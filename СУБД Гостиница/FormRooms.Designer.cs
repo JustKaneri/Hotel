@@ -1,6 +1,6 @@
 ﻿namespace СУБД_Гостиница.Porte
 {
-    partial class FormRoomsPortie
+    partial class FormRooms
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvRooms = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +55,16 @@
             this.CntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CntReg = new System.Windows.Forms.ToolStripMenuItem();
             this.CntDeReg = new System.Windows.Forms.ToolStripMenuItem();
-            this.историяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CntHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.CntMenuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.CnmHistoryAdm = new System.Windows.Forms.ToolStripMenuItem();
+            this.CnmRemont = new System.Windows.Forms.ToolStripMenuItem();
+            this.CnmRegAdm = new System.Windows.Forms.ToolStripMenuItem();
+            this.CnmDeRegAdmin = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DgvRooms)).BeginInit();
             this.PnlInfo.SuspendLayout();
             this.CntMenu.SuspendLayout();
+            this.CntMenuAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvRooms
@@ -82,14 +88,14 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Book Antiqua", 7.8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRooms.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Book Antiqua", 7.8F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRooms.DefaultCellStyle = dataGridViewCellStyle12;
             this.DgvRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.DgvRooms.Location = new System.Drawing.Point(12, 12);
             this.DgvRooms.MultiSelect = false;
@@ -110,10 +116,10 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column1.HeaderText = "Column1";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -121,10 +127,10 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column2.HeaderText = "Column2";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -132,10 +138,10 @@
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column3.HeaderText = "Column3";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -143,10 +149,10 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column4.HeaderText = "Column4";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -154,10 +160,10 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column5.HeaderText = "Column5";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -292,18 +298,18 @@
             this.CntMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CntReg,
             this.CntDeReg,
-            this.историяToolStripMenuItem});
+            this.CntHistory});
             this.CntMenu.Name = "CntMenu";
-            this.CntMenu.Size = new System.Drawing.Size(274, 116);
+            this.CntMenu.Size = new System.Drawing.Size(287, 104);
             this.CntMenu.Text = "Функции";
             // 
             // CntReg
             // 
             this.CntReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.CntReg.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CntReg.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CntReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.CntReg.Name = "CntReg";
-            this.CntReg.Size = new System.Drawing.Size(273, 28);
+            this.CntReg.Size = new System.Drawing.Size(286, 24);
             this.CntReg.Text = "Регистрация";
             this.CntReg.Click += new System.EventHandler(this.CntReg_Click);
             this.CntReg.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
@@ -312,25 +318,73 @@
             // CntDeReg
             // 
             this.CntDeReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.CntDeReg.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CntDeReg.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CntDeReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.CntDeReg.Name = "CntDeReg";
-            this.CntDeReg.Size = new System.Drawing.Size(273, 28);
+            this.CntDeReg.Size = new System.Drawing.Size(286, 24);
             this.CntDeReg.Text = "Снятие с регестрации";
             this.CntDeReg.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
             this.CntDeReg.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
-            // историяToolStripMenuItem
+            // CntHistory
             // 
-            this.историяToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.историяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.историяToolStripMenuItem.Name = "историяToolStripMenuItem";
-            this.историяToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
-            this.историяToolStripMenuItem.Text = "История";
-            this.историяToolStripMenuItem.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.историяToolStripMenuItem.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
+            this.CntHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CntHistory.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CntHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.CntHistory.Name = "CntHistory";
+            this.CntHistory.Size = new System.Drawing.Size(286, 24);
+            this.CntHistory.Text = "История";
+            this.CntHistory.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
+            this.CntHistory.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
-            // FormRoomsPortie
+            // CntMenuAdmin
+            // 
+            this.CntMenuAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CntMenuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CnmRegAdm,
+            this.CnmDeRegAdmin,
+            this.CnmHistoryAdm,
+            this.CnmRemont});
+            this.CntMenuAdmin.Name = "CntMenuAdmin";
+            this.CntMenuAdmin.Size = new System.Drawing.Size(287, 100);
+            // 
+            // CnmHistoryAdm
+            // 
+            this.CnmHistoryAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnmHistoryAdm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnmHistoryAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.CnmHistoryAdm.Name = "CnmHistoryAdm";
+            this.CnmHistoryAdm.Size = new System.Drawing.Size(286, 24);
+            this.CnmHistoryAdm.Text = "История";
+            // 
+            // CnmRemont
+            // 
+            this.CnmRemont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnmRemont.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnmRemont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.CnmRemont.Name = "CnmRemont";
+            this.CnmRemont.Size = new System.Drawing.Size(286, 24);
+            this.CnmRemont.Text = "Ремонт";
+            // 
+            // CnmRegAdm
+            // 
+            this.CnmRegAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnmRegAdm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnmRegAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.CnmRegAdm.Name = "CnmRegAdm";
+            this.CnmRegAdm.Size = new System.Drawing.Size(286, 24);
+            this.CnmRegAdm.Text = "Регистрация";
+            // 
+            // CnmDeRegAdmin
+            // 
+            this.CnmDeRegAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnmDeRegAdmin.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnmDeRegAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.CnmDeRegAdmin.Name = "CnmDeRegAdmin";
+            this.CnmDeRegAdmin.Size = new System.Drawing.Size(286, 24);
+            this.CnmDeRegAdmin.Text = "Снятие с регестрации";
+            // 
+            // FormRooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -339,12 +393,13 @@
             this.Controls.Add(this.PnlInfo);
             this.Controls.Add(this.DgvRooms);
             this.Font = new System.Drawing.Font("Book Antiqua", 7.8F);
-            this.Name = "FormRoomsPortie";
+            this.Name = "FormRooms";
             this.Load += new System.EventHandler(this.FormRoomsPortie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvRooms)).EndInit();
             this.PnlInfo.ResumeLayout(false);
             this.PnlInfo.PerformLayout();
             this.CntMenu.ResumeLayout(false);
+            this.CntMenuAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -372,6 +427,11 @@
         private System.Windows.Forms.ToolStripMenuItem CntReg;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem CntDeReg;
-        private System.Windows.Forms.ToolStripMenuItem историяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CntHistory;
+        private System.Windows.Forms.ContextMenuStrip CntMenuAdmin;
+        private System.Windows.Forms.ToolStripMenuItem CnmRegAdm;
+        private System.Windows.Forms.ToolStripMenuItem CnmDeRegAdmin;
+        private System.Windows.Forms.ToolStripMenuItem CnmHistoryAdm;
+        private System.Windows.Forms.ToolStripMenuItem CnmRemont;
     }
 }

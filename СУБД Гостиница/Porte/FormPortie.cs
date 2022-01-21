@@ -85,7 +85,7 @@ namespace СУБД_Гостиница.Porte
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormRoomsPortie());
+            ActivateForm(new FormRooms());
 
         }
 

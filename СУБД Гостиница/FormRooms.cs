@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace СУБД_Гостиница.Porte
 {
-    public partial class FormRoomsPortie : Form
+    public partial class FormRooms : Form
     {
-        public FormRoomsPortie()
+        public FormRooms()
         {
             InitializeComponent();
         }
