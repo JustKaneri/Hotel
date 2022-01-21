@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Вариант-5.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,14 +49,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Autorization.Designer.cs">
+      <DependentUpon>Autorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colors.cs" />
+    <Compile Include="FormClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClients.Designer.cs">
+      <DependentUpon>FormClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Porte\FormOformlen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Porte\FormOformlen.Designer.cs">
+      <DependentUpon>FormOformlen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Porte\FormPortie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Porte\FormPortie.Designer.cs">
+      <DependentUpon>FormPortie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Porte\FormRoomsPortie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Porte\FormRoomsPortie.Designer.cs">
+      <DependentUpon>FormRoomsPortie.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Autorization.resx">
+      <DependentUpon>Autorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClients.resx">
+      <DependentUpon>FormClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Porte\FormOformlen.resx">
+      <DependentUpon>FormOformlen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Porte\FormPortie.resx">
+      <DependentUpon>FormPortie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Porte\FormRoomsPortie.resx">
+      <DependentUpon>FormRoomsPortie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +119,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MiniSearhB.png" />
+    <None Include="Resources\MiniSearhW.png" />
+    <None Include="Resources\MiniMessag.png" />
+    <None Include="Resources\MiniPersonal.png" />
+    <None Include="Resources\MiniRoom.png" />
+    <None Include="Resources\MiniStatistic.png" />
+    <None Include="Resources\MiniClients.png" />
+    <None Include="Resources\MiniLogo.png" />
+    <Content Include="Вариант-5.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
