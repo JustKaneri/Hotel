@@ -34,9 +34,6 @@ namespace СУБД_Гостиница.Porte
 
         private void DgvRooms_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //FormOformlen oformlen = new FormOformlen();
-            //oformlen.ShowDialog();
-
             CntMenu.Show(Cursor.Position);
         }
 
@@ -55,8 +52,15 @@ namespace СУБД_Гостиница.Porte
 
         private void CntReg_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DgvRooms.CurrentCell.Value.ToString());
-         
+            //MessageBox.Show(DgvRooms.CurrentCell.Value.ToString());
+            FormOformlen oformlen = new FormOformlen();
+            oformlen.ShowDialog();
+        }
+
+        private void CntHistory_Click(object sender, EventArgs e)
+        {
+            FormHistoryRoom formHistory = new FormHistoryRoom();
+            formHistory.Show();
         }
     }
 }

@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>СУБД_Гостиница</RootNamespace>
     <AssemblyName>СУБД Гостиница</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrator\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +63,12 @@
       <DependentUpon>Autorization.cs</DependentUpon>
     </Compile>
     <Compile Include="Colors.cs" />
+    <Compile Include="FormAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlert.Designer.cs">
+      <DependentUpon>FormAlert.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +80,12 @@
     </Compile>
     <Compile Include="FormHistoryRoom.Designer.cs">
       <DependentUpon>FormHistoryRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInfoClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoClients.Designer.cs">
+      <DependentUpon>FormInfoClients.cs</DependentUpon>
     </Compile>
     <Compile Include="Porte\FormOformlen.cs">
       <SubType>Form</SubType>
@@ -88,14 +107,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administrator\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlert.resx">
+      <DependentUpon>FormAlert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClients.resx">
       <DependentUpon>FormClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHistoryRoom.resx">
       <DependentUpon>FormHistoryRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoClients.resx">
+      <DependentUpon>FormInfoClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Porte\FormOformlen.resx">
       <DependentUpon>FormOformlen.cs</DependentUpon>

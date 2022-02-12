@@ -57,10 +57,10 @@
             this.CntDeReg = new System.Windows.Forms.ToolStripMenuItem();
             this.CntHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.CntMenuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.CnmHistoryAdm = new System.Windows.Forms.ToolStripMenuItem();
-            this.CnmRemont = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmRegAdm = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmDeRegAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.CnmHistoryAdm = new System.Windows.Forms.ToolStripMenuItem();
+            this.CnmRemont = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DgvRooms)).BeginInit();
             this.PnlInfo.SuspendLayout();
             this.CntMenu.SuspendLayout();
@@ -300,7 +300,7 @@
             this.CntDeReg,
             this.CntHistory});
             this.CntMenu.Name = "CntMenu";
-            this.CntMenu.Size = new System.Drawing.Size(287, 104);
+            this.CntMenu.Size = new System.Drawing.Size(287, 76);
             this.CntMenu.Text = "Функции";
             // 
             // CntReg
@@ -334,6 +334,7 @@
             this.CntHistory.Name = "CntHistory";
             this.CntHistory.Size = new System.Drawing.Size(286, 24);
             this.CntHistory.Text = "История";
+            this.CntHistory.Click += new System.EventHandler(this.CntHistory_Click);
             this.CntHistory.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
             this.CntHistory.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
@@ -346,25 +347,7 @@
             this.CnmHistoryAdm,
             this.CnmRemont});
             this.CntMenuAdmin.Name = "CntMenuAdmin";
-            this.CntMenuAdmin.Size = new System.Drawing.Size(287, 100);
-            // 
-            // CnmHistoryAdm
-            // 
-            this.CnmHistoryAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.CnmHistoryAdm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CnmHistoryAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.CnmHistoryAdm.Name = "CnmHistoryAdm";
-            this.CnmHistoryAdm.Size = new System.Drawing.Size(286, 24);
-            this.CnmHistoryAdm.Text = "История";
-            // 
-            // CnmRemont
-            // 
-            this.CnmRemont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.CnmRemont.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CnmRemont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.CnmRemont.Name = "CnmRemont";
-            this.CnmRemont.Size = new System.Drawing.Size(286, 24);
-            this.CnmRemont.Text = "Ремонт";
+            this.CntMenuAdmin.Size = new System.Drawing.Size(287, 128);
             // 
             // CnmRegAdm
             // 
@@ -374,6 +357,7 @@
             this.CnmRegAdm.Name = "CnmRegAdm";
             this.CnmRegAdm.Size = new System.Drawing.Size(286, 24);
             this.CnmRegAdm.Text = "Регистрация";
+            this.CnmRegAdm.Click += new System.EventHandler(this.CntReg_Click);
             // 
             // CnmDeRegAdmin
             // 
@@ -383,6 +367,25 @@
             this.CnmDeRegAdmin.Name = "CnmDeRegAdmin";
             this.CnmDeRegAdmin.Size = new System.Drawing.Size(286, 24);
             this.CnmDeRegAdmin.Text = "Снятие с регестрации";
+            // 
+            // CnmHistoryAdm
+            // 
+            this.CnmHistoryAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnmHistoryAdm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnmHistoryAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.CnmHistoryAdm.Name = "CnmHistoryAdm";
+            this.CnmHistoryAdm.Size = new System.Drawing.Size(286, 24);
+            this.CnmHistoryAdm.Text = "История";
+            this.CnmHistoryAdm.Click += new System.EventHandler(this.CntHistory_Click);
+            // 
+            // CnmRemont
+            // 
+            this.CnmRemont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnmRemont.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnmRemont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.CnmRemont.Name = "CnmRemont";
+            this.CnmRemont.Size = new System.Drawing.Size(286, 24);
+            this.CnmRemont.Text = "Ремонт";
             // 
             // FormRooms
             // 

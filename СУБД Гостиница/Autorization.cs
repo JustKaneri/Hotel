@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using СУБД_Гостиница.Administrator;
 using СУБД_Гостиница.Porte;
 
 namespace СУБД_Гостиница
@@ -60,8 +61,11 @@ namespace СУБД_Гостиница
 
         private void BtnLogIn_Click(object sender, EventArgs e)
         {
-            FormPortie formPortie = new FormPortie();
-            formPortie.ShowDialog();
+            //FormPortie formPortie = new FormPortie();
+            //formPortie.ShowDialog();
+
+            FormAdmin admin = new FormAdmin();
+            admin.ShowDialog();
         }
     }
 }

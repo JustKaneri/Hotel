@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using СУБД_Гостиница.Porte;
 
-namespace СУБД_Гостиница.Porte
+namespace СУБД_Гостиница.Administrator
 {
-    public partial class FormPortie : Form
+    public partial class FormAdmin : Form
     {
-        public FormPortie()
+        public FormAdmin()
         {
             InitializeComponent();
         }
@@ -47,17 +48,17 @@ namespace СУБД_Гостиница.Porte
             CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             CurrentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             CurrentBtn.BackColor = Colors.PanelColor;
-           
+
         }
 
         private void ActivateForm(Form form)
         {
-            if(form == null)
+            if (form == null)
             {
                 return;
             }
 
-            if(CurrentForm != null)
+            if (CurrentForm != null)
             {
                 CurrentForm.Close();
             }
@@ -70,10 +71,10 @@ namespace СУБД_Гостиница.Porte
             CurrentForm.Dock = DockStyle.Fill;
         }
 
-        private void FormPortie_Load(object sender, EventArgs e)
+        private void FormAdmin_Load(object sender, EventArgs e)
         {
             CursorSelectBtn = new Panel();
-            CursorSelectBtn.Size = new Size(10,68);
+            CursorSelectBtn.Size = new Size(10, 68);
             CursorSelectBtn.BackColor = Colors.ButtonForeSelect;
             this.Controls.Add(CursorSelectBtn);
             CursorSelectBtn.BringToFront();
@@ -86,7 +87,6 @@ namespace СУБД_Гостиница.Porte
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
             ActivateForm(new FormRooms());
-
         }
 
         private void BtnClients_Click(object sender, EventArgs e)
@@ -101,6 +101,20 @@ namespace СУБД_Гостиница.Porte
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
             ActivateForm(new FormAlert());
+        }
+
+        private void BtnPersonal_Click(object sender, EventArgs e)
+        {
+            EnableButton(SelectBtn);
+            ActivateButton((Button)(sender));
+            ActivateForm(null);
+        }
+
+        private void BtnStatic_Click(object sender, EventArgs e)
+        {
+            EnableButton(SelectBtn);
+            ActivateButton((Button)(sender));
+            ActivateForm(null);
         }
     }
 }

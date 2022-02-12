@@ -34,13 +34,12 @@ namespace СУБД_Гостиница.Porte
             BtnReg.ForeColor = Colors.ButtonForeNoSelect;
         }
 
-        private void FormOformlen_Paint(object sender, PaintEventArgs e)
+        private void CbxExsist_CheckedChanged(object sender, EventArgs e)
         {
-            Autorization.PaitBorderTextBox(TbxName, e.Graphics);
-            Autorization.PaitBorderTextBox(TbxFam, e.Graphics);
-            Autorization.PaitBorderTextBox(TbxOtch, e.Graphics);
-            Autorization.PaitBorderTextBox(TbxNomer, e.Graphics);
-            Autorization.PaitBorderTextBox(TbxSeria, e.Graphics);
+            if (CbxExsist.Checked)
+                CmbxFam.DropDownStyle = ComboBoxStyle.DropDownList;
+            else
+                CmbxFam.DropDownStyle = ComboBoxStyle.DropDown;
         }
     }
 }
