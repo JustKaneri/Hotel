@@ -36,7 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.PbxUser = new System.Windows.Forms.PictureBox();
+            this.PbxPass = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPass)).BeginInit();
             this.SuspendLayout();
             // 
             // TbxLogin
@@ -44,10 +48,10 @@
             this.TbxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.TbxLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxLogin.Location = new System.Drawing.Point(464, 139);
+            this.TbxLogin.Location = new System.Drawing.Point(495, 139);
             this.TbxLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TbxLogin.Name = "TbxLogin";
-            this.TbxLogin.Size = new System.Drawing.Size(361, 30);
+            this.TbxLogin.Size = new System.Drawing.Size(330, 30);
             this.TbxLogin.TabIndex = 1;
             // 
             // TbxPassword
@@ -55,10 +59,10 @@
             this.TbxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.TbxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxPassword.Location = new System.Drawing.Point(464, 227);
+            this.TbxPassword.Location = new System.Drawing.Point(495, 227);
             this.TbxPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TbxPassword.Name = "TbxPassword";
-            this.TbxPassword.Size = new System.Drawing.Size(361, 30);
+            this.TbxPassword.Size = new System.Drawing.Size(330, 30);
             this.TbxPassword.TabIndex = 2;
             this.TbxPassword.UseSystemPasswordChar = true;
             // 
@@ -68,7 +72,7 @@
             this.BtnLogIn.FlatAppearance.BorderSize = 2;
             this.BtnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogIn.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnLogIn.Location = new System.Drawing.Point(671, 277);
+            this.BtnLogIn.Location = new System.Drawing.Point(671, 276);
             this.BtnLogIn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnLogIn.Name = "BtnLogIn";
             this.BtnLogIn.Size = new System.Drawing.Size(154, 49);
@@ -120,12 +124,38 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Пароль:";
             // 
+            // PbxUser
+            // 
+            this.PbxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PbxUser.Image = ((System.Drawing.Image)(resources.GetObject("PbxUser.Image")));
+            this.PbxUser.Location = new System.Drawing.Point(459, 139);
+            this.PbxUser.Name = "PbxUser";
+            this.PbxUser.Size = new System.Drawing.Size(35, 30);
+            this.PbxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxUser.TabIndex = 8;
+            this.PbxUser.TabStop = false;
+            // 
+            // PbxPass
+            // 
+            this.PbxPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PbxPass.Image = ((System.Drawing.Image)(resources.GetObject("PbxPass.Image")));
+            this.PbxPass.Location = new System.Drawing.Point(459, 227);
+            this.PbxPass.Name = "PbxPass";
+            this.PbxPass.Size = new System.Drawing.Size(35, 30);
+            this.PbxPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxPass.TabIndex = 9;
+            this.PbxPass.TabStop = false;
+            this.PbxPass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbxPass_MouseDown);
+            this.PbxPass.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbxPass_MouseUp);
+            // 
             // Autorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(863, 356);
+            this.Controls.Add(this.PbxPass);
+            this.Controls.Add(this.PbxUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -144,6 +174,8 @@
             this.Text = "СУБД Гостиница";
             this.Load += new System.EventHandler(this.Autorization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +189,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox PbxUser;
+        private System.Windows.Forms.PictureBox PbxPass;
     }
 }
 

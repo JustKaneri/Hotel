@@ -67,5 +67,15 @@ namespace СУБД_Гостиница
             FormAdmin admin = new FormAdmin();
             admin.ShowDialog();
         }
+
+        private void PbxPass_MouseDown(object sender, MouseEventArgs e)
+        {
+            TbxPassword.UseSystemPasswordChar = false;
+        }
+
+        private void PbxPass_MouseUp(object sender, MouseEventArgs e)
+        {
+            TbxPassword.UseSystemPasswordChar = true;
+        }
     }
 }

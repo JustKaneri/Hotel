@@ -16,5 +16,7 @@ namespace СУБД_Гостиница
         public static Color ButtonForeSelect = Color.FromArgb(245, 243, 244);
         public static Color ButtonForeNoSelect = Color.Black;
         public static Color PanelColor = Color.FromArgb(52, 52, 77);
+
+        public static Color ColorSelectPanelRoom = Color.FromArgb(123, 190, 175);
     }
 }

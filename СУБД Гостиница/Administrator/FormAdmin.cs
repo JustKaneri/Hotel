@@ -22,18 +22,21 @@ namespace СУБД_Гостиница.Administrator
         private Button SelectBtn;
         private Form CurrentForm;
 
+        public bool IsShow { get; private set; }
+
         /// <summary>
         /// Изменений нажатой кнопки.
         /// </summary>
         /// <param name="CurrentBtn"></param>
         private void ActivateButton(Button CurrentBtn)
         {
-            CurrentBtn.ImageAlign = ContentAlignment.MiddleRight;
-            CurrentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            //CurrentBtn.ImageAlign = ContentAlignment.MiddleRight;
+            //CurrentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
             CursorSelectBtn.Location = CurrentBtn.Location;
-            CurrentBtn.BackColor = Colors.ButtonMousEnter;
+            //CurrentBtn.BackColor = Color.White;
+            //CurrentBtn.ForeColor = Color.Black;
             SelectBtn = CurrentBtn;
-            LbxTitle.Text = CurrentBtn.Text;
+            LbxTitle.Text = CurrentBtn.Tag.ToString();
         }
 
         /// <summary>
@@ -45,9 +48,9 @@ namespace СУБД_Гостиница.Administrator
             if (CurrentBtn == null)
                 return;
 
-            CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            CurrentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            CurrentBtn.BackColor = Colors.PanelColor;
+            //CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            //CurrentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            //CurrentBtn.BackColor = Colors.PanelColor;
 
         }
 
@@ -74,19 +77,22 @@ namespace СУБД_Гостиница.Administrator
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             CursorSelectBtn = new Panel();
-            CursorSelectBtn.Size = new Size(10, 68);
+            CursorSelectBtn.Size = new Size(6, 68);
             CursorSelectBtn.BackColor = Colors.ButtonForeSelect;
             this.Controls.Add(CursorSelectBtn);
             CursorSelectBtn.BringToFront();
 
+            HidePanel();
+
             BtnNomer_Click(BtnNomer, null);
+
         }
 
         private void BtnNomer_Click(object sender, EventArgs e)
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormRooms());
+            ActivateForm(new FormRooms("Admin"));
         }
 
         private void BtnClients_Click(object sender, EventArgs e)
@@ -107,14 +113,62 @@ namespace СУБД_Гостиница.Administrator
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(null);
+            ActivateForm(new FormPersonal());
         }
 
         private void BtnStatic_Click(object sender, EventArgs e)
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(null);
+            ActivateForm(new FormStatistic());
+        }
+
+        private void HidePanel()
+        {
+            PnlMenu.Width = 80;
+
+            foreach (Control item in PnlMenu.Controls)
+            {
+                if (item is Button)
+                {
+                    item.Tag = item.Text;
+                    item.Text = "";
+                    (item as Button).ImageAlign = ContentAlignment.MiddleCenter;
+                }
+
+
+            }
+        }
+
+        private void ShowPanel()
+        {
+            PnlMenu.Width = 200;
+
+            foreach (Control item in PnlMenu.Controls)
+            {
+                if (item is Button)
+                {
+                    item.Text = item.Tag.ToString();
+                    (item as Button).ImageAlign = ContentAlignment.MiddleLeft;
+                }
+
+            }
+
+            BtnMenu.ImageAlign = ContentAlignment.MiddleRight;
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            if (IsShow)
+            {
+                IsShow = false;
+                HidePanel();
+            }
+            else
+            {
+                IsShow = true;
+                ShowPanel();
+            }
         }
     }
 }

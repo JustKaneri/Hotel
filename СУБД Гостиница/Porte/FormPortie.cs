@@ -15,11 +15,14 @@ namespace СУБД_Гостиница.Porte
         public FormPortie()
         {
             InitializeComponent();
+            HidePanel();
         }
 
         private Panel CursorSelectBtn;
         private Button SelectBtn;
         private Form CurrentForm;
+
+        private Boolean IsShow = false;
 
         /// <summary>
         /// Изменений нажатой кнопки.
@@ -27,12 +30,13 @@ namespace СУБД_Гостиница.Porte
         /// <param name="CurrentBtn"></param>
         private void ActivateButton(Button CurrentBtn)
         {
-            CurrentBtn.ImageAlign = ContentAlignment.MiddleRight;
-            CurrentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            //CurrentBtn.ImageAlign = ContentAlignment.MiddleRight;
+            //CurrentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
             CursorSelectBtn.Location = CurrentBtn.Location;
-            CurrentBtn.BackColor = Colors.ButtonMousEnter;
+            //CurrentBtn.BackColor = Color.White;
+            //CurrentBtn.ForeColor = Color.Black;
             SelectBtn = CurrentBtn;
-            LbxTitle.Text = CurrentBtn.Text;
+            LbxTitle.Text = CurrentBtn.Tag.ToString();
         }
 
         /// <summary>
@@ -44,20 +48,20 @@ namespace СУБД_Гостиница.Porte
             if (CurrentBtn == null)
                 return;
 
-            CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            CurrentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            CurrentBtn.BackColor = Colors.PanelColor;
-           
+            //CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            //CurrentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            //CurrentBtn.BackColor = Colors.PanelColor;
+
         }
 
         private void ActivateForm(Form form)
         {
-            if(form == null)
+            if (form == null)
             {
                 return;
             }
 
-            if(CurrentForm != null)
+            if (CurrentForm != null)
             {
                 CurrentForm.Close();
             }
@@ -73,7 +77,7 @@ namespace СУБД_Гостиница.Porte
         private void FormPortie_Load(object sender, EventArgs e)
         {
             CursorSelectBtn = new Panel();
-            CursorSelectBtn.Size = new Size(10,68);
+            CursorSelectBtn.Size = new Size(6, 68);
             CursorSelectBtn.BackColor = Colors.ButtonForeSelect;
             this.Controls.Add(CursorSelectBtn);
             CursorSelectBtn.BringToFront();
@@ -85,7 +89,7 @@ namespace СУБД_Гостиница.Porte
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormRooms());
+            ActivateForm(new FormRooms("Portie"));
 
         }
 
@@ -101,6 +105,54 @@ namespace СУБД_Гостиница.Porte
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
             ActivateForm(new FormAlert());
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            if (IsShow)
+            {
+                IsShow = false;
+                HidePanel();
+            }
+            else
+            {
+                IsShow = true;
+                ShowPanel();
+            }
+        }
+
+        private void HidePanel()
+        {
+            PnlMenu.Width = 80;
+
+            foreach (Control item in PnlMenu.Controls)
+            {
+                if(item is Button)
+                {
+                    item.Tag = item.Text;
+                    item.Text = "";
+                    (item as Button).ImageAlign = ContentAlignment.MiddleCenter;
+                }
+
+                
+            }
+        }
+
+        private void ShowPanel()
+        {
+            PnlMenu.Width = 200;
+
+            foreach (Control item in PnlMenu.Controls)
+            {
+                if(item is Button)
+                {
+                    item.Text = item.Tag.ToString();
+                    (item as Button).ImageAlign = ContentAlignment.MiddleLeft;
+                }
+                
+            }
+
+            BtnMenu.ImageAlign = ContentAlignment.MiddleRight;
         }
     }
 }
