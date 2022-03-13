@@ -48,14 +48,14 @@ namespace СУБД_Гостиница.Porte
         private void CntReg_MouseLeave(object sender, EventArgs e)
         {
             
-            ((ToolStripMenuItem)(sender)).BackColor = Color.FromArgb(123, 190, 175);
-            ((ToolStripMenuItem)(sender)).ForeColor = Colors.PanelColor;
+            //((ToolStripMenuItem)(sender)).BackColor = Color.FromArgb(123, 190, 175);
+            //((ToolStripMenuItem)(sender)).ForeColor = Colors.PanelColor;
         }
 
         private void CntReg_MouseEnter(object sender, EventArgs e)
         {
-            ((ToolStripMenuItem)(sender)).BackColor = Color.FromArgb(52, 52, 77);
-            ((ToolStripMenuItem)(sender)).ForeColor = Color.White;
+            //((ToolStripMenuItem)(sender)).BackColor = Color.FromArgb(52, 52, 77);
+            //((ToolStripMenuItem)(sender)).ForeColor = Color.White;
         }
 
         private void CntReg_Click(object sender, EventArgs e)
@@ -115,6 +115,23 @@ namespace СУБД_Гостиница.Porte
                 CntMenu.Show(Cursor.Position);
             else
                 CntMenuAdmin.Show(Cursor.Position);
+        }
+
+        private void CntInfo_Click(object sender, EventArgs e)
+        {
+            FormInfoRoom infoRoom = new FormInfoRoom();
+            infoRoom.ShowDialog();
+        }
+
+        private void CntEditRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CnmRemont_Click(object sender, EventArgs e)
+        {
+            FormRemont remont = new FormRemont();
+            remont.ShowDialog();
         }
     }
 }

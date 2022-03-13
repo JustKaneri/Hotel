@@ -30,20 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPortie));
             this.PnlMenu = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.PnlFragment = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnNomer = new System.Windows.Forms.Button();
             this.BtnMessage = new System.Windows.Forms.Button();
             this.BtnClients = new System.Windows.Forms.Button();
+            this.BtnNomer = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.BtnMenu = new System.Windows.Forms.Button();
-            this.LbxTitle = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.LbxTitle = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PnlFragment = new System.Windows.Forms.Panel();
+            this.PbxLine = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -59,70 +61,6 @@
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(194, 538);
             this.PnlMenu.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.label2.Location = new System.Drawing.Point(0, 508);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 30);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "v 1.0";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.LbxTitle);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(194, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(857, 96);
-            this.panel3.TabIndex = 2;
-            // 
-            // PnlFragment
-            // 
-            this.PnlFragment.BackColor = System.Drawing.Color.White;
-            this.PnlFragment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlFragment.Location = new System.Drawing.Point(194, 96);
-            this.PnlFragment.Name = "PnlFragment";
-            this.PnlFragment.Size = new System.Drawing.Size(857, 442);
-            this.PnlFragment.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(771, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BtnNomer
-            // 
-            this.BtnNomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnNomer.FlatAppearance.BorderSize = 0;
-            this.BtnNomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNomer.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnNomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnNomer.Image = global::СУБД_Гостиница.Properties.Resources.MiniRoom;
-            this.BtnNomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNomer.Location = new System.Drawing.Point(0, 96);
-            this.BtnNomer.Name = "BtnNomer";
-            this.BtnNomer.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
-            this.BtnNomer.Size = new System.Drawing.Size(194, 68);
-            this.BtnNomer.TabIndex = 5;
-            this.BtnNomer.Text = "Номера";
-            this.BtnNomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnNomer.UseVisualStyleBackColor = true;
-            this.BtnNomer.Click += new System.EventHandler(this.BtnNomer_Click);
             // 
             // BtnMessage
             // 
@@ -162,6 +100,38 @@
             this.BtnClients.UseVisualStyleBackColor = true;
             this.BtnClients.Click += new System.EventHandler(this.BtnClients_Click);
             // 
+            // BtnNomer
+            // 
+            this.BtnNomer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnNomer.FlatAppearance.BorderSize = 0;
+            this.BtnNomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNomer.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnNomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnNomer.Image = global::СУБД_Гостиница.Properties.Resources.MiniRoom;
+            this.BtnNomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNomer.Location = new System.Drawing.Point(0, 96);
+            this.BtnNomer.Name = "BtnNomer";
+            this.BtnNomer.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.BtnNomer.Size = new System.Drawing.Size(194, 68);
+            this.BtnNomer.TabIndex = 5;
+            this.BtnNomer.Text = "Номера";
+            this.BtnNomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnNomer.UseVisualStyleBackColor = true;
+            this.BtnNomer.Click += new System.EventHandler(this.BtnNomer_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.label2.Location = new System.Drawing.Point(0, 508);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 30);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "v 1.0";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // BtnMenu
             // 
             this.BtnMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -182,6 +152,30 @@
             this.BtnMenu.UseVisualStyleBackColor = true;
             this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.PbxLine);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.LbxTitle);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(194, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(857, 96);
+            this.panel3.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::СУБД_Гостиница.Properties.Resources.MiniMessag;
+            this.pictureBox2.Location = new System.Drawing.Point(717, 41);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // LbxTitle
             // 
             this.LbxTitle.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -192,15 +186,36 @@
             this.LbxTitle.Text = "label1";
             this.LbxTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox2
+            // pictureBox1
             // 
-            this.pictureBox2.Image = global::СУБД_Гостиница.Properties.Resources.MiniMessag;
-            this.pictureBox2.Location = new System.Drawing.Point(717, 41);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(771, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // PnlFragment
+            // 
+            this.PnlFragment.BackColor = System.Drawing.Color.White;
+            this.PnlFragment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlFragment.Location = new System.Drawing.Point(194, 96);
+            this.PnlFragment.Name = "PnlFragment";
+            this.PnlFragment.Size = new System.Drawing.Size(857, 442);
+            this.PnlFragment.TabIndex = 3;
+            // 
+            // PbxLine
+            // 
+            this.PbxLine.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PbxLine.Image = ((System.Drawing.Image)(resources.GetObject("PbxLine.Image")));
+            this.PbxLine.Location = new System.Drawing.Point(0, 78);
+            this.PbxLine.Name = "PbxLine";
+            this.PbxLine.Size = new System.Drawing.Size(857, 18);
+            this.PbxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxLine.TabIndex = 3;
+            this.PbxLine.TabStop = false;
             // 
             // FormPortie
             // 
@@ -219,8 +234,9 @@
             this.Load += new System.EventHandler(this.FormPortie_Load);
             this.PnlMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +254,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LbxTitle;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox PbxLine;
     }
 }

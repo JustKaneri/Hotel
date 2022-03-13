@@ -19,14 +19,7 @@ namespace СУБД_Гостиница
 
         private void FormStatistic_Load(object sender, EventArgs e)
         {
-            chart1.Series.Clear();
 
-            chart1.Series.Add("V1");
-            chart1.Series["V1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            chart1.Series["V1"].Points.AddXY("Зима",20);
-            chart1.Series["V1"].Points.AddXY("Лето", 51);
-            chart1.Series["V1"].Points.AddXY("Осень", 21);
-            chart1.Series["V1"].Points.AddXY("Весна", 16);
 
             chart3.Series.Clear();
 

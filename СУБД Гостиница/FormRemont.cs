@@ -8,21 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace СУБД_Гостиница.Porte
+namespace СУБД_Гостиница
 {
-    public partial class FormOformlen : Form
+    public partial class FormRemont : Form
     {
-        public FormOformlen()
+        private Calendar calendar;
+
+        public FormRemont()
         {
             InitializeComponent();
         }
 
-        private Calendar calendar;
-
-        private void FormOformlen_Load(object sender, EventArgs e)
+        private void FormRemont_Load(object sender, EventArgs e)
         {
-            BtnReg.FlatAppearance.BorderColor = Colors.BorderButton;
-
             CurrentYear.Text = DateTime.Now.Year + " Год";
 
             List<DateTime> dtSt = new List<DateTime>();
@@ -34,10 +32,10 @@ namespace СУБД_Гостиница.Porte
             dtFn.Add(new DateTime(2022, 4, 2));
 
             calendar = new Calendar(dtSt, dtFn);
-            FillCalendar(calendar.SetNowMont(),calendar.NameMonth);
+            FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
         }
 
-        private void FillCalendar(List<Calendar.DayMonth> list,string name)
+        private void FillCalendar(List<Calendar.DayMonth> list, string name)
         {
             LbxMonthName.Text = name;
 
@@ -52,7 +50,7 @@ namespace СУБД_Гостиница.Porte
             for (int i = 0; i < list.Count; i++)
             {
 
-                DgvCalendar[list[i].NumWeek-1 , row].Value = list[i].Name;
+                DgvCalendar[list[i].NumWeek - 1, row].Value = list[i].Name;
 
                 if (!list[i].IsFree)
                 {
@@ -68,29 +66,22 @@ namespace СУБД_Гостиница.Porte
             }
         }
 
-        private void BtnReg_MouseEnter(object sender, EventArgs e)
+        private void BtnRem_MouseEnter(object sender, EventArgs e)
         {
-            BtnReg.BackColor = Colors.ButtonMousEnter;
-            BtnReg.ForeColor = Colors.ButtonForeSelect;
+            BtnRem.BackColor = Colors.ButtonMousEnter;
+            BtnRem.ForeColor = Colors.ButtonForeSelect;
         }
 
-        private void BtnReg_MouseLeave(object sender, EventArgs e)
+        private void BtnRem_MouseLeave(object sender, EventArgs e)
         {
-            BtnReg.BackColor = Colors.ButtonMousLeave;
-            BtnReg.ForeColor = Colors.ButtonForeNoSelect;
-        }
-
-        private void CbxExsist_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CbxExsist.Checked)
-                CmbxFam.DropDownStyle = ComboBoxStyle.DropDownList;
-            else
-                CmbxFam.DropDownStyle = ComboBoxStyle.DropDown;
+            BtnRem.BackColor = Colors.ButtonMousLeave;
+            BtnRem.ForeColor = Colors.ButtonForeNoSelect;
         }
 
         private void LbxNextMonth_Click(object sender, EventArgs e)
         {
             FillCalendar(calendar.NextMonth(), calendar.NameMonth);
+            
         }
 
         private void LbxLastMonth_Click(object sender, EventArgs e)

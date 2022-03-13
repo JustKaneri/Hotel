@@ -117,7 +117,7 @@
             this.Column1,
             this.Column2});
             this.DgvClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.DgvClients.Location = new System.Drawing.Point(38, 147);
+            this.DgvClients.Location = new System.Drawing.Point(38, 138);
             this.DgvClients.Name = "DgvClients";
             this.DgvClients.ReadOnly = true;
             this.DgvClients.RowHeadersVisible = false;
@@ -126,7 +126,7 @@
             this.DgvClients.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvClients.RowTemplate.Height = 50;
             this.DgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvClients.Size = new System.Drawing.Size(816, 334);
+            this.DgvClients.Size = new System.Drawing.Size(816, 343);
             this.DgvClients.TabIndex = 1;
             // 
             // Column1

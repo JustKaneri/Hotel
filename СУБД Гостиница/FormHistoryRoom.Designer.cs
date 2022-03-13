@@ -51,7 +51,7 @@
             // 
             this.LbxTitle.BackColor = System.Drawing.Color.Transparent;
             this.LbxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LbxTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.LbxTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LbxTitle.Location = new System.Drawing.Point(0, 0);

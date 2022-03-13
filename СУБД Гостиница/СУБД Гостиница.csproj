@@ -63,6 +63,7 @@
     <Compile Include="Autorization.Designer.cs">
       <DependentUpon>Autorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calendar.cs" />
     <Compile Include="Colors.cs" />
     <Compile Include="Controls\PanelRoom.cs">
       <SubType>Component</SubType>
@@ -97,11 +98,23 @@
     <Compile Include="FormInfoClients.Designer.cs">
       <DependentUpon>FormInfoClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInfoRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoRoom.Designer.cs">
+      <DependentUpon>FormInfoRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPersonal.Designer.cs">
       <DependentUpon>FormPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRemont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRemont.Designer.cs">
+      <DependentUpon>FormRemont.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStatistic.cs">
       <SubType>Form</SubType>
@@ -156,8 +169,14 @@
     <EmbeddedResource Include="FormInfoClients.resx">
       <DependentUpon>FormInfoClients.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoRoom.resx">
+      <DependentUpon>FormInfoRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPersonal.resx">
       <DependentUpon>FormPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRemont.resx">
+      <DependentUpon>FormRemont.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStatistic.resx">
       <DependentUpon>FormStatistic.cs</DependentUpon>
@@ -209,6 +228,24 @@
     <None Include="Resources\MiniMessag.png" />
     <Content Include="Вариант-5.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
