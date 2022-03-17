@@ -125,7 +125,8 @@ namespace СУБД_Гостиница.Porte
 
         private void CntEditRoom_Click(object sender, EventArgs e)
         {
-
+            FormRoomEdit roomEdit = new FormRoomEdit();
+            roomEdit.ShowDialog();
         }
 
         private void CnmRemont_Click(object sender, EventArgs e)

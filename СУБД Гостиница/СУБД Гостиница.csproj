@@ -86,6 +86,12 @@
     <Compile Include="FormClients.Designer.cs">
       <DependentUpon>FormClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditPersonal.Designer.cs">
+      <DependentUpon>FormEditPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHistoryRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +116,23 @@
     <Compile Include="FormPersonal.Designer.cs">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPersonalAdding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersonalAdding.Designer.cs">
+      <DependentUpon>FormPersonalAdding.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRemont.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRemont.Designer.cs">
       <DependentUpon>FormRemont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRoomEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoomEdit.Designer.cs">
+      <DependentUpon>FormRoomEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStatistic.cs">
       <SubType>Form</SubType>
@@ -163,6 +181,9 @@
     <EmbeddedResource Include="FormClients.resx">
       <DependentUpon>FormClients.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEditPersonal.resx">
+      <DependentUpon>FormEditPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHistoryRoom.resx">
       <DependentUpon>FormHistoryRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,8 +196,14 @@
     <EmbeddedResource Include="FormPersonal.resx">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonalAdding.resx">
+      <DependentUpon>FormPersonalAdding.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRemont.resx">
       <DependentUpon>FormRemont.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRoomEdit.resx">
+      <DependentUpon>FormRoomEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStatistic.resx">
       <DependentUpon>FormStatistic.cs</DependentUpon>

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace СУБД_Гостиница
 {
-    public partial class FormInfoRoom : Form
+    public partial class FormPersonalAdding : Form
     {
-        public FormInfoRoom()
+        public FormPersonalAdding()
         {
             InitializeComponent();
         }
 
-        private void FormInfoRoom_Load(object sender, EventArgs e)
+        private void FormPersonalAdding_Load(object sender, EventArgs e)
         {
 
         }
@@ -33,5 +33,6 @@ namespace СУБД_Гостиница
             (sender as Button).BackColor = Colors.ButtonMousLeave;
             (sender as Button).ForeColor = Colors.ButtonForeNoSelect;
         }
+
     }
 }

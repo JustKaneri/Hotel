@@ -16,5 +16,32 @@ namespace СУБД_Гостиница
         {
             InitializeComponent();
         }
+
+        private void FormAssept_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Colors.ButtonMousEnter;
+            (sender as Button).ForeColor = Colors.ButtonForeSelect;
+        }
+
+        private void Btn_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Colors.ButtonMousLeave;
+            (sender as Button).ForeColor = Colors.ButtonForeNoSelect;
+        }
+
+        private void BtnAsseppt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

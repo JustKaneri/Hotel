@@ -40,9 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbxCountPerson = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnOk = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.BtnOk = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,9 +52,9 @@
             // 
             this.groupBox1.Controls.Add(this.LstEqupm);
             this.groupBox1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(356, 95);
+            this.groupBox1.Location = new System.Drawing.Point(349, 95);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 374);
+            this.groupBox1.Size = new System.Drawing.Size(308, 374);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "В номере";
@@ -63,9 +63,9 @@
             // 
             this.LstEqupm.FormattingEnabled = true;
             this.LstEqupm.ItemHeight = 24;
-            this.LstEqupm.Location = new System.Drawing.Point(13, 29);
+            this.LstEqupm.Location = new System.Drawing.Point(6, 29);
             this.LstEqupm.Name = "LstEqupm";
-            this.LstEqupm.Size = new System.Drawing.Size(288, 316);
+            this.LstEqupm.Size = new System.Drawing.Size(295, 316);
             this.LstEqupm.TabIndex = 0;
             // 
             // groupBox2
@@ -162,24 +162,9 @@
             this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(17, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 24);
+            this.label1.Size = new System.Drawing.Size(141, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Кол-во персон";
-            // 
-            // BtnOk
-            // 
-            this.BtnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
-            this.BtnOk.FlatAppearance.BorderSize = 2;
-            this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOk.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnOk.Location = new System.Drawing.Point(510, 475);
-            this.BtnOk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnOk.Name = "BtnOk";
-            this.BtnOk.Size = new System.Drawing.Size(151, 49);
-            this.BtnOk.TabIndex = 5;
-            this.BtnOk.Text = "Ок";
-            this.BtnOk.UseVisualStyleBackColor = true;
+            this.label1.Text = "Кол-во людей";
             // 
             // panel1
             // 
@@ -203,22 +188,41 @@
             this.label5.Text = "Информация о номере";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BtnOk
+            // 
+            this.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnOk.FlatAppearance.BorderSize = 2;
+            this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOk.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnOk.Location = new System.Drawing.Point(507, 475);
+            this.BtnOk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnOk.Name = "BtnOk";
+            this.BtnOk.Size = new System.Drawing.Size(154, 49);
+            this.BtnOk.TabIndex = 7;
+            this.BtnOk.Text = "Ок";
+            this.BtnOk.UseVisualStyleBackColor = true;
+            this.BtnOk.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.BtnOk.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
+            // 
             // FormInfoRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(672, 538);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnOk);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormInfoRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "СУБД Гостиница";
+            this.Load += new System.EventHandler(this.FormInfoRoom_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -240,8 +244,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TbxType;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnOk;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button BtnOk;
     }
 }

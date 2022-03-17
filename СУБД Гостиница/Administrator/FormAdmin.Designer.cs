@@ -38,26 +38,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnMenu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.PbxLine = new System.Windows.Forms.PictureBox();
             this.PbxMessage = new System.Windows.Forms.PictureBox();
             this.LbxTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlFragment = new System.Windows.Forms.Panel();
-            this.PbxLine = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
             // 
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
             this.PnlMenu.Controls.Add(this.BtnStatic);
-            this.PnlMenu.Controls.Add(this.BtnPersonal);
-            this.PnlMenu.Controls.Add(this.BtnMessage);
             this.PnlMenu.Controls.Add(this.BtnClients);
+            this.PnlMenu.Controls.Add(this.BtnPersonal);
             this.PnlMenu.Controls.Add(this.BtnNomer);
+            this.PnlMenu.Controls.Add(this.BtnMessage);
             this.PnlMenu.Controls.Add(this.label2);
             this.PnlMenu.Controls.Add(this.BtnMenu);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -94,7 +94,7 @@
             this.BtnPersonal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnPersonal.Image = global::СУБД_Гостиница.Properties.Resources.MiniPersonal;
             this.BtnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPersonal.Location = new System.Drawing.Point(0, 300);
+            this.BtnPersonal.Location = new System.Drawing.Point(0, 232);
             this.BtnPersonal.Name = "BtnPersonal";
             this.BtnPersonal.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnPersonal.Size = new System.Drawing.Size(194, 68);
@@ -113,7 +113,7 @@
             this.BtnMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnMessage.Image = global::СУБД_Гостиница.Properties.Resources.MiniMessag;
             this.BtnMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMessage.Location = new System.Drawing.Point(0, 232);
+            this.BtnMessage.Location = new System.Drawing.Point(0, 96);
             this.BtnMessage.Name = "BtnMessage";
             this.BtnMessage.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnMessage.Size = new System.Drawing.Size(194, 68);
@@ -132,7 +132,7 @@
             this.BtnClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnClients.Image = global::СУБД_Гостиница.Properties.Resources.MiniClients;
             this.BtnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnClients.Location = new System.Drawing.Point(0, 164);
+            this.BtnClients.Location = new System.Drawing.Point(0, 300);
             this.BtnClients.Name = "BtnClients";
             this.BtnClients.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnClients.Size = new System.Drawing.Size(194, 68);
@@ -151,7 +151,7 @@
             this.BtnNomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnNomer.Image = global::СУБД_Гостиница.Properties.Resources.MiniRoom;
             this.BtnNomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNomer.Location = new System.Drawing.Point(0, 96);
+            this.BtnNomer.Location = new System.Drawing.Point(0, 164);
             this.BtnNomer.Name = "BtnNomer";
             this.BtnNomer.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnNomer.Size = new System.Drawing.Size(194, 68);
@@ -207,6 +207,17 @@
             this.panel3.Size = new System.Drawing.Size(972, 96);
             this.panel3.TabIndex = 3;
             // 
+            // PbxLine
+            // 
+            this.PbxLine.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PbxLine.Image = ((System.Drawing.Image)(resources.GetObject("PbxLine.Image")));
+            this.PbxLine.Location = new System.Drawing.Point(0, 78);
+            this.PbxLine.Name = "PbxLine";
+            this.PbxLine.Size = new System.Drawing.Size(972, 18);
+            this.PbxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxLine.TabIndex = 4;
+            this.PbxLine.TabStop = false;
+            // 
             // PbxMessage
             // 
             this.PbxMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -248,17 +259,6 @@
             this.PnlFragment.Size = new System.Drawing.Size(972, 483);
             this.PnlFragment.TabIndex = 4;
             // 
-            // PbxLine
-            // 
-            this.PbxLine.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PbxLine.Image = ((System.Drawing.Image)(resources.GetObject("PbxLine.Image")));
-            this.PbxLine.Location = new System.Drawing.Point(0, 78);
-            this.PbxLine.Name = "PbxLine";
-            this.PbxLine.Size = new System.Drawing.Size(972, 18);
-            this.PbxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PbxLine.TabIndex = 4;
-            this.PbxLine.TabStop = false;
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,9 +276,9 @@
             this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.PnlMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).EndInit();
             this.ResumeLayout(false);
 
         }

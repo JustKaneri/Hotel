@@ -48,6 +48,7 @@
             this.DgvHistory = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -137,7 +138,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(14, 124);
+            this.label3.Location = new System.Drawing.Point(4, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 8;
@@ -158,7 +159,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(14, 166);
+            this.label4.Location = new System.Drawing.Point(14, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 10;
@@ -213,9 +214,9 @@
             this.BtnSave.FlatAppearance.BorderSize = 2;
             this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSave.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSave.Location = new System.Drawing.Point(57, 296);
+            this.BtnSave.Location = new System.Drawing.Point(57, 334);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(148, 44);
+            this.BtnSave.Size = new System.Drawing.Size(160, 36);
             this.BtnSave.TabIndex = 18;
             this.BtnSave.Text = "Сохранить";
             this.BtnSave.UseVisualStyleBackColor = true;
@@ -229,9 +230,9 @@
             this.BtnEdit.FlatAppearance.BorderSize = 2;
             this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEdit.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnEdit.Location = new System.Drawing.Point(57, 246);
+            this.BtnEdit.Location = new System.Drawing.Point(57, 281);
             this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(148, 44);
+            this.BtnEdit.Size = new System.Drawing.Size(160, 36);
             this.BtnEdit.TabIndex = 17;
             this.BtnEdit.Text = "Редактировать";
             this.BtnEdit.UseVisualStyleBackColor = true;
@@ -264,7 +265,8 @@
             this.DgvHistory.ColumnHeadersVisible = false;
             this.DgvHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2});
+            this.Column2,
+            this.Column3});
             this.DgvHistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.DgvHistory.Location = new System.Drawing.Point(22, 31);
             this.DgvHistory.MultiSelect = false;
@@ -280,7 +282,7 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
+            this.Column1.HeaderText = "Номер";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 200;
@@ -288,9 +290,16 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Column2";
+            this.Column2.HeaderText = "Дата заселения";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Дата выезда";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // FormInfoClients
             // 
@@ -332,9 +341,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DgvHistory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
