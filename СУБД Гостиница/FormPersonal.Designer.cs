@@ -142,7 +142,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "СУБД Гостиница";
+            this.Text = " СУБД Гостиница";
             this.Load += new System.EventHandler(this.FormPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPersonal)).EndInit();
             this.ResumeLayout(false);
