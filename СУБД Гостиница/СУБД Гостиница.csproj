@@ -57,10 +57,10 @@
     <Compile Include="Administrator\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Autorization.cs">
+    <Compile Include="Total\Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Autorization.Designer.cs">
+    <Compile Include="Total\Autorization.Designer.cs">
       <DependentUpon>Autorization.cs</DependentUpon>
     </Compile>
     <Compile Include="Calendar.cs" />
@@ -68,76 +68,76 @@
     <Compile Include="Controls\PanelRoom.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormAlert.cs">
+    <Compile Include="Total\FormAlert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAlert.Designer.cs">
+    <Compile Include="Total\FormAlert.Designer.cs">
       <DependentUpon>FormAlert.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAssept.cs">
+    <Compile Include="Total\FormAssept.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAssept.Designer.cs">
+    <Compile Include="Total\FormAssept.Designer.cs">
       <DependentUpon>FormAssept.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormClients.cs">
+    <Compile Include="Total\FormClients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClients.Designer.cs">
+    <Compile Include="Total\FormClients.Designer.cs">
       <DependentUpon>FormClients.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEditPersonal.cs">
+    <Compile Include="Administrator\FormEditPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditPersonal.Designer.cs">
+    <Compile Include="Administrator\FormEditPersonal.Designer.cs">
       <DependentUpon>FormEditPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHistoryRoom.cs">
+    <Compile Include="Total\FormHistoryRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHistoryRoom.Designer.cs">
+    <Compile Include="Total\FormHistoryRoom.Designer.cs">
       <DependentUpon>FormHistoryRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInfoClients.cs">
+    <Compile Include="Total\FormInfoClients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInfoClients.Designer.cs">
+    <Compile Include="Total\FormInfoClients.Designer.cs">
       <DependentUpon>FormInfoClients.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInfoRoom.cs">
+    <Compile Include="Total\FormInfoRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInfoRoom.Designer.cs">
+    <Compile Include="Total\FormInfoRoom.Designer.cs">
       <DependentUpon>FormInfoRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPersonal.cs">
+    <Compile Include="Administrator\FormPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPersonal.Designer.cs">
+    <Compile Include="Administrator\FormPersonal.Designer.cs">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPersonalAdding.cs">
+    <Compile Include="Administrator\FormPersonalAdding.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPersonalAdding.Designer.cs">
+    <Compile Include="Administrator\FormPersonalAdding.Designer.cs">
       <DependentUpon>FormPersonalAdding.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRemont.cs">
+    <Compile Include="Administrator\FormRemont.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRemont.Designer.cs">
+    <Compile Include="Administrator\FormRemont.Designer.cs">
       <DependentUpon>FormRemont.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRoomEdit.cs">
+    <Compile Include="Administrator\FormRoomEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRoomEdit.Designer.cs">
+    <Compile Include="Administrator\FormRoomEdit.Designer.cs">
       <DependentUpon>FormRoomEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStatistic.cs">
+    <Compile Include="Administrator\FormStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStatistic.Designer.cs">
+    <Compile Include="Administrator\FormStatistic.Designer.cs">
       <DependentUpon>FormStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTMP.cs">
@@ -146,10 +146,10 @@
     <Compile Include="FormTMP.Designer.cs">
       <DependentUpon>FormTMP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Porte\FormOformlen.cs">
+    <Compile Include="Total\FormOformlen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Porte\FormOformlen.Designer.cs">
+    <Compile Include="Total\FormOformlen.Designer.cs">
       <DependentUpon>FormOformlen.cs</DependentUpon>
     </Compile>
     <Compile Include="Porte\FormPortie.cs">
@@ -158,10 +158,10 @@
     <Compile Include="Porte\FormPortie.Designer.cs">
       <DependentUpon>FormPortie.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRooms.cs">
+    <Compile Include="Total\FormRooms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRooms.Designer.cs">
+    <Compile Include="Total\FormRooms.Designer.cs">
       <DependentUpon>FormRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -169,55 +169,55 @@
     <EmbeddedResource Include="Administrator\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Autorization.resx">
+    <EmbeddedResource Include="Total\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAlert.resx">
+    <EmbeddedResource Include="Total\FormAlert.resx">
       <DependentUpon>FormAlert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAssept.resx">
+    <EmbeddedResource Include="Total\FormAssept.resx">
       <DependentUpon>FormAssept.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormClients.resx">
+    <EmbeddedResource Include="Total\FormClients.resx">
       <DependentUpon>FormClients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditPersonal.resx">
+    <EmbeddedResource Include="Administrator\FormEditPersonal.resx">
       <DependentUpon>FormEditPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHistoryRoom.resx">
+    <EmbeddedResource Include="Total\FormHistoryRoom.resx">
       <DependentUpon>FormHistoryRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInfoClients.resx">
+    <EmbeddedResource Include="Total\FormInfoClients.resx">
       <DependentUpon>FormInfoClients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInfoRoom.resx">
+    <EmbeddedResource Include="Total\FormInfoRoom.resx">
       <DependentUpon>FormInfoRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPersonal.resx">
+    <EmbeddedResource Include="Administrator\FormPersonal.resx">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPersonalAdding.resx">
+    <EmbeddedResource Include="Administrator\FormPersonalAdding.resx">
       <DependentUpon>FormPersonalAdding.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRemont.resx">
+    <EmbeddedResource Include="Administrator\FormRemont.resx">
       <DependentUpon>FormRemont.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRoomEdit.resx">
+    <EmbeddedResource Include="Administrator\FormRoomEdit.resx">
       <DependentUpon>FormRoomEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStatistic.resx">
+    <EmbeddedResource Include="Administrator\FormStatistic.resx">
       <DependentUpon>FormStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTMP.resx">
       <DependentUpon>FormTMP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Porte\FormOformlen.resx">
+    <EmbeddedResource Include="Total\FormOformlen.resx">
       <DependentUpon>FormOformlen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Porte\FormPortie.resx">
       <DependentUpon>FormPortie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRooms.resx">
+    <EmbeddedResource Include="Total\FormRooms.resx">
       <DependentUpon>FormRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
