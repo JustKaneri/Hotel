@@ -31,25 +31,25 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRoomEdit));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.LstPhoto = new System.Windows.Forms.ListView();
-            this.ImgList = new System.Windows.Forms.ImageList(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.TbxCntPers = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TbxPrice = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TbxNomer = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnSave = new System.Windows.Forms.Button();
-            this.BtnCancel = new System.Windows.Forms.Button();
-            this.BtnAddImage = new System.Windows.Forms.Button();
-            this.BtnDelImage = new System.Windows.Forms.Button();
+            this.TbxPrice = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TbxCntPers = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LstPhoto = new System.Windows.Forms.ListView();
+            this.ImgList = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbxTitle = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.BtnAddImage = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnDelImage = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnCancel = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnSave = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -75,183 +75,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Общая информация";
             // 
-            // LstPhoto
-            // 
-            this.LstPhoto.HideSelection = false;
-            this.LstPhoto.LargeImageList = this.ImgList;
-            this.LstPhoto.Location = new System.Drawing.Point(365, 93);
-            this.LstPhoto.Name = "LstPhoto";
-            this.LstPhoto.Size = new System.Drawing.Size(764, 387);
-            this.LstPhoto.TabIndex = 1;
-            this.LstPhoto.UseCompatibleStateImageBehavior = false;
-            // 
-            // ImgList
-            // 
-            this.ImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.ImgList.ImageSize = new System.Drawing.Size(320, 179);
-            this.ImgList.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Кол-во человек:";
-            // 
-            // TbxCntPers
-            // 
-            this.TbxCntPers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbxCntPers.Location = new System.Drawing.Point(17, 139);
-            this.TbxCntPers.Name = "TbxCntPers";
-            this.TbxCntPers.Size = new System.Drawing.Size(304, 30);
-            this.TbxCntPers.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 185);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Этаж";
-            // 
-            // TbxPrice
-            // 
-            this.TbxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbxPrice.Location = new System.Drawing.Point(17, 279);
-            this.TbxPrice.Name = "TbxPrice";
-            this.TbxPrice.Size = new System.Drawing.Size(304, 30);
-            this.TbxPrice.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 252);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Цена";
-            // 
-            // TbxNomer
-            // 
-            this.TbxNomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbxNomer.Location = new System.Drawing.Point(17, 67);
-            this.TbxNomer.Name = "TbxNomer";
-            this.TbxNomer.Size = new System.Drawing.Size(304, 30);
-            this.TbxNomer.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 24);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Номер:";
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnSave.FlatAppearance.BorderSize = 2;
-            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSave.Location = new System.Drawing.Point(964, 551);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(154, 49);
-            this.BtnSave.TabIndex = 4;
-            this.BtnSave.Text = "Сохранить";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            this.BtnSave.MouseEnter += new System.EventHandler(this.BtnSave_MouseEnter);
-            this.BtnSave.MouseLeave += new System.EventHandler(this.BtnSave_MouseLeave);
-            // 
-            // BtnCancel
-            // 
-            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnCancel.FlatAppearance.BorderSize = 2;
-            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnCancel.Location = new System.Drawing.Point(13, 551);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(154, 49);
-            this.BtnCancel.TabIndex = 5;
-            this.BtnCancel.Text = "Отмена";
-            this.BtnCancel.UseVisualStyleBackColor = true;
-            this.BtnCancel.MouseEnter += new System.EventHandler(this.BtnSave_MouseEnter);
-            this.BtnCancel.MouseLeave += new System.EventHandler(this.BtnSave_MouseLeave);
-            // 
-            // BtnAddImage
-            // 
-            this.BtnAddImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnAddImage.FlatAppearance.BorderSize = 2;
-            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddImage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnAddImage.Location = new System.Drawing.Point(364, 486);
-            this.BtnAddImage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnAddImage.Name = "BtnAddImage";
-            this.BtnAddImage.Size = new System.Drawing.Size(119, 34);
-            this.BtnAddImage.TabIndex = 6;
-            this.BtnAddImage.Text = "Добавить";
-            this.BtnAddImage.UseVisualStyleBackColor = true;
-            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
-            this.BtnAddImage.MouseEnter += new System.EventHandler(this.BtnSave_MouseEnter);
-            this.BtnAddImage.MouseLeave += new System.EventHandler(this.BtnSave_MouseLeave);
-            // 
-            // BtnDelImage
-            // 
-            this.BtnDelImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnDelImage.FlatAppearance.BorderSize = 2;
-            this.BtnDelImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDelImage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnDelImage.Location = new System.Drawing.Point(497, 486);
-            this.BtnDelImage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnDelImage.Name = "BtnDelImage";
-            this.BtnDelImage.Size = new System.Drawing.Size(119, 34);
-            this.BtnDelImage.TabIndex = 7;
-            this.BtnDelImage.Text = "Удалить";
-            this.BtnDelImage.UseVisualStyleBackColor = true;
-            this.BtnDelImage.Click += new System.EventHandler(this.BtnDelImage_Click);
-            this.BtnDelImage.MouseEnter += new System.EventHandler(this.BtnSave_MouseEnter);
-            this.BtnDelImage.MouseLeave += new System.EventHandler(this.BtnSave_MouseLeave);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
-            this.panel3.Controls.Add(this.LbxTitle);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1141, 82);
-            this.panel3.TabIndex = 8;
-            // 
-            // LbxTitle
-            // 
-            this.LbxTitle.BackColor = System.Drawing.Color.Transparent;
-            this.LbxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LbxTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.LbxTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LbxTitle.Location = new System.Drawing.Point(0, 0);
-            this.LbxTitle.Name = "LbxTitle";
-            this.LbxTitle.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.LbxTitle.Size = new System.Drawing.Size(1141, 82);
-            this.LbxTitle.TabIndex = 0;
-            this.LbxTitle.Text = "Редактирование номера";
-            this.LbxTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LbxTitle.UseCompatibleTextRendering = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 212);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(304, 32);
-            this.comboBox1.TabIndex = 8;
-            // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -270,16 +93,186 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Тип номера";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(17, 212);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(304, 32);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // TbxNomer
+            // 
+            this.TbxNomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TbxNomer.Location = new System.Drawing.Point(17, 67);
+            this.TbxNomer.Name = "TbxNomer";
+            this.TbxNomer.Size = new System.Drawing.Size(304, 30);
+            this.TbxNomer.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 24);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Номер:";
+            // 
+            // TbxPrice
+            // 
+            this.TbxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TbxPrice.Location = new System.Drawing.Point(17, 279);
+            this.TbxPrice.Name = "TbxPrice";
+            this.TbxPrice.Size = new System.Drawing.Size(304, 30);
+            this.TbxPrice.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 252);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Цена";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 185);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Этаж";
+            // 
+            // TbxCntPers
+            // 
+            this.TbxCntPers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TbxCntPers.Location = new System.Drawing.Point(17, 139);
+            this.TbxCntPers.Name = "TbxCntPers";
+            this.TbxCntPers.Size = new System.Drawing.Size(304, 30);
+            this.TbxCntPers.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Кол-во человек:";
+            // 
+            // LstPhoto
+            // 
+            this.LstPhoto.HideSelection = false;
+            this.LstPhoto.LargeImageList = this.ImgList;
+            this.LstPhoto.Location = new System.Drawing.Point(365, 93);
+            this.LstPhoto.Name = "LstPhoto";
+            this.LstPhoto.Size = new System.Drawing.Size(764, 387);
+            this.LstPhoto.TabIndex = 1;
+            this.LstPhoto.UseCompatibleStateImageBehavior = false;
+            // 
+            // ImgList
+            // 
+            this.ImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ImgList.ImageSize = new System.Drawing.Size(320, 179);
+            this.ImgList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.panel3.Controls.Add(this.LbxTitle);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1141, 82);
+            this.panel3.TabIndex = 8;
+            // 
+            // LbxTitle
+            // 
+            this.LbxTitle.BackColor = System.Drawing.Color.Transparent;
+            this.LbxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.LbxTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LbxTitle.Location = new System.Drawing.Point(0, 0);
+            this.LbxTitle.Name = "LbxTitle";
+            this.LbxTitle.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.LbxTitle.Size = new System.Drawing.Size(1141, 82);
+            this.LbxTitle.TabIndex = 0;
+            this.LbxTitle.Text = "Редактирование номера";
+            this.LbxTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LbxTitle.UseCompatibleTextRendering = true;
+            // 
+            // BtnAddImage
+            // 
+            this.BtnAddImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnAddImage.FlatAppearance.BorderSize = 2;
+            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddImage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnAddImage.Location = new System.Drawing.Point(364, 486);
+            this.BtnAddImage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnAddImage.Name = "BtnAddImage";
+            this.BtnAddImage.Size = new System.Drawing.Size(156, 39);
+            this.BtnAddImage.TabIndex = 3;
+            this.BtnAddImage.Text = "Добавить";
+            this.BtnAddImage.UseVisualStyleBackColor = true;
+            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
+            // 
+            // BtnDelImage
+            // 
+            this.BtnDelImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnDelImage.FlatAppearance.BorderSize = 2;
+            this.BtnDelImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDelImage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnDelImage.Location = new System.Drawing.Point(540, 487);
+            this.BtnDelImage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnDelImage.Name = "BtnDelImage";
+            this.BtnDelImage.Size = new System.Drawing.Size(140, 38);
+            this.BtnDelImage.TabIndex = 3;
+            this.BtnDelImage.Text = "Удалить";
+            this.BtnDelImage.UseVisualStyleBackColor = true;
+            this.BtnDelImage.Click += new System.EventHandler(this.BtnDelImage_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnCancel.FlatAppearance.BorderSize = 2;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnCancel.Location = new System.Drawing.Point(30, 551);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(154, 49);
+            this.BtnCancel.TabIndex = 3;
+            this.BtnCancel.Text = "Отмена";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            // 
+            // BtnSave
+            // 
+            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnSave.FlatAppearance.BorderSize = 2;
+            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSave.Location = new System.Drawing.Point(975, 550);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(154, 49);
+            this.BtnSave.TabIndex = 3;
+            this.BtnSave.Text = "Сохранить";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            // 
             // FormRoomEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 611);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.BtnSave);
+            this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnDelImage);
             this.Controls.Add(this.BtnAddImage);
-            this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.BtnSave);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.LstPhoto);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -310,15 +303,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView LstPhoto;
         private System.Windows.Forms.ImageList ImgList;
-        private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.Button BtnCancel;
-        private System.Windows.Forms.Button BtnAddImage;
-        private System.Windows.Forms.Button BtnDelImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label LbxTitle;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
+        private Controls.ButtonSpecial BtnAddImage;
+        private Controls.ButtonSpecial BtnDelImage;
+        private Controls.ButtonSpecial BtnCancel;
+        private Controls.ButtonSpecial BtnSave;
     }
 }

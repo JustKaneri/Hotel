@@ -121,7 +121,7 @@
             this.CntEditRoom,
             this.CnmRemont});
             this.CntMenuAdmin.Name = "CntMenuAdmin";
-            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 200);
+            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 172);
             // 
             // CnmRegAdm
             // 
@@ -229,7 +229,9 @@
             this.Controls.Add(this.TblRoom);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Book Antiqua", 7.8F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRooms";
+            this.Text = "СУБД Гостинца";
             this.Load += new System.EventHandler(this.FormRoomsPortie_Load);
             this.Shown += new System.EventHandler(this.FormRooms_Shown);
             this.CntMenu.ResumeLayout(false);

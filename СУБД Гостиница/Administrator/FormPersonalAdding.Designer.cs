@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonalAdding));
-            this.BtnAdd = new System.Windows.Forms.Button();
             this.DtmBorn = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.TbxInn = new System.Windows.Forms.TextBox();
@@ -54,24 +53,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.CmbxPost = new System.Windows.Forms.ComboBox();
+            this.BtnAdd = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BtnAdd
-            // 
-            this.BtnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnAdd.FlatAppearance.BorderSize = 2;
-            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAdd.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnAdd.Location = new System.Drawing.Point(374, 432);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(173, 46);
-            this.BtnAdd.TabIndex = 34;
-            this.BtnAdd.Text = "Добавить";
-            this.BtnAdd.UseVisualStyleBackColor = true;
-            this.BtnAdd.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
-            this.BtnAdd.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // DtmBorn
             // 
@@ -219,7 +203,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -305,11 +289,26 @@
             this.CmbxPost.Size = new System.Drawing.Size(302, 32);
             this.CmbxPost.TabIndex = 43;
             // 
+            // BtnAdd
+            // 
+            this.BtnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnAdd.FlatAppearance.BorderSize = 2;
+            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAdd.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnAdd.Location = new System.Drawing.Point(393, 429);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(154, 49);
+            this.BtnAdd.TabIndex = 3;
+            this.BtnAdd.Text = "Добавить";
+            this.BtnAdd.UseVisualStyleBackColor = true;
+            // 
             // FormPersonalAdding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 490);
+            this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.CmbxPost);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.TbxPhone);
@@ -319,7 +318,6 @@
             this.Controls.Add(this.TbxLogin);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.DtmBorn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TbxInn);
@@ -350,8 +348,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.DateTimePicker DtmBorn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TbxInn;
@@ -376,5 +372,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox CmbxPost;
+        private Controls.ButtonSpecial BtnAdd;
     }
 }

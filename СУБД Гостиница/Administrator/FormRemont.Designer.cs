@@ -43,13 +43,13 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnRem = new System.Windows.Forms.Button();
             this.DtmFinish = new System.Windows.Forms.DateTimePicker();
             this.DtmStart = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TbxPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.BtnRem = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCalendar)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -200,21 +200,6 @@
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             // 
-            // BtnRem
-            // 
-            this.BtnRem.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnRem.FlatAppearance.BorderSize = 2;
-            this.BtnRem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRem.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnRem.Location = new System.Drawing.Point(766, 296);
-            this.BtnRem.Name = "BtnRem";
-            this.BtnRem.Size = new System.Drawing.Size(248, 55);
-            this.BtnRem.TabIndex = 37;
-            this.BtnRem.Text = "Начать ремонт";
-            this.BtnRem.UseVisualStyleBackColor = true;
-            this.BtnRem.MouseEnter += new System.EventHandler(this.BtnRem_MouseEnter);
-            this.BtnRem.MouseLeave += new System.EventHandler(this.BtnRem_MouseLeave);
-            // 
             // DtmFinish
             // 
             this.DtmFinish.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
@@ -273,6 +258,20 @@
             this.label6.TabIndex = 31;
             this.label6.Text = "Цена:";
             // 
+            // BtnRem
+            // 
+            this.BtnRem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnRem.FlatAppearance.BorderSize = 2;
+            this.BtnRem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRem.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnRem.Location = new System.Drawing.Point(786, 306);
+            this.BtnRem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnRem.Name = "BtnRem";
+            this.BtnRem.Size = new System.Drawing.Size(208, 49);
+            this.BtnRem.TabIndex = 3;
+            this.BtnRem.Text = "Начать ремонт";
+            this.BtnRem.UseVisualStyleBackColor = true;
+            // 
             // FormRemont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,12 +321,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.Button BtnRem;
         private System.Windows.Forms.DateTimePicker DtmFinish;
         private System.Windows.Forms.DateTimePicker DtmStart;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TbxPrice;
         private System.Windows.Forms.Label label6;
+        private Controls.ButtonSpecial BtnRem;
     }
 }

@@ -47,15 +47,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.DtmStart = new System.Windows.Forms.DateTimePicker();
             this.DtmFinish = new System.Windows.Forms.DateTimePicker();
-            this.BtnReg = new System.Windows.Forms.Button();
             this.DgvServis = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
-            this.CbxExsist = new System.Windows.Forms.CheckBox();
             this.CmbxFam = new System.Windows.Forms.ComboBox();
             this.DgvCalendar = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +62,13 @@
             this.LbxNextMonth = new System.Windows.Forms.Label();
             this.LbxLastMonth = new System.Windows.Forms.Label();
             this.CurrentYear = new System.Windows.Forms.Label();
+            this.BtnSelect = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnReg = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvServis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCalendar)).BeginInit();
@@ -76,7 +76,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -88,8 +88,8 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.label1.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1256, 76);
@@ -101,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(758, 176);
+            this.label2.Location = new System.Drawing.Point(756, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 24);
             this.label2.TabIndex = 2;
@@ -112,7 +112,7 @@
             this.TbxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.TbxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxName.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxName.Location = new System.Drawing.Point(864, 174);
+            this.TbxName.Location = new System.Drawing.Point(864, 178);
             this.TbxName.Name = "TbxName";
             this.TbxName.Size = new System.Drawing.Size(346, 30);
             this.TbxName.TabIndex = 3;
@@ -132,7 +132,7 @@
             this.TbxOtch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.TbxOtch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxOtch.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxOtch.Location = new System.Drawing.Point(862, 222);
+            this.TbxOtch.Location = new System.Drawing.Point(864, 221);
             this.TbxOtch.Name = "TbxOtch";
             this.TbxOtch.Size = new System.Drawing.Size(348, 30);
             this.TbxOtch.TabIndex = 7;
@@ -225,21 +225,6 @@
             this.DtmFinish.Size = new System.Drawing.Size(200, 30);
             this.DtmFinish.TabIndex = 15;
             // 
-            // BtnReg
-            // 
-            this.BtnReg.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnReg.FlatAppearance.BorderSize = 2;
-            this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReg.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnReg.Location = new System.Drawing.Point(910, 603);
-            this.BtnReg.Name = "BtnReg";
-            this.BtnReg.Size = new System.Drawing.Size(241, 58);
-            this.BtnReg.TabIndex = 16;
-            this.BtnReg.Text = "Зарегистрировать";
-            this.BtnReg.UseVisualStyleBackColor = true;
-            this.BtnReg.MouseEnter += new System.EventHandler(this.BtnReg_MouseEnter);
-            this.BtnReg.MouseLeave += new System.EventHandler(this.BtnReg_MouseLeave);
-            // 
             // DgvServis
             // 
             this.DgvServis.AllowUserToAddRows = false;
@@ -253,58 +238,13 @@
             this.Column4,
             this.Column3,
             this.Column5});
-            this.DgvServis.Location = new System.Drawing.Point(760, 448);
+            this.DgvServis.Location = new System.Drawing.Point(757, 448);
             this.DgvServis.Name = "DgvServis";
             this.DgvServis.RowHeadersVisible = false;
             this.DgvServis.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DgvServis.RowTemplate.Height = 27;
-            this.DgvServis.Size = new System.Drawing.Size(485, 141);
+            this.DgvServis.Size = new System.Drawing.Size(488, 141);
             this.DgvServis.TabIndex = 17;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "Название";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column2.HeaderText = "Доступно";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column4.HeaderText = "Цена";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Кол-во";
-            this.Column3.Name = "Column3";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Оформить";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label9
             // 
@@ -316,24 +256,12 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Доп. услуги:";
             // 
-            // CbxExsist
-            // 
-            this.CbxExsist.AutoSize = true;
-            this.CbxExsist.Font = new System.Drawing.Font("Georgia", 12F);
-            this.CbxExsist.Location = new System.Drawing.Point(886, 98);
-            this.CbxExsist.Name = "CbxExsist";
-            this.CbxExsist.Size = new System.Drawing.Size(233, 28);
-            this.CbxExsist.TabIndex = 19;
-            this.CbxExsist.Text = "Уже регистрировался";
-            this.CbxExsist.UseVisualStyleBackColor = true;
-            this.CbxExsist.CheckedChanged += new System.EventHandler(this.CbxExsist_CheckedChanged);
-            // 
             // CmbxFam
             // 
             this.CmbxFam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.CmbxFam.Font = new System.Drawing.Font("Georgia", 12F);
             this.CmbxFam.FormattingEnabled = true;
-            this.CmbxFam.Location = new System.Drawing.Point(864, 132);
+            this.CmbxFam.Location = new System.Drawing.Point(864, 136);
             this.CmbxFam.Name = "CmbxFam";
             this.CmbxFam.Size = new System.Drawing.Size(346, 32);
             this.CmbxFam.TabIndex = 20;
@@ -462,22 +390,96 @@
             this.CurrentYear.Text = "MonthName";
             this.CurrentYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BtnSelect
+            // 
+            this.BtnSelect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnSelect.FlatAppearance.BorderSize = 2;
+            this.BtnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSelect.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSelect.Location = new System.Drawing.Point(1022, 93);
+            this.BtnSelect.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnSelect.Name = "BtnSelect";
+            this.BtnSelect.Size = new System.Drawing.Size(188, 35);
+            this.BtnSelect.TabIndex = 3;
+            this.BtnSelect.Text = "Зарегистрирован";
+            this.BtnSelect.UseVisualStyleBackColor = true;
+            this.BtnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
+            // 
+            // BtnReg
+            // 
+            this.BtnReg.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnReg.FlatAppearance.BorderSize = 2;
+            this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReg.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnReg.Location = new System.Drawing.Point(887, 603);
+            this.BtnReg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnReg.Name = "BtnReg";
+            this.BtnReg.Size = new System.Drawing.Size(241, 58);
+            this.BtnReg.TabIndex = 3;
+            this.BtnReg.Text = "Зарегистрировать";
+            this.BtnReg.UseVisualStyleBackColor = true;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "Название";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column2.HeaderText = "Доступно";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4.HeaderText = "Цена";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Кол-во";
+            this.Column3.Name = "Column3";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Оформить";
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FormOformlen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1256, 673);
+            this.Controls.Add(this.BtnReg);
+            this.Controls.Add(this.BtnSelect);
             this.Controls.Add(this.CurrentYear);
             this.Controls.Add(this.LbxLastMonth);
             this.Controls.Add(this.LbxNextMonth);
             this.Controls.Add(this.LbxMonthName);
             this.Controls.Add(this.DgvCalendar);
             this.Controls.Add(this.CmbxFam);
-            this.Controls.Add(this.CbxExsist);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.DgvServis);
-            this.Controls.Add(this.BtnReg);
             this.Controls.Add(this.DtmFinish);
             this.Controls.Add(this.DtmStart);
             this.Controls.Add(this.label8);
@@ -526,15 +528,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker DtmStart;
         private System.Windows.Forms.DateTimePicker DtmFinish;
-        private System.Windows.Forms.Button BtnReg;
         private System.Windows.Forms.DataGridView DgvServis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox CbxExsist;
         private System.Windows.Forms.ComboBox CmbxFam;
         private System.Windows.Forms.DataGridView DgvCalendar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
@@ -548,5 +543,12 @@
         private System.Windows.Forms.Label LbxNextMonth;
         private System.Windows.Forms.Label LbxLastMonth;
         private System.Windows.Forms.Label CurrentYear;
+        private Controls.ButtonSpecial BtnSelect;
+        private Controls.ButtonSpecial BtnReg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
     }
 }

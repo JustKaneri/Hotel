@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.BtnOk = new System.Windows.Forms.Button();
+            this.BtnOk = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -179,7 +179,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
@@ -190,19 +190,18 @@
             // 
             // BtnOk
             // 
-            this.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnOk.FlatAppearance.BorderSize = 2;
             this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOk.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnOk.Location = new System.Drawing.Point(507, 475);
+            this.BtnOk.Location = new System.Drawing.Point(496, 475);
             this.BtnOk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(154, 49);
-            this.BtnOk.TabIndex = 7;
-            this.BtnOk.Text = "Ок";
+            this.BtnOk.TabIndex = 3;
+            this.BtnOk.Text = "ОК";
             this.BtnOk.UseVisualStyleBackColor = true;
-            this.BtnOk.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
-            this.BtnOk.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // FormInfoRoom
             // 
@@ -246,6 +245,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button BtnOk;
+        private Controls.ButtonSpecial BtnOk;
     }
 }

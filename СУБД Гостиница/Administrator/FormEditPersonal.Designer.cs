@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditPersonal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnSave = new System.Windows.Forms.Button();
             this.BtnDel = new System.Windows.Forms.Button();
             this.CmbxPost = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.TbxFam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.BtnSave = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -79,22 +79,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Редактирование";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnSave.FlatAppearance.BorderSize = 2;
-            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSave.Location = new System.Drawing.Point(655, 455);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(154, 49);
-            this.BtnSave.TabIndex = 18;
-            this.BtnSave.Text = "Сохранить";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            this.BtnSave.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
-            this.BtnSave.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // BtnDel
             // 
@@ -192,9 +176,9 @@
             // 
             this.DtmBorn.CalendarFont = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DtmBorn.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DtmBorn.Location = new System.Drawing.Point(176, 357);
+            this.DtmBorn.Location = new System.Drawing.Point(180, 357);
             this.DtmBorn.Name = "DtmBorn";
-            this.DtmBorn.Size = new System.Drawing.Size(226, 30);
+            this.DtmBorn.Size = new System.Drawing.Size(216, 30);
             this.DtmBorn.TabIndex = 56;
             // 
             // label8
@@ -321,12 +305,27 @@
             this.label3.TabIndex = 65;
             this.label3.Text = "Имя:";
             // 
+            // BtnSave
+            // 
+            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnSave.FlatAppearance.BorderSize = 2;
+            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSave.Location = new System.Drawing.Point(655, 459);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(154, 49);
+            this.BtnSave.TabIndex = 3;
+            this.BtnSave.Text = "Сохранить";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            // 
             // FormEditPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(832, 520);
+            this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CmbxPost);
             this.Controls.Add(this.label12);
@@ -350,7 +349,6 @@
             this.Controls.Add(this.TbxFam);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnDel);
-            this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -371,7 +369,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnDel;
         private System.Windows.Forms.ComboBox CmbxPost;
         private System.Windows.Forms.Label label12;
@@ -395,5 +392,6 @@
         private System.Windows.Forms.TextBox TbxFam;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private Controls.ButtonSpecial BtnSave;
     }
 }

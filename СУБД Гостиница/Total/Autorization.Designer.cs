@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Autorization));
             this.TbxLogin = new System.Windows.Forms.TextBox();
             this.TbxPassword = new System.Windows.Forms.TextBox();
-            this.BtnLogIn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PbxUser = new System.Windows.Forms.PictureBox();
             this.PbxPass = new System.Windows.Forms.PictureBox();
+            this.BtnLogIn = new СУБД_Гостиница.Controls.ButtonSpecial();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPass)).BeginInit();
@@ -65,23 +65,6 @@
             this.TbxPassword.Size = new System.Drawing.Size(330, 30);
             this.TbxPassword.TabIndex = 2;
             this.TbxPassword.UseSystemPasswordChar = true;
-            // 
-            // BtnLogIn
-            // 
-            this.BtnLogIn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnLogIn.FlatAppearance.BorderSize = 2;
-            this.BtnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogIn.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnLogIn.Location = new System.Drawing.Point(671, 276);
-            this.BtnLogIn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnLogIn.Name = "BtnLogIn";
-            this.BtnLogIn.Size = new System.Drawing.Size(154, 49);
-            this.BtnLogIn.TabIndex = 3;
-            this.BtnLogIn.Text = "Вход";
-            this.BtnLogIn.UseVisualStyleBackColor = true;
-            this.BtnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
-            this.BtnLogIn.MouseEnter += new System.EventHandler(this.BtnLogIn_MouseEnter);
-            this.BtnLogIn.MouseLeave += new System.EventHandler(this.BtnLogIn_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -148,19 +131,34 @@
             this.PbxPass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbxPass_MouseDown);
             this.PbxPass.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbxPass_MouseUp);
             // 
+            // BtnLogIn
+            // 
+            this.BtnLogIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnLogIn.FlatAppearance.BorderSize = 2;
+            this.BtnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogIn.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnLogIn.Location = new System.Drawing.Point(671, 282);
+            this.BtnLogIn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnLogIn.Name = "BtnLogIn";
+            this.BtnLogIn.Size = new System.Drawing.Size(154, 49);
+            this.BtnLogIn.TabIndex = 3;
+            this.BtnLogIn.Text = "Вход";
+            this.BtnLogIn.UseVisualStyleBackColor = true;
+            this.BtnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
             // Autorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(863, 356);
+            this.Controls.Add(this.BtnLogIn);
             this.Controls.Add(this.PbxPass);
             this.Controls.Add(this.PbxUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BtnLogIn);
             this.Controls.Add(this.TbxPassword);
             this.Controls.Add(this.TbxLogin);
             this.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,13 +182,13 @@
         #endregion
         private System.Windows.Forms.TextBox TbxLogin;
         private System.Windows.Forms.TextBox TbxPassword;
-        private System.Windows.Forms.Button BtnLogIn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox PbxUser;
         private System.Windows.Forms.PictureBox PbxPass;
+        private Controls.ButtonSpecial BtnLogIn;
     }
 }
 

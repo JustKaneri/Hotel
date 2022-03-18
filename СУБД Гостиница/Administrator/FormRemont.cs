@@ -66,18 +66,6 @@ namespace СУБД_Гостиница
             }
         }
 
-        private void BtnRem_MouseEnter(object sender, EventArgs e)
-        {
-            BtnRem.BackColor = Colors.ButtonMousEnter;
-            BtnRem.ForeColor = Colors.ButtonForeSelect;
-        }
-
-        private void BtnRem_MouseLeave(object sender, EventArgs e)
-        {
-            BtnRem.BackColor = Colors.ButtonMousLeave;
-            BtnRem.ForeColor = Colors.ButtonForeNoSelect;
-        }
-
         private void LbxNextMonth_Click(object sender, EventArgs e)
         {
             FillCalendar(calendar.NextMonth(), calendar.NameMonth);

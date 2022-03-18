@@ -42,13 +42,13 @@
             this.TbxPasportN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnSave = new System.Windows.Forms.Button();
-            this.BtnEdit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DgvHistory = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEdit = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnSave = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,7 +69,7 @@
             // 
             this.LbxTitle.BackColor = System.Drawing.Color.Transparent;
             this.LbxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LbxTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.LbxTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LbxTitle.Location = new System.Drawing.Point(0, 0);
@@ -208,37 +208,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Клиент";
             // 
-            // BtnSave
-            // 
-            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            this.BtnSave.FlatAppearance.BorderSize = 2;
-            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSave.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSave.Location = new System.Drawing.Point(57, 334);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(160, 36);
-            this.BtnSave.TabIndex = 18;
-            this.BtnSave.Text = "Сохранить";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            this.BtnSave.Visible = false;
-            this.BtnSave.MouseEnter += new System.EventHandler(this.BtnEdit_MouseEnter);
-            this.BtnSave.MouseLeave += new System.EventHandler(this.BtnEdit_MouseLeave);
-            // 
-            // BtnEdit
-            // 
-            this.BtnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            this.BtnEdit.FlatAppearance.BorderSize = 2;
-            this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEdit.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnEdit.Location = new System.Drawing.Point(57, 281);
-            this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(160, 36);
-            this.BtnEdit.TabIndex = 17;
-            this.BtnEdit.Text = "Редактировать";
-            this.BtnEdit.UseVisualStyleBackColor = true;
-            this.BtnEdit.MouseEnter += new System.EventHandler(this.BtnEdit_MouseEnter);
-            this.BtnEdit.MouseLeave += new System.EventHandler(this.BtnEdit_MouseLeave);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.DgvHistory);
@@ -301,6 +270,34 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
+            // BtnEdit
+            // 
+            this.BtnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnEdit.FlatAppearance.BorderSize = 2;
+            this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEdit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnEdit.Location = new System.Drawing.Point(57, 283);
+            this.BtnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(160, 36);
+            this.BtnEdit.TabIndex = 3;
+            this.BtnEdit.Text = "Редактировать";
+            this.BtnEdit.UseVisualStyleBackColor = true;
+            // 
+            // BtnSave
+            // 
+            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnSave.FlatAppearance.BorderSize = 2;
+            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSave.Location = new System.Drawing.Point(57, 334);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(160, 36);
+            this.BtnSave.TabIndex = 3;
+            this.BtnSave.Text = "Сохранить";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            // 
             // FormInfoClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -315,6 +312,7 @@
             this.Name = "FormInfoClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "СУБД Гостиница";
+            this.Load += new System.EventHandler(this.FormInfoClients_Load);
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -341,10 +339,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DgvHistory;
-        private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private Controls.ButtonSpecial BtnSave;
+        private Controls.ButtonSpecial BtnEdit;
     }
 }

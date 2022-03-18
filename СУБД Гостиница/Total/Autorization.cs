@@ -44,20 +44,20 @@ namespace СУБД_Гостиница
 
         private void Autorization_Load(object sender, EventArgs e)
         {
-            BtnLogIn.FlatAppearance.BorderColor = Colors.BorderButton;
+           
         }
 
-        private void BtnLogIn_MouseEnter(object sender, EventArgs e)
-        {
-            BtnLogIn.BackColor = Colors.ButtonMousEnter;
-            BtnLogIn.ForeColor = Colors.ButtonForeSelect;
-        }
+        //private void BtnLogIn_MouseEnter(object sender, EventArgs e)
+        //{
+        //    BtnLogIn.BackColor = Colors.ButtonMousEnter;
+        //    BtnLogIn.ForeColor = Colors.ButtonForeSelect;
+        //}
 
-        private void BtnLogIn_MouseLeave(object sender, EventArgs e)
-        {
-            BtnLogIn.BackColor = Colors.ButtonMousLeave;
-            BtnLogIn.ForeColor = Colors.ButtonForeNoSelect;
-        }
+        //private void BtnLogIn_MouseLeave(object sender, EventArgs e)
+        //{
+        //    BtnLogIn.BackColor = Colors.ButtonMousLeave;
+        //    BtnLogIn.ForeColor = Colors.ButtonForeNoSelect;
+        //}
 
         private void BtnLogIn_Click(object sender, EventArgs e)
         {

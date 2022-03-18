@@ -35,6 +35,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnOk = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvHistory)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             // 
             this.LbxTitle.BackColor = System.Drawing.Color.Transparent;
             this.LbxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxTitle.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LbxTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.LbxTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LbxTitle.Location = new System.Drawing.Point(0, 0);
@@ -109,11 +110,27 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
+            // BtnOk
+            // 
+            this.BtnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnOk.FlatAppearance.BorderSize = 2;
+            this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOk.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnOk.Location = new System.Drawing.Point(331, 522);
+            this.BtnOk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnOk.Name = "BtnOk";
+            this.BtnOk.Size = new System.Drawing.Size(143, 33);
+            this.BtnOk.TabIndex = 3;
+            this.BtnOk.Text = "ОК";
+            this.BtnOk.UseVisualStyleBackColor = true;
+            // 
             // FormHistoryRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 530);
+            this.ClientSize = new System.Drawing.Size(487, 566);
+            this.Controls.Add(this.BtnOk);
             this.Controls.Add(this.DgvHistory);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -137,5 +154,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private Controls.ButtonSpecial BtnOk;
     }
 }

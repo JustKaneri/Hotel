@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClients));
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnFind = new System.Windows.Forms.Button();
             this.CmxFind = new System.Windows.Forms.ComboBox();
@@ -152,7 +153,9 @@
             this.Controls.Add(this.DgvClients);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClients";
+            this.Text = "СУБД Гостинца";
             this.Load += new System.EventHandler(this.FormClients_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

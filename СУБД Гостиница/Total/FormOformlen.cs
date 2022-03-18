@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using СУБД_Гостиница.Total;
 
 namespace СУБД_Гостиница.Porte
 {
@@ -68,25 +69,8 @@ namespace СУБД_Гостиница.Porte
             }
         }
 
-        private void BtnReg_MouseEnter(object sender, EventArgs e)
-        {
-            BtnReg.BackColor = Colors.ButtonMousEnter;
-            BtnReg.ForeColor = Colors.ButtonForeSelect;
-        }
-
-        private void BtnReg_MouseLeave(object sender, EventArgs e)
-        {
-            BtnReg.BackColor = Colors.ButtonMousLeave;
-            BtnReg.ForeColor = Colors.ButtonForeNoSelect;
-        }
-
-        private void CbxExsist_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CbxExsist.Checked)
-                CmbxFam.DropDownStyle = ComboBoxStyle.DropDownList;
-            else
-                CmbxFam.DropDownStyle = ComboBoxStyle.DropDown;
-        }
+        
+        
 
         private void LbxNextMonth_Click(object sender, EventArgs e)
         {
@@ -96,6 +80,12 @@ namespace СУБД_Гостиница.Porte
         private void LbxLastMonth_Click(object sender, EventArgs e)
         {
             FillCalendar(calendar.PrevMonth(), calendar.NameMonth);
+        }
+
+        private void BtnSelect_Click(object sender, EventArgs e)
+        {
+            FormSelectClient selectClient = new FormSelectClient();
+            selectClient.ShowDialog();
         }
     }
 }

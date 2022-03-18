@@ -34,7 +34,7 @@
             this.DgvPersonal = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnAdd = new System.Windows.Forms.Button();
+            this.BtnAdd = new СУБД_Гостиница.Controls.ButtonSpecial();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPersonal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.DgvPersonal.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvPersonal.RowTemplate.Height = 50;
             this.DgvPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvPersonal.Size = new System.Drawing.Size(776, 303);
+            this.DgvPersonal.Size = new System.Drawing.Size(776, 313);
             this.DgvPersonal.TabIndex = 6;
             // 
             // Column1
@@ -113,27 +113,24 @@
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnAdd.FlatAppearance.BorderSize = 2;
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnAdd.Location = new System.Drawing.Point(557, 377);
+            this.BtnAdd.Location = new System.Drawing.Point(545, 387);
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(232, 35);
-            this.BtnAdd.TabIndex = 8;
+            this.BtnAdd.Size = new System.Drawing.Size(243, 35);
+            this.BtnAdd.TabIndex = 3;
             this.BtnAdd.Text = "Новый сотрудник";
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
-            this.BtnAdd.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
-            this.BtnAdd.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // FormPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 424);
+            this.ClientSize = new System.Drawing.Size(800, 434);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.BtnFind);
             this.Controls.Add(this.TbxFind);
@@ -157,6 +154,6 @@
         private System.Windows.Forms.DataGridView DgvPersonal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button BtnAdd;
+        private Controls.ButtonSpecial BtnAdd;
     }
 }
