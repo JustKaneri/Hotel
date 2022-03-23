@@ -95,6 +95,12 @@
     <Compile Include="Administrator\FormEditPersonal.Designer.cs">
       <DependentUpon>FormEditPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Total\FormContinie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Total\FormContinie.Designer.cs">
+      <DependentUpon>FormContinie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Total\FormHistoryRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator\FormEditPersonal.resx">
       <DependentUpon>FormEditPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Total\FormContinie.resx">
+      <DependentUpon>FormContinie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Total\FormHistoryRoom.resx">
       <DependentUpon>FormHistoryRoom.cs</DependentUpon>

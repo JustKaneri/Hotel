@@ -43,6 +43,8 @@
             this.CntEditRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmRemont = new System.Windows.Forms.ToolStripMenuItem();
             this.TblRoom = new System.Windows.Forms.TableLayoutPanel();
+            this.CnContinie = new System.Windows.Forms.ToolStripMenuItem();
+            this.CntContinie = new System.Windows.Forms.ToolStripMenuItem();
             this.CntMenu.SuspendLayout();
             this.CntMenuAdmin.SuspendLayout();
             this.SuspendLayout();
@@ -54,10 +56,11 @@
             this.CntMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CntReg,
             this.CntDeReg,
+            this.CnContinie,
             this.CntInfo,
             this.CntHistory});
             this.CntMenu.Name = "CntMenu";
-            this.CntMenu.Size = new System.Drawing.Size(307, 116);
+            this.CntMenu.Size = new System.Drawing.Size(307, 144);
             this.CntMenu.Text = "Функции";
             // 
             // CntReg
@@ -116,12 +119,13 @@
             this.CntMenuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CnmRegAdm,
             this.CnmDeRegAdmin,
+            this.CntContinie,
             this.CnmHistoryAdm,
             this.CntInfoRoom,
             this.CntEditRoom,
             this.CnmRemont});
             this.CntMenuAdmin.Name = "CntMenuAdmin";
-            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 172);
+            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 228);
             // 
             // CnmRegAdm
             // 
@@ -220,6 +224,28 @@
             this.TblRoom.Size = new System.Drawing.Size(812, 426);
             this.TblRoom.TabIndex = 2;
             // 
+            // CnContinie
+            // 
+            this.CnContinie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.CnContinie.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnContinie.Image = ((System.Drawing.Image)(resources.GetObject("CnContinie.Image")));
+            this.CnContinie.Name = "CnContinie";
+            this.CnContinie.Size = new System.Drawing.Size(306, 28);
+            this.CnContinie.Text = "Продлить";
+            this.CnContinie.Click += new System.EventHandler(this.CnContinie_Click);
+            // 
+            // CntContinie
+            // 
+            this.CntContinie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.CntContinie.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CntContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CntContinie.Image = ((System.Drawing.Image)(resources.GetObject("CntContinie.Image")));
+            this.CntContinie.Name = "CntContinie";
+            this.CntContinie.Size = new System.Drawing.Size(306, 28);
+            this.CntContinie.Text = "Продлить";
+            this.CntContinie.Click += new System.EventHandler(this.CnContinie_Click);
+            // 
             // FormRooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -255,5 +281,7 @@
         private System.Windows.Forms.ToolStripMenuItem CntInfo;
         private System.Windows.Forms.ToolStripMenuItem CntInfoRoom;
         private System.Windows.Forms.ToolStripMenuItem CntEditRoom;
+        private System.Windows.Forms.ToolStripMenuItem CnContinie;
+        private System.Windows.Forms.ToolStripMenuItem CntContinie;
     }
 }

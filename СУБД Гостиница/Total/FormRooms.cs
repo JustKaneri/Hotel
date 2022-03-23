@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using СУБД_Гостиница.Controls;
+using СУБД_Гостиница.Total;
 
 namespace СУБД_Гостиница.Porte
 {
@@ -133,6 +135,12 @@ namespace СУБД_Гостиница.Porte
         {
             FormRemont remont = new FormRemont();
             remont.ShowDialog();
+        }
+
+        private void CnContinie_Click(object sender, EventArgs e)
+        {
+            FormContinie continie = new FormContinie();
+            continie.ShowDialog();
         }
     }
 }
