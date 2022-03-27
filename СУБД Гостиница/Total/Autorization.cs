@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using СУБД_Гостиница.Administrator;
 using СУБД_Гостиница.Porte;
+using HotelAPI.Autohrization.Controller;
+using HotelAPI.Autohrization;
 
 namespace СУБД_Гостиница
 {
@@ -19,7 +22,7 @@ namespace СУБД_Гостиница
             InitializeComponent();
         }
 
-        public static void PaitBorderTextBox(TextBox tbx,Graphics g)
+        public static void PaitBorderTextBox(TextBox tbx, Graphics g)
         {
             int SizeLine = 1;
 
@@ -33,9 +36,9 @@ namespace СУБД_Гостиница
             g.DrawLine(penLine, LeftAngel, RightUpAngel);
             g.DrawLine(penLine, LeftDownAngel, RightDownAngel);
 
-            g.DrawArc(penLine,new Rectangle(LeftAngel.X-5,LeftAngel.Y,15,15), 270, -90);
-            g.DrawArc(penLine, new Rectangle(LeftDownAngel.X - 5, LeftDownAngel.Y-15, 15, 15), 180, -90);
-            g.DrawLine(penLine, LeftAngel.X - 5, LeftAngel.Y+5, LeftDownAngel.X - 5, LeftDownAngel.Y-5);
+            g.DrawArc(penLine, new Rectangle(LeftAngel.X - 5, LeftAngel.Y, 15, 15), 270, -90);
+            g.DrawArc(penLine, new Rectangle(LeftDownAngel.X - 5, LeftDownAngel.Y - 15, 15, 15), 180, -90);
+            g.DrawLine(penLine, LeftAngel.X - 5, LeftAngel.Y + 5, LeftDownAngel.X - 5, LeftDownAngel.Y - 5);
 
             g.DrawArc(penLine, new Rectangle(RightUpAngel.X - 6, RightUpAngel.Y, 15, 15), 0, -90);
             g.DrawArc(penLine, new Rectangle(RightDownAngel.X - 6, RightDownAngel.Y - 15, 15, 15), 0, 90);
@@ -44,23 +47,27 @@ namespace СУБД_Гостиница
 
         private void Autorization_Load(object sender, EventArgs e)
         {
-           
+
         }
 
-        //private void BtnLogIn_MouseEnter(object sender, EventArgs e)
-        //{
-        //    BtnLogIn.BackColor = Colors.ButtonMousEnter;
-        //    BtnLogIn.ForeColor = Colors.ButtonForeSelect;
-        //}
-
-        //private void BtnLogIn_MouseLeave(object sender, EventArgs e)
-        //{
-        //    BtnLogIn.BackColor = Colors.ButtonMousLeave;
-        //    BtnLogIn.ForeColor = Colors.ButtonForeNoSelect;
-        //}
-
-        private void BtnLogIn_Click(object sender, EventArgs e)
+        private async void BtnLogIn_ClickAsync(object sender, EventArgs e)
         {
+            Authorization authorization = new Authorization(TbxLogin.Text, TbxPassword.Text);
+
+            CurrentUser user = null;
+
+            try
+            {
+                user = await authorization.LogIn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            MessageBox.Show(user.RoleUser);
+
             //FormPortie formPortie = new FormPortie();
             //formPortie.ShowDialog();
 

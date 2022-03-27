@@ -144,7 +144,7 @@
             this.BtnLogIn.TabIndex = 3;
             this.BtnLogIn.Text = "Вход";
             this.BtnLogIn.UseVisualStyleBackColor = true;
-            this.BtnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            this.BtnLogIn.Click += new System.EventHandler(this.BtnLogIn_ClickAsync);
             // 
             // Autorization
             // 

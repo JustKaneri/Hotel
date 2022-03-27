@@ -295,5 +295,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelAPI\HotelAPI.csproj">
+      <Project>{92caa8d1-2d52-4caf-9af1-658a943b10ce}</Project>
+      <Name>HotelAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
