@@ -66,12 +66,11 @@ namespace СУБД_Гостиница
                 return;
             }
 
-            MessageBox.Show(user.RoleUser);
 
-            //FormPortie formPortie = new FormPortie();
+            //FormPortie formPortie = new FormPortie(user);
             //formPortie.ShowDialog();
 
-            FormAdmin admin = new FormAdmin();
+            FormAdmin admin = new FormAdmin(user);
             admin.ShowDialog();
         }
 

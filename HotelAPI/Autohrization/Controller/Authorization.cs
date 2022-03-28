@@ -20,18 +20,18 @@ namespace HotelAPI.Autohrization.Controller
 
         public CurrentUser User;
 
-        public  Authorization(string login,string password)
+        public Authorization(string login, string password)
         {
             Login = login;
             Password = password;
-            
+
         }
 
         public async Task<CurrentUser> LogIn()
         {
             string token = await GetUser();
 
-            if(token == null)
+            if (token == null)
             {
                 throw new Exception("Не верный логин или пароль");
             }
@@ -47,7 +47,7 @@ namespace HotelAPI.Autohrization.Controller
         {
             Client = new HttpClient();
 
-            Client.DefaultRequestHeaders.Add("Authorization",token);
+            Client.DefaultRequestHeaders.Add("Authorization", token);
 
             string url = Properties.Resources.Url + "api/Authorization/GetRole";
 
@@ -63,7 +63,7 @@ namespace HotelAPI.Autohrization.Controller
         {
             Client = new HttpClient();
 
-            Dictionary<string,string> param = new Dictionary<string, string>();
+            Dictionary<string, string> param = new Dictionary<string, string>();
             var url = Properties.Resources.Url + "token";
             param.Add("username", Login);
             param.Add("password", Password);
@@ -71,7 +71,7 @@ namespace HotelAPI.Autohrization.Controller
 
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response =  await Client.PostAsync(url, new FormUrlEncodedContent(param));
+            HttpResponseMessage response = await Client.PostAsync(url, new FormUrlEncodedContent(param));
 
             if (!response.StatusCode.ToString().Equals("OK"))
                 return null;

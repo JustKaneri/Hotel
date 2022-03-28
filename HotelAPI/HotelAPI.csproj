@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Controllers\AlertsControllers.cs" />
+    <Compile Include="Alerts\Models\Alert.cs" />
     <Compile Include="Autohrization\Controller\Authorization.cs" />
     <Compile Include="Autohrization\Models\CurrentUser.cs" />
     <Compile Include="Autohrization\Models\Token.cs" />
@@ -61,5 +63,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

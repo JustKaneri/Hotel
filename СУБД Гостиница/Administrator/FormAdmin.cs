@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelAPI.Autohrization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,12 @@ namespace СУБД_Гостиница.Administrator
 {
     public partial class FormAdmin : Form
     {
-        public FormAdmin()
+        private CurrentUser User;
+        
+        public FormAdmin(CurrentUser user)
         {
             InitializeComponent();
+            User = user;
         }
 
         private Panel CursorSelectBtn;
@@ -30,11 +34,7 @@ namespace СУБД_Гостиница.Administrator
         /// <param name="CurrentBtn"></param>
         private void ActivateButton(Button CurrentBtn)
         {
-            //CurrentBtn.ImageAlign = ContentAlignment.MiddleRight;
-            //CurrentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
             CursorSelectBtn.Location = CurrentBtn.Location;
-            //CurrentBtn.BackColor = Color.White;
-            //CurrentBtn.ForeColor = Color.Black;
             SelectBtn = CurrentBtn;
             LbxTitle.Text = CurrentBtn.Tag.ToString();
         }
@@ -47,10 +47,6 @@ namespace СУБД_Гостиница.Administrator
         {
             if (CurrentBtn == null)
                 return;
-
-            //CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            //CurrentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            //CurrentBtn.BackColor = Colors.PanelColor;
 
         }
 
@@ -106,7 +102,7 @@ namespace СУБД_Гостиница.Administrator
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormAlert());
+            ActivateForm(new FormAlert(User));
         }
 
         private void BtnPersonal_Click(object sender, EventArgs e)

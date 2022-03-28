@@ -105,6 +105,7 @@
             this.RbxClient.TabIndex = 2;
             this.RbxClient.Text = "Клиенты";
             this.RbxClient.UseVisualStyleBackColor = true;
+            this.RbxClient.CheckedChanged += new System.EventHandler(this.RbxClient_CheckedChanged);
             // 
             // RbxRoom
             // 
@@ -115,6 +116,7 @@
             this.RbxRoom.TabIndex = 1;
             this.RbxRoom.Text = "Номера";
             this.RbxRoom.UseVisualStyleBackColor = true;
+            this.RbxRoom.CheckedChanged += new System.EventHandler(this.RbxRoom_CheckedChanged);
             // 
             // RbxAll
             // 
@@ -127,6 +129,7 @@
             this.RbxAll.TabStop = true;
             this.RbxAll.Text = "Все";
             this.RbxAll.UseVisualStyleBackColor = true;
+            this.RbxAll.CheckedChanged += new System.EventHandler(this.RbxAll_CheckedChanged);
             // 
             // FormAlert
             // 
@@ -140,6 +143,7 @@
             this.Name = "FormAlert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "СУБД Гостиница";
+            this.Load += new System.EventHandler(this.FormAlert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvAlert)).EndInit();
             this.GgFilter.ResumeLayout(false);
             this.GgFilter.PerformLayout();
