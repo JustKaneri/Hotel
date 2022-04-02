@@ -8,14 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HotelAPI;
+
 namespace СУБД_Гостиница.Porte
 {
     public partial class FormPortie : Form
     {
-        public FormPortie()
+
+        private MainManager Manager;
+
+        public FormPortie(MainManager manager)
         {
             InitializeComponent();
             HidePanel();
+            Manager = manager;
         }
 
         private Panel CursorSelectBtn;
@@ -89,7 +95,7 @@ namespace СУБД_Гостиница.Porte
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormRooms("Portie"));
+            ActivateForm(new FormRooms(Manager));
 
         }
 

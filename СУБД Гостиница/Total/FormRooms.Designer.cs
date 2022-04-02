@@ -33,18 +33,18 @@
             this.CntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CntReg = new System.Windows.Forms.ToolStripMenuItem();
             this.CntDeReg = new System.Windows.Forms.ToolStripMenuItem();
+            this.CnContinie = new System.Windows.Forms.ToolStripMenuItem();
             this.CntInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.CntHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.CntMenuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CnmRegAdm = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmDeRegAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.CntContinie = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmHistoryAdm = new System.Windows.Forms.ToolStripMenuItem();
             this.CntInfoRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.CntEditRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmRemont = new System.Windows.Forms.ToolStripMenuItem();
             this.TblRoom = new System.Windows.Forms.TableLayoutPanel();
-            this.CnContinie = new System.Windows.Forms.ToolStripMenuItem();
-            this.CntContinie = new System.Windows.Forms.ToolStripMenuItem();
             this.CntMenu.SuspendLayout();
             this.CntMenuAdmin.SuspendLayout();
             this.SuspendLayout();
@@ -73,8 +73,6 @@
             this.CntReg.Size = new System.Drawing.Size(306, 28);
             this.CntReg.Text = "Регистрация";
             this.CntReg.Click += new System.EventHandler(this.CntReg_Click);
-            this.CntReg.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.CntReg.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
             // CntDeReg
             // 
@@ -86,8 +84,17 @@
             this.CntDeReg.Size = new System.Drawing.Size(306, 28);
             this.CntDeReg.Text = "Снятие с регестрации";
             this.CntDeReg.Click += new System.EventHandler(this.CntDeReg_Click);
-            this.CntDeReg.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.CntDeReg.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
+            // 
+            // CnContinie
+            // 
+            this.CnContinie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.CnContinie.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CnContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CnContinie.Image = ((System.Drawing.Image)(resources.GetObject("CnContinie.Image")));
+            this.CnContinie.Name = "CnContinie";
+            this.CnContinie.Size = new System.Drawing.Size(306, 28);
+            this.CnContinie.Text = "Продлить";
+            this.CnContinie.Click += new System.EventHandler(this.CnContinie_Click);
             // 
             // CntInfo
             // 
@@ -110,8 +117,6 @@
             this.CntHistory.Size = new System.Drawing.Size(306, 28);
             this.CntHistory.Text = "История";
             this.CntHistory.Click += new System.EventHandler(this.CntHistory_Click);
-            this.CntHistory.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.CntHistory.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
             // CntMenuAdmin
             // 
@@ -125,7 +130,7 @@
             this.CntEditRoom,
             this.CnmRemont});
             this.CntMenuAdmin.Name = "CntMenuAdmin";
-            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 228);
+            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 200);
             // 
             // CnmRegAdm
             // 
@@ -137,8 +142,6 @@
             this.CnmRegAdm.Size = new System.Drawing.Size(306, 28);
             this.CnmRegAdm.Text = "Регистрация";
             this.CnmRegAdm.Click += new System.EventHandler(this.CntReg_Click);
-            this.CnmRegAdm.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.CnmRegAdm.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
             // CnmDeRegAdmin
             // 
@@ -150,8 +153,17 @@
             this.CnmDeRegAdmin.Size = new System.Drawing.Size(306, 28);
             this.CnmDeRegAdmin.Text = "Снятие с регестрации";
             this.CnmDeRegAdmin.Click += new System.EventHandler(this.CntDeReg_Click);
-            this.CnmDeRegAdmin.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.CnmDeRegAdmin.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
+            // 
+            // CntContinie
+            // 
+            this.CntContinie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.CntContinie.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CntContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.CntContinie.Image = ((System.Drawing.Image)(resources.GetObject("CntContinie.Image")));
+            this.CntContinie.Name = "CntContinie";
+            this.CntContinie.Size = new System.Drawing.Size(306, 28);
+            this.CntContinie.Text = "Продлить";
+            this.CntContinie.Click += new System.EventHandler(this.CnContinie_Click);
             // 
             // CnmHistoryAdm
             // 
@@ -163,8 +175,6 @@
             this.CnmHistoryAdm.Size = new System.Drawing.Size(306, 28);
             this.CnmHistoryAdm.Text = "История";
             this.CnmHistoryAdm.Click += new System.EventHandler(this.CntHistory_Click);
-            this.CnmHistoryAdm.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.CnmHistoryAdm.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
             // CntInfoRoom
             // 
@@ -198,8 +208,6 @@
             this.CnmRemont.Size = new System.Drawing.Size(306, 28);
             this.CnmRemont.Text = "Ремонт";
             this.CnmRemont.Click += new System.EventHandler(this.CnmRemont_Click);
-            this.CnmRemont.MouseEnter += new System.EventHandler(this.CntReg_MouseEnter);
-            this.CnmRemont.MouseLeave += new System.EventHandler(this.CntReg_MouseLeave);
             // 
             // TblRoom
             // 
@@ -215,36 +223,13 @@
             this.TblRoom.Location = new System.Drawing.Point(24, 12);
             this.TblRoom.Margin = new System.Windows.Forms.Padding(3, 3, 266, 3);
             this.TblRoom.Name = "TblRoom";
-            this.TblRoom.RowCount = 5;
-            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.RowCount = 4;
             this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TblRoom.Size = new System.Drawing.Size(812, 426);
             this.TblRoom.TabIndex = 2;
-            // 
-            // CnContinie
-            // 
-            this.CnContinie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
-            this.CnContinie.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CnContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.CnContinie.Image = ((System.Drawing.Image)(resources.GetObject("CnContinie.Image")));
-            this.CnContinie.Name = "CnContinie";
-            this.CnContinie.Size = new System.Drawing.Size(306, 28);
-            this.CnContinie.Text = "Продлить";
-            this.CnContinie.Click += new System.EventHandler(this.CnContinie_Click);
-            // 
-            // CntContinie
-            // 
-            this.CntContinie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
-            this.CntContinie.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CntContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.CntContinie.Image = ((System.Drawing.Image)(resources.GetObject("CntContinie.Image")));
-            this.CntContinie.Name = "CntContinie";
-            this.CntContinie.Size = new System.Drawing.Size(306, 28);
-            this.CntContinie.Text = "Продлить";
-            this.CntContinie.Click += new System.EventHandler(this.CnContinie_Click);
             // 
             // FormRooms
             // 

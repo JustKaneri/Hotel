@@ -32,7 +32,7 @@ namespace СУБД_Гостиница.Controls
             // 
             this.LbxNumber.BorderStyle = BorderStyle.FixedSingle;
             this.LbxNumber.Dock = DockStyle.Fill;
-            this.LbxNumber.Font = new System.Drawing.Font("Georgia", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxNumber.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LbxNumber.Location = new System.Drawing.Point(0, 0);
             this.LbxNumber.Name = "LbxNumber";
             this.LbxNumber.Size = new System.Drawing.Size(287, 203);

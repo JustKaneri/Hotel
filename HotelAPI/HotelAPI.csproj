@@ -50,12 +50,17 @@
     <Compile Include="Autohrization\Controller\Authorization.cs" />
     <Compile Include="Autohrization\Models\CurrentUser.cs" />
     <Compile Include="Autohrization\Models\Token.cs" />
+    <Compile Include="MainManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Rooms\Controller\RoomController.cs" />
+    <Compile Include="Rooms\Model\Equpment.cs" />
+    <Compile Include="Rooms\Model\Room.cs" />
+    <Compile Include="Rooms\Model\RoomHistory.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

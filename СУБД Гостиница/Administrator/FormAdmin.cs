@@ -1,4 +1,5 @@
-﻿using HotelAPI.Autohrization;
+﻿using HotelAPI;
+using HotelAPI.Autohrization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,12 @@ namespace СУБД_Гостиница.Administrator
 {
     public partial class FormAdmin : Form
     {
-        private CurrentUser User;
+        private MainManager Manager;
         
-        public FormAdmin(CurrentUser user)
+        public FormAdmin(MainManager manager)
         {
             InitializeComponent();
-            User = user;
+            Manager = manager;
         }
 
         private Panel CursorSelectBtn;
@@ -50,7 +51,7 @@ namespace СУБД_Гостиница.Administrator
 
         }
 
-        private void ActivateForm(Form form)
+        private async void ActivateForm(Form form)
         {
             if (form == null)
             {
@@ -62,8 +63,18 @@ namespace СУБД_Гостиница.Administrator
                 CurrentForm.Close();
             }
 
+            string conect = await Manager.GetConect();
+
+            if (!conect.Equals("OK"))
+            {
+                form.Close();
+                form = new FormNotConect();
+            }
+           
+
             CurrentForm = form;
             CurrentForm.Show();
+            
             CurrentForm.FormBorderStyle = FormBorderStyle.None;
             CurrentForm.TopLevel = false;
             PnlFragment.Controls.Add(CurrentForm);
@@ -81,14 +92,13 @@ namespace СУБД_Гостиница.Administrator
             HidePanel();
 
             BtnNomer_Click(BtnNomer, null);
-
         }
 
         private void BtnNomer_Click(object sender, EventArgs e)
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormRooms("Admin"));
+            ActivateForm(new FormRooms(Manager));
         }
 
         private void BtnClients_Click(object sender, EventArgs e)
@@ -102,7 +112,16 @@ namespace СУБД_Гостиница.Administrator
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormAlert(User));
+            try
+            {
+                ActivateForm(new FormAlert(Manager));
+            }
+            catch 
+            {
+
+                ActivateForm(new FormNotConect());
+            }
+            
         }
 
         private void BtnPersonal_Click(object sender, EventArgs e)

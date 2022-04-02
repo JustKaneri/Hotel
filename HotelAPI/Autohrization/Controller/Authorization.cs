@@ -38,6 +38,8 @@ namespace HotelAPI.Autohrization.Controller
 
             string role = await GetRole(token);
 
+            role = role.Remove(0, 1).Remove(role.Length - 2, 1);
+
             User = new CurrentUser(token, role);
 
             return User;

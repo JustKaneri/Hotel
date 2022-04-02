@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HotelAPI;
+using HotelAPI.Rooms.Controller;
+using HotelAPI.Rooms.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,49 +18,31 @@ namespace СУБД_Гостиница.Porte
 {
     public partial class FormRooms : Form
     {
-        public FormRooms(string typeUser)
+        private MainManager Manager;
+
+        public FormRooms(MainManager manager)
         {
             InitializeComponent();
 
-            TypeUser = typeUser;
+            Manager = manager;
         }
-
-        private string TypeUser { get; set; }
+        
         private Color ColorReapair = Color.FromArgb(195,37,48);
         private Color ColorBusy = Color.FromArgb(53, 54, 82);
         private PanelRoom CurrentRoom;
+        private RoomController roomController;
 
         private void FormRoomsPortie_Load(object sender, EventArgs e)
         {
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    DgvRooms.Rows.Add(200 + i * i,
-            //                      200 + (i * i) + 1,
-            //                      200 + (i * i) + 2,
-            //                      200 + (i * i) + 3,
-            //                      200 + (i * i) + 4);
-            //}
+            roomController = Manager.GetRoomController();
         }
 
         private void DgvRooms_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (!TypeUser.Equals("Admin"))
+            if (!Manager.User.RoleUser.Equals("Admin"))
                 CntMenu.Show(Cursor.Position);
             else
                 CntMenuAdmin.Show(Cursor.Position);
-        }
-
-        private void CntReg_MouseLeave(object sender, EventArgs e)
-        {
-            
-            //((ToolStripMenuItem)(sender)).BackColor = Color.FromArgb(123, 190, 175);
-            //((ToolStripMenuItem)(sender)).ForeColor = Colors.PanelColor;
-        }
-
-        private void CntReg_MouseEnter(object sender, EventArgs e)
-        {
-            //((ToolStripMenuItem)(sender)).BackColor = Color.FromArgb(52, 52, 77);
-            //((ToolStripMenuItem)(sender)).ForeColor = Color.White;
         }
 
         private void CntReg_Click(object sender, EventArgs e)
@@ -82,22 +67,36 @@ namespace СУБД_Гостиница.Porte
             }
         }
 
-        private void FormRooms_Shown(object sender, EventArgs e)
+        private async void FormRooms_Shown(object sender, EventArgs e)
         {
             TblRoom.SuspendLayout();
 
-            int num = 5;
-            for (int i = 0; i < 5; i++)
+            List<Room> rooms = await roomController.GetRooms();
+
+            int rows = 0;
+            int column = 0;
+
+            foreach (var item in rooms)
             {
-                for (int j = 0; j < 5; j++)
+                if(column == 5)
                 {
-                    PanelRoom panelRoom = new PanelRoom();
-                    panelRoom.LbxNumber.Text = (num + 20).ToString();
-                    panelRoom.LbxNumber.Click += PanelRoom_Click;
-                    num++;
-                    panelRoom.LbxStatus.Text = "Свободно";
-                    TblRoom.Controls.Add(panelRoom, j, i);
+                    column = 0;
+                    rows++;
                 }
+
+                PanelRoom panelRoom = new PanelRoom();
+                panelRoom.LbxNumber.Text = item.Name + "\r\n" + item.Status;
+                panelRoom.LbxNumber.Click += PanelRoom_Click;
+                TblRoom.Controls.Add(panelRoom, column, rows);
+
+                if (item.Status == "ремонт")
+                    panelRoom.BackColor = Color.Yellow;
+
+                if (item.Status == "занят")
+                    panelRoom.BackColor = ColorBusy;
+
+                column++;
+
             }
 
             TblRoom.ResumeLayout();
@@ -110,10 +109,15 @@ namespace СУБД_Гостиница.Porte
                 CurrentRoom.BackColor = Color.White;
             }
 
-            CurrentRoom = (sender as Label).Parent as PanelRoom;
-            CurrentRoom.BackColor = Colors.ColorSelectPanelRoom;
+            PanelRoom panel = (sender as Label).Parent as PanelRoom;
 
-            if (!TypeUser.Equals("Admin"))
+            if(panel.BackColor == Color.White)
+            {
+                CurrentRoom = (sender as Label).Parent as PanelRoom;
+                CurrentRoom.BackColor = Colors.ColorSelectPanelRoom;
+            }
+
+            if (!Manager.User.RoleUser.Equals("Admin"))
                 CntMenu.Show(Cursor.Position);
             else
                 CntMenuAdmin.Show(Cursor.Position);

@@ -60,6 +60,12 @@
     <Compile Include="Controls\ButtonSpecial.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormNotConect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotConect.Designer.cs">
+      <DependentUpon>FormNotConect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Total\Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </Compile>
     <EmbeddedResource Include="Administrator\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotConect.resx">
+      <DependentUpon>FormNotConect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Total\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>

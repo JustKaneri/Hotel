@@ -12,11 +12,14 @@ using СУБД_Гостиница.Administrator;
 using СУБД_Гостиница.Porte;
 using HotelAPI.Autohrization.Controller;
 using HotelAPI.Autohrization;
+using HotelAPI;
 
 namespace СУБД_Гостиница
 {
     public partial class Autorization : Form
     {
+        private MainManager manager;
+
         public Autorization()
         {
             InitializeComponent();
@@ -47,12 +50,20 @@ namespace СУБД_Гостиница
 
         private void Autorization_Load(object sender, EventArgs e)
         {
-
+            manager = new MainManager();
         }
 
         private async void BtnLogIn_ClickAsync(object sender, EventArgs e)
         {
-            Authorization authorization = new Authorization(TbxLogin.Text, TbxPassword.Text);
+            string conect = await manager.GetConect(); 
+        
+            if(!conect.Equals("OK"))
+            {
+                MessageBox.Show("Не соединения с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Authorization authorization = manager.GetAutohrization(TbxLogin.Text, TbxPassword.Text);
 
             CurrentUser user = null;
 
@@ -66,12 +77,26 @@ namespace СУБД_Гостиница
                 return;
             }
 
+            manager.User = user;
 
-            //FormPortie formPortie = new FormPortie(user);
-            //formPortie.ShowDialog();
+            this.Hide();
 
-            FormAdmin admin = new FormAdmin(user);
-            admin.ShowDialog();
+            if(user.RoleUser == "Admin")
+            {
+                FormAdmin admin = new FormAdmin(manager);
+                admin.ShowDialog();
+            }
+            else
+            {
+                FormPortie formPortie = new FormPortie(manager);
+                formPortie.ShowDialog();
+            }
+
+            this.Show();
+            TbxLogin.Text = "";
+            TbxPassword.Text = "";
+
+
         }
 
         private void PbxPass_MouseDown(object sender, MouseEventArgs e)

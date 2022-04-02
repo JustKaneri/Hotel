@@ -1,4 +1,5 @@
-﻿using HotelAPI.Alerts.Controllers;
+﻿using HotelAPI;
+using HotelAPI.Alerts.Controllers;
 using HotelAPI.Alerts.Models;
 using HotelAPI.Autohrization;
 using System;
@@ -9,21 +10,23 @@ namespace СУБД_Гостиница
 {
     public partial class FormAlert : Form
     {
-        private CurrentUser User;
+        private MainManager Manager;
         private AlertsControllers controllers;
+        private List<Alert> alerts;
 
-        public FormAlert(CurrentUser user)
+        public FormAlert(MainManager manager)
         {
             InitializeComponent();
-            User = user;
+            Manager = manager;
+            controllers = Manager.GetAlertsControllers();
         }
 
-        private async void FormAlert_Load(object sender, EventArgs e)
+        private  async void FormAlert_Load(object sender, EventArgs e)
         {
-            controllers = new AlertsControllers(User);
-            List<Alert> alerts = await controllers.GetAlertsAsync();
+            alerts = await controllers.GetAlertsAsync();
+            
 
-            if(alerts == null)
+            if (alerts == null)
             {
                 throw new Exception("Сервер не доступен");
             }

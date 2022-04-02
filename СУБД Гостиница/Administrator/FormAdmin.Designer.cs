@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnStatic = new System.Windows.Forms.Button();
-            this.BtnPersonal = new System.Windows.Forms.Button();
-            this.BtnMessage = new System.Windows.Forms.Button();
             this.BtnClients = new System.Windows.Forms.Button();
+            this.BtnPersonal = new System.Windows.Forms.Button();
             this.BtnNomer = new System.Windows.Forms.Button();
+            this.BtnMessage = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnMenu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -85,44 +85,6 @@
             this.BtnStatic.UseVisualStyleBackColor = true;
             this.BtnStatic.Click += new System.EventHandler(this.BtnStatic_Click);
             // 
-            // BtnPersonal
-            // 
-            this.BtnPersonal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPersonal.FlatAppearance.BorderSize = 0;
-            this.BtnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPersonal.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnPersonal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnPersonal.Image = global::СУБД_Гостиница.Properties.Resources.MiniPersonal;
-            this.BtnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPersonal.Location = new System.Drawing.Point(0, 232);
-            this.BtnPersonal.Name = "BtnPersonal";
-            this.BtnPersonal.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
-            this.BtnPersonal.Size = new System.Drawing.Size(194, 68);
-            this.BtnPersonal.TabIndex = 6;
-            this.BtnPersonal.Text = "Персонал";
-            this.BtnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnPersonal.UseVisualStyleBackColor = true;
-            this.BtnPersonal.Click += new System.EventHandler(this.BtnPersonal_Click);
-            // 
-            // BtnMessage
-            // 
-            this.BtnMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnMessage.FlatAppearance.BorderSize = 0;
-            this.BtnMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMessage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnMessage.Image = global::СУБД_Гостиница.Properties.Resources.MiniMessag;
-            this.BtnMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMessage.Location = new System.Drawing.Point(0, 96);
-            this.BtnMessage.Name = "BtnMessage";
-            this.BtnMessage.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
-            this.BtnMessage.Size = new System.Drawing.Size(194, 68);
-            this.BtnMessage.TabIndex = 3;
-            this.BtnMessage.Text = "Оповещения";
-            this.BtnMessage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnMessage.UseVisualStyleBackColor = true;
-            this.BtnMessage.Click += new System.EventHandler(this.BtnMessage_Click);
-            // 
             // BtnClients
             // 
             this.BtnClients.Dock = System.Windows.Forms.DockStyle.Top;
@@ -142,6 +104,25 @@
             this.BtnClients.UseVisualStyleBackColor = true;
             this.BtnClients.Click += new System.EventHandler(this.BtnClients_Click);
             // 
+            // BtnPersonal
+            // 
+            this.BtnPersonal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnPersonal.FlatAppearance.BorderSize = 0;
+            this.BtnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPersonal.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnPersonal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnPersonal.Image = global::СУБД_Гостиница.Properties.Resources.MiniPersonal;
+            this.BtnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPersonal.Location = new System.Drawing.Point(0, 232);
+            this.BtnPersonal.Name = "BtnPersonal";
+            this.BtnPersonal.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.BtnPersonal.Size = new System.Drawing.Size(194, 68);
+            this.BtnPersonal.TabIndex = 6;
+            this.BtnPersonal.Text = "Персонал";
+            this.BtnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnPersonal.UseVisualStyleBackColor = true;
+            this.BtnPersonal.Click += new System.EventHandler(this.BtnPersonal_Click);
+            // 
             // BtnNomer
             // 
             this.BtnNomer.Dock = System.Windows.Forms.DockStyle.Top;
@@ -160,6 +141,25 @@
             this.BtnNomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnNomer.UseVisualStyleBackColor = true;
             this.BtnNomer.Click += new System.EventHandler(this.BtnNomer_Click);
+            // 
+            // BtnMessage
+            // 
+            this.BtnMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnMessage.FlatAppearance.BorderSize = 0;
+            this.BtnMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMessage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnMessage.Image = global::СУБД_Гостиница.Properties.Resources.MiniMessag;
+            this.BtnMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnMessage.Location = new System.Drawing.Point(0, 96);
+            this.BtnMessage.Name = "BtnMessage";
+            this.BtnMessage.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.BtnMessage.Size = new System.Drawing.Size(194, 68);
+            this.BtnMessage.TabIndex = 3;
+            this.BtnMessage.Text = "Оповещения";
+            this.BtnMessage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnMessage.UseVisualStyleBackColor = true;
+            this.BtnMessage.Click += new System.EventHandler(this.BtnMessage_Click);
             // 
             // label2
             // 
