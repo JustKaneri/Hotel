@@ -25,24 +25,61 @@ namespace СУБД_Гостиница.Porte
             InitializeComponent();
 
             Manager = manager;
+            
         }
         
         private Color ColorReapair = Color.FromArgb(195,37,48);
         private Color ColorBusy = Color.FromArgb(53, 54, 82);
         private PanelRoom CurrentRoom;
         private RoomController roomController;
+        private List<Room> rooms;
 
-        private void FormRoomsPortie_Load(object sender, EventArgs e)
+        private async void FormRoomsPortie_Load(object sender, EventArgs e)
         {
             roomController = Manager.GetRoomController();
+
+            TblRoom.SuspendLayout();
+
+            TblRoom.Controls.Clear();
+
+            rooms = await roomController.GetRooms();
+
+            FillTblRoom();
         }
 
-        private void DgvRooms_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        public void FillTblRoom()
         {
-            if (!Manager.User.RoleUser.Equals("Admin"))
-                CntMenu.Show(Cursor.Position);
-            else
-                CntMenuAdmin.Show(Cursor.Position);
+            int rows = 0;
+            int column = 0;
+
+            TblRoom.Controls.Clear();
+
+            foreach (var item in rooms)
+            {
+                if (column == 5)
+                {
+                    column = 0;
+                    rows++;
+                }
+
+                PanelRoom panelRoom = new PanelRoom();
+                panelRoom.Tag = item.Id;
+                panelRoom.LbxNumber.Text = item.Name + "\r\n" + item.Status;
+                panelRoom.LbxNumber.Click += PanelRoom_Click;
+                TblRoom.Controls.Add(panelRoom, column, rows);
+
+                if (item.Status == "ремонт")
+                    panelRoom.BackColor = Color.FromArgb(230, 178, 104);
+
+                if (item.Status == "занят")
+                    panelRoom.BackColor = Color.FromArgb(76, 112, 173);
+
+                column++;
+
+            }
+
+            TblRoom.ResumeLayout();
         }
 
         private void CntReg_Click(object sender, EventArgs e)
@@ -60,61 +97,39 @@ namespace СУБД_Гостиница.Porte
 
         private void CntDeReg_Click(object sender, EventArgs e)
         {
-            FormAssept formAssept = new FormAssept();
+            FormAssept formAssept = new FormAssept(Manager);
             if(formAssept.ShowDialog() == DialogResult.OK)
             {
                 
             }
         }
 
-        private async void FormRooms_Shown(object sender, EventArgs e)
-        {
-            TblRoom.SuspendLayout();
-
-            List<Room> rooms = await roomController.GetRooms();
-
-            int rows = 0;
-            int column = 0;
-
-            foreach (var item in rooms)
-            {
-                if(column == 5)
-                {
-                    column = 0;
-                    rows++;
-                }
-
-                PanelRoom panelRoom = new PanelRoom();
-                panelRoom.LbxNumber.Text = item.Name + "\r\n" + item.Status;
-                panelRoom.LbxNumber.Click += PanelRoom_Click;
-                TblRoom.Controls.Add(panelRoom, column, rows);
-
-                if (item.Status == "ремонт")
-                    panelRoom.BackColor = Color.Yellow;
-
-                if (item.Status == "занят")
-                    panelRoom.BackColor = ColorBusy;
-
-                column++;
-
-            }
-
-            TblRoom.ResumeLayout();
-        }
-
         private void PanelRoom_Click(object sender, EventArgs e)
         {
+
             if (CurrentRoom != null)
             {
-                CurrentRoom.BackColor = Color.White;
+                if(CurrentRoom.LbxNumber.Text.Contains("свободен"))
+                    CurrentRoom.BackColor = Color.White;
             }
 
-            PanelRoom panel = (sender as Label).Parent as PanelRoom;
+            CurrentRoom = (sender as Label).Parent as PanelRoom;
 
-            if(panel.BackColor == Color.White)
+            if(CurrentRoom.BackColor == Color.White)
             {
-                CurrentRoom = (sender as Label).Parent as PanelRoom;
                 CurrentRoom.BackColor = Colors.ColorSelectPanelRoom;
+            }
+
+            if (CurrentRoom.LbxNumber.Text.Contains("ремонт")) 
+            {
+                CntDeRemont.Show(Cursor.Position);
+                return;
+            }
+
+            if(CurrentRoom.LbxNumber.Text.Contains("занят"))
+            {
+                CntDeReg.Visible = true;
+                CnmDeRegAdmin.Visible = true;
             }
 
             if (!Manager.User.RoleUser.Equals("Admin"))
@@ -145,6 +160,22 @@ namespace СУБД_Гостиница.Porte
         {
             FormContinie continie = new FormContinie();
             continie.ShowDialog();
+        }
+
+        private async void BtnDeRemont_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Для снятия с ремонта, укажите пароль", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            FormAssept assept = new FormAssept(Manager);
+            if(assept.ShowDialog() == DialogResult.OK)
+            {
+                roomController.DeRepair(int.Parse(CurrentRoom.Tag.ToString()));
+
+                await Task.Delay(1000);
+
+                rooms = await roomController.GetRooms();
+
+                FillTblRoom();
+            }
         }
     }
 }

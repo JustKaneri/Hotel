@@ -45,8 +45,11 @@
             this.CntEditRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmRemont = new System.Windows.Forms.ToolStripMenuItem();
             this.TblRoom = new System.Windows.Forms.TableLayoutPanel();
+            this.CntDeRemont = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.BtnDeRemont = new System.Windows.Forms.ToolStripMenuItem();
             this.CntMenu.SuspendLayout();
             this.CntMenuAdmin.SuspendLayout();
+            this.CntDeRemont.SuspendLayout();
             this.SuspendLayout();
             // 
             // CntMenu
@@ -60,7 +63,7 @@
             this.CntInfo,
             this.CntHistory});
             this.CntMenu.Name = "CntMenu";
-            this.CntMenu.Size = new System.Drawing.Size(307, 144);
+            this.CntMenu.Size = new System.Drawing.Size(307, 172);
             this.CntMenu.Text = "Функции";
             // 
             // CntReg
@@ -83,6 +86,7 @@
             this.CntDeReg.Name = "CntDeReg";
             this.CntDeReg.Size = new System.Drawing.Size(306, 28);
             this.CntDeReg.Text = "Снятие с регестрации";
+            this.CntDeReg.Visible = false;
             this.CntDeReg.Click += new System.EventHandler(this.CntDeReg_Click);
             // 
             // CnContinie
@@ -152,6 +156,7 @@
             this.CnmDeRegAdmin.Name = "CnmDeRegAdmin";
             this.CnmDeRegAdmin.Size = new System.Drawing.Size(306, 28);
             this.CnmDeRegAdmin.Text = "Снятие с регестрации";
+            this.CnmDeRegAdmin.Visible = false;
             this.CnmDeRegAdmin.Click += new System.EventHandler(this.CntDeReg_Click);
             // 
             // CntContinie
@@ -231,6 +236,25 @@
             this.TblRoom.Size = new System.Drawing.Size(812, 426);
             this.TblRoom.TabIndex = 2;
             // 
+            // CntDeRemont
+            // 
+            this.CntDeRemont.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CntDeRemont.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnDeRemont});
+            this.CntDeRemont.Name = "CntDeRemont";
+            this.CntDeRemont.Size = new System.Drawing.Size(263, 32);
+            // 
+            // BtnDeRemont
+            // 
+            this.BtnDeRemont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.BtnDeRemont.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnDeRemont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnDeRemont.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeRemont.Image")));
+            this.BtnDeRemont.Name = "BtnDeRemont";
+            this.BtnDeRemont.Size = new System.Drawing.Size(262, 28);
+            this.BtnDeRemont.Text = "Снятие с ремонта";
+            this.BtnDeRemont.Click += new System.EventHandler(this.BtnDeRemont_Click);
+            // 
             // FormRooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -244,9 +268,9 @@
             this.Name = "FormRooms";
             this.Text = "СУБД Гостинца";
             this.Load += new System.EventHandler(this.FormRoomsPortie_Load);
-            this.Shown += new System.EventHandler(this.FormRooms_Shown);
             this.CntMenu.ResumeLayout(false);
             this.CntMenuAdmin.ResumeLayout(false);
+            this.CntDeRemont.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -268,5 +292,7 @@
         private System.Windows.Forms.ToolStripMenuItem CntEditRoom;
         private System.Windows.Forms.ToolStripMenuItem CnContinie;
         private System.Windows.Forms.ToolStripMenuItem CntContinie;
+        private System.Windows.Forms.ContextMenuStrip CntDeRemont;
+        private System.Windows.Forms.ToolStripMenuItem BtnDeRemont;
     }
 }

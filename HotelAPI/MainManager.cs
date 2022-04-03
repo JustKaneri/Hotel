@@ -54,5 +54,33 @@ namespace HotelAPI
 
             return "OK";
         }
+
+        public async Task<string> PasswordVerification(string password)
+        {
+            HttpClient Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + $"api/Authorization/PasswordVerification?password={password}";
+
+            try
+            {
+                HttpResponseMessage httpResponse = await Client.GetAsync(url);
+
+                string result = await httpResponse.Content.ReadAsStringAsync();
+
+                if(!result.Contains("OK"))
+                    return "Not Corect Password";
+             
+
+            }
+            catch
+            {
+                return "Not Corect Password";
+            }
+
+
+            return "OK";
+        }
     }
 }

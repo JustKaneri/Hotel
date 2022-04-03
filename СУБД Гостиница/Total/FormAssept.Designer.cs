@@ -97,6 +97,7 @@
             this.BtnAsseppt.TabIndex = 3;
             this.BtnAsseppt.Text = "Подтвердить";
             this.BtnAsseppt.UseVisualStyleBackColor = true;
+            this.BtnAsseppt.Click += new System.EventHandler(this.BtnAsseppt_Click_1);
             // 
             // FormAssept
             // 

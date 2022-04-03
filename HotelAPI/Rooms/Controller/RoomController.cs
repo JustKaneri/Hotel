@@ -38,5 +38,18 @@ namespace HotelAPI.Rooms.Controller
 
             return JsonConvert.DeserializeObject<List<Room>>(result);
         }
+
+        public async void DeRepair(int id)
+        {
+            Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + $"api/Rooms/DeRepair?Id={id}";
+
+            HttpResponseMessage httpResponse = await Client.PutAsync(url, null);
+
+           
+        }
     }
 }
