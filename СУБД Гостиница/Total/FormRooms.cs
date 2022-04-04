@@ -161,10 +161,15 @@ namespace СУБД_Гостиница.Porte
             roomEdit.ShowDialog();
         }
 
-        private void CnmRemont_Click(object sender, EventArgs e)
+        private async void CnmRemont_Click(object sender, EventArgs e)
         {
-            FormRemont remont = new FormRemont();
-            remont.ShowDialog();
+            FormRemont remont = new FormRemont(Manager, int.Parse(CurrentRoom.Tag.ToString()));
+            if(remont.ShowDialog()== DialogResult.OK)
+            {
+                rooms = await roomController.GetRooms();
+
+                FillTblRoom();
+            }
         }
 
         private void CnContinie_Click(object sender, EventArgs e)

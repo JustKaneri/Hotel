@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HotelAPI;
+using HotelAPI.Rooms.Controller;
+using HotelAPI.Rooms.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,25 +16,36 @@ namespace СУБД_Гостиница
     public partial class FormRemont : Form
     {
         private Calendar calendar;
+        private MainManager Manager;
+        private RoomController roomController;
 
-        public FormRemont()
+        private int Id_Room;
+
+        public FormRemont(MainManager manager,int Id)
         {
             InitializeComponent();
+            Manager = manager;
+            Id_Room = Id;
+
+            roomController = manager.GetRoomController();
         }
 
-        private void FormRemont_Load(object sender, EventArgs e)
+        private async void FormRemont_Load(object sender, EventArgs e)
         {
-            CurrentYear.Text = DateTime.Now.Year + " Год";
+            string conect = await Manager.GetConect();
 
-            List<DateTime> dtSt = new List<DateTime>();
-            dtSt.Add(new DateTime(2022, 3, 1));
-            dtSt.Add(new DateTime(2022, 3, 17));
+            if (!conect.Equals("OK"))
+            {
+                MessageBox.Show("Нет соединения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Close();
+                return;
+            }
 
-            List<DateTime> dtFn = new List<DateTime>();
-            dtFn.Add(new DateTime(2022, 3, 15));
-            dtFn.Add(new DateTime(2022, 4, 2));
+            RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
 
-            calendar = new Calendar(dtSt, dtFn);
+            CurrentYear.Text = DateTime.Now.Year + " год";
+
+            calendar = new Calendar(history.DateStart, history.DateFinish);
             FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
         }
 
@@ -75,6 +89,57 @@ namespace СУБД_Гостиница
         private void LbxLastMonth_Click(object sender, EventArgs e)
         {
             FillCalendar(calendar.PrevMonth(), calendar.NameMonth);
+        }
+
+        private void TbxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                e.Handled = true;
+
+            if (Keys.Back == (Keys)e.KeyChar)
+                e.Handled = false;
+
+            if (e.KeyChar == ',')
+                e.Handled = false; 
+        }
+
+        private async void BtnRem_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(TbxPrice.Text))
+            {
+                MessageBox.Show("Укажите стоймость ремонта", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            double tmp = 0;
+
+            if(!double.TryParse(TbxPrice.Text,out tmp))
+            {
+                MessageBox.Show("Укажите коректную стоймость ремонта", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(DateTime.Now.Date > DtmStart.Value.Date)
+            {
+                MessageBox.Show("Дата начала не может быть в прошлом времени", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Repair repair = new Repair();
+            repair.IdRoom = Id_Room;
+            repair.DateStart = DtmStart.Value;
+            repair.Price = float.Parse(TbxPrice.Text);
+            repair.DateFinish = null;
+
+            string result = await roomController.Repair(Id_Room,repair);
+
+            if(!result.Equals("OK"))
+            {
+                MessageBox.Show("Не удалось начать ремонт", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult = DialogResult.OK;
         }
     }
 }

@@ -8,12 +8,10 @@ namespace HotelAPI.Rooms.Model
 {
     public class Repair
     {
-        public int Id_Room { get; set; }
-
-        public DateTime DtStart { get; set; }
-        
-        public DateTime DtFinish { get; set; }
-
-        public Double Price { get; set; }
+        public int Id { get; set; }
+        public DateTime DateStart { get; set; }
+        public Nullable<System.DateTime> DateFinish { get; set; }
+        public float Price { get; set; }
+        public int IdRoom { get; set; }
     }
 }

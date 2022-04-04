@@ -36,6 +36,7 @@ namespace СУБД_Гостиница
             {
                 MessageBox.Show("Нет соединения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
+                return;
             }
 
             RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
