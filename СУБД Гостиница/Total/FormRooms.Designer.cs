@@ -63,8 +63,9 @@
             this.CntInfo,
             this.CntHistory});
             this.CntMenu.Name = "CntMenu";
-            this.CntMenu.Size = new System.Drawing.Size(307, 172);
+            this.CntMenu.Size = new System.Drawing.Size(307, 144);
             this.CntMenu.Text = "Функции";
+            this.CntMenu.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.CntMenuAdmin_Closing);
             // 
             // CntReg
             // 
@@ -86,7 +87,6 @@
             this.CntDeReg.Name = "CntDeReg";
             this.CntDeReg.Size = new System.Drawing.Size(306, 28);
             this.CntDeReg.Text = "Снятие с регестрации";
-            this.CntDeReg.Visible = false;
             this.CntDeReg.Click += new System.EventHandler(this.CntDeReg_Click);
             // 
             // CnContinie
@@ -134,7 +134,8 @@
             this.CntEditRoom,
             this.CnmRemont});
             this.CntMenuAdmin.Name = "CntMenuAdmin";
-            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 200);
+            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 228);
+            this.CntMenuAdmin.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.CntMenuAdmin_Closing);
             // 
             // CnmRegAdm
             // 
@@ -145,6 +146,7 @@
             this.CnmRegAdm.Name = "CnmRegAdm";
             this.CnmRegAdm.Size = new System.Drawing.Size(306, 28);
             this.CnmRegAdm.Text = "Регистрация";
+            this.CnmRegAdm.Visible = false;
             this.CnmRegAdm.Click += new System.EventHandler(this.CntReg_Click);
             // 
             // CnmDeRegAdmin
@@ -168,6 +170,7 @@
             this.CntContinie.Name = "CntContinie";
             this.CntContinie.Size = new System.Drawing.Size(306, 28);
             this.CntContinie.Text = "Продлить";
+            this.CntContinie.Visible = false;
             this.CntContinie.Click += new System.EventHandler(this.CnContinie_Click);
             // 
             // CnmHistoryAdm
@@ -201,6 +204,7 @@
             this.CntEditRoom.Name = "CntEditRoom";
             this.CntEditRoom.Size = new System.Drawing.Size(306, 28);
             this.CntEditRoom.Text = "Редактировать";
+            this.CntEditRoom.Visible = false;
             this.CntEditRoom.Click += new System.EventHandler(this.CntEditRoom_Click);
             // 
             // CnmRemont
@@ -212,6 +216,7 @@
             this.CnmRemont.Name = "CnmRemont";
             this.CnmRemont.Size = new System.Drawing.Size(306, 28);
             this.CnmRemont.Text = "Ремонт";
+            this.CnmRemont.Visible = false;
             this.CnmRemont.Click += new System.EventHandler(this.CnmRemont_Click);
             // 
             // TblRoom

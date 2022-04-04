@@ -130,6 +130,15 @@ namespace СУБД_Гостиница.Porte
             {
                 CntDeReg.Visible = true;
                 CnmDeRegAdmin.Visible = true;
+                CnContinie.Visible = true;
+                CntContinie.Visible = true;
+            }
+            else
+            {
+                CnmRemont.Visible = true;
+                CntReg.Visible = true;
+                CnmRegAdm.Visible = true;
+                CntEditRoom.Visible = true;
             }
 
             if (!Manager.User.RoleUser.Equals("Admin"))
@@ -176,6 +185,18 @@ namespace СУБД_Гостиница.Porte
 
                 FillTblRoom();
             }
+        }
+
+        private void CntMenuAdmin_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            CntDeReg.Visible = false;
+            CnmDeRegAdmin.Visible = false;
+            CnContinie.Visible = false;
+            CntContinie.Visible = false;
+            CntEditRoom.Visible = false;
+            CntReg.Visible = false;
+            CnmRegAdm.Visible = false;
+            CnmRemont.Visible = false;
         }
     }
 }
