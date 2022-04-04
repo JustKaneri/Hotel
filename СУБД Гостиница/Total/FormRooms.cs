@@ -149,7 +149,9 @@ namespace СУБД_Гостиница.Porte
 
         private void CntInfo_Click(object sender, EventArgs e)
         {
-            FormInfoRoom infoRoom = new FormInfoRoom();
+            Room room = rooms.Where(r => r.Id == int.Parse(CurrentRoom.Tag.ToString())).FirstOrDefault();
+
+            FormInfoRoom infoRoom = new FormInfoRoom(room);
             infoRoom.ShowDialog();
         }
 

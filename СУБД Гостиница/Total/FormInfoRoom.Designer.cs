@@ -202,6 +202,7 @@
             this.BtnOk.TabIndex = 3;
             this.BtnOk.Text = "ОК";
             this.BtnOk.UseVisualStyleBackColor = true;
+            this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
             // FormInfoRoom
             // 
