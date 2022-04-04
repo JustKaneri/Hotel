@@ -11,6 +11,6 @@ namespace HotelAPI.Rooms.Model
         public List<DateTime> DateStart { get; set; }
         public List<DateTime> DateFinish { get; set; }
 
-        public string FIO { get; set; }
+        public List<string> FIO { get; set; }
     }
 }

@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Rooms\Controller\RoomController.cs" />
     <Compile Include="Rooms\Model\Equpment.cs" />
+    <Compile Include="Rooms\Model\Repair.cs" />
     <Compile Include="Rooms\Model\Room.cs" />
     <Compile Include="Rooms\Model\RoomHistory.cs" />
   </ItemGroup>

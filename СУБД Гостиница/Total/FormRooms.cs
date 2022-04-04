@@ -91,7 +91,7 @@ namespace СУБД_Гостиница.Porte
 
         private void CntHistory_Click(object sender, EventArgs e)
         {
-            FormHistoryRoom formHistory = new FormHistoryRoom();
+            FormHistoryRoom formHistory = new FormHistoryRoom(Manager,int.Parse(CurrentRoom.Tag.ToString()));
             formHistory.Show();
         }
 
