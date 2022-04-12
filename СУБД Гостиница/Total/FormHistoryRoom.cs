@@ -15,6 +15,10 @@ namespace СУБД_Гостиница
 {
     public partial class FormHistoryRoom : Form
     {
+        /// <summary>
+        /// Написать о HTTP and API
+        /// </summary>
+
         private MainManager Manager;
         private RoomController roomController;
         private int Id_Room;
@@ -28,11 +32,21 @@ namespace СУБД_Гостиница
             roomController = manager.GetRoomController();
         }
 
-        private async void FormHistoryRoom_Load(object sender, EventArgs e)
+        private void FormHistoryRoom_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtnOk_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private async void FormHistoryRoom_Shown(object sender, EventArgs e)
         {
             string conect = await Manager.GetConect();
 
-            if(!conect.Equals("OK"))
+            if (!conect.Equals("OK"))
             {
                 MessageBox.Show("Нет соединения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
@@ -41,7 +55,7 @@ namespace СУБД_Гостиница
 
             RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
 
-            if(history == null)
+            if (history == null)
             {
                 MessageBox.Show("Нет соединения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
@@ -52,11 +66,6 @@ namespace СУБД_Гостиница
             {
                 DgvHistory.Rows.Add(history.DateStart[i].ToString("dd.MM.yyyy"), history.DateFinish[i].ToString("dd.MM.yyyy"), history.FIO[i]);
             }
-        }
-
-        private void BtnOk_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -13,8 +13,6 @@ namespace СУБД_Гостиница
 {
     public partial class FormInfoRoom : Form
     {
-        
-
         public FormInfoRoom(Room room)
         {
             InitializeComponent();

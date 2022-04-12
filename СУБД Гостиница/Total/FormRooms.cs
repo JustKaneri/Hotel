@@ -40,9 +40,15 @@ namespace СУБД_Гостиница.Porte
 
             TblRoom.SuspendLayout();
 
-            TblRoom.Controls.Clear();
+            TblRoom.Controls.Clear(); 
 
             rooms = await roomController.GetRooms();
+
+            if(rooms == null)
+            {
+                Close();
+                return;
+            }
 
             FillTblRoom();
         }
@@ -147,9 +153,9 @@ namespace СУБД_Гостиница.Porte
                 CntMenuAdmin.Show(Cursor.Position);
         }
 
-        private void CntInfo_Click(object sender, EventArgs e)
+        private async void CntInfo_Click(object sender, EventArgs e)
         {
-            Room room = rooms.Where(r => r.Id == int.Parse(CurrentRoom.Tag.ToString())).FirstOrDefault();
+            Room room = await roomController.GetRoomInfoAsync(int.Parse(CurrentRoom.Tag.ToString()));
 
             FormInfoRoom infoRoom = new FormInfoRoom(room);
             infoRoom.ShowDialog();

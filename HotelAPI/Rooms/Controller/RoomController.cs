@@ -33,7 +33,18 @@ namespace HotelAPI.Rooms.Controller
 
             string url = Properties.Resources.Url + "api/Rooms/GetRooms";
 
-            HttpResponseMessage Message = await Client.GetAsync(url);
+            HttpResponseMessage Message;
+
+            try
+            {
+
+                Message = await Client.GetAsync(url);
+            }
+            catch 
+            {
+                return null;
+            }
+
 
             if (!Message.StatusCode.ToString().Equals("OK"))
                 return null;
@@ -132,6 +143,40 @@ namespace HotelAPI.Rooms.Controller
             string result = await Message.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<RoomHistory>(result);
+        }
+
+        /// <summary>
+        /// Подробная информация о номере
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+        public async Task<Room> GetRoomInfoAsync(int v)
+        {
+            Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + $"api/Rooms/GetRoomInfo?Id={v}";
+
+            HttpResponseMessage Message;
+
+            try
+            {
+
+                Message = await Client.GetAsync(url);
+            }
+            catch
+            {
+                return null;
+            }
+
+
+            if (!Message.StatusCode.ToString().Equals("OK"))
+                return null;
+
+            string result = await Message.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<Room>(result);
         }
     }
 }

@@ -32,10 +32,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbxTitle = new System.Windows.Forms.Label();
             this.DgvHistory = new System.Windows.Forms.DataGridView();
-            this.BtnOk = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnOk = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvHistory)).BeginInit();
             this.SuspendLayout();
@@ -92,22 +92,6 @@
             this.DgvHistory.Size = new System.Drawing.Size(732, 407);
             this.DgvHistory.TabIndex = 4;
             // 
-            // BtnOk
-            // 
-            this.BtnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnOk.FlatAppearance.BorderSize = 2;
-            this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOk.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnOk.Location = new System.Drawing.Point(601, 521);
-            this.BtnOk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnOk.Name = "BtnOk";
-            this.BtnOk.Size = new System.Drawing.Size(143, 33);
-            this.BtnOk.TabIndex = 3;
-            this.BtnOk.Text = "ОК";
-            this.BtnOk.UseVisualStyleBackColor = true;
-            this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
-            // 
             // Column1
             // 
             this.Column1.FillWeight = 284.7716F;
@@ -132,6 +116,22 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
+            // BtnOk
+            // 
+            this.BtnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnOk.FlatAppearance.BorderSize = 2;
+            this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOk.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnOk.Location = new System.Drawing.Point(601, 521);
+            this.BtnOk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnOk.Name = "BtnOk";
+            this.BtnOk.Size = new System.Drawing.Size(143, 33);
+            this.BtnOk.TabIndex = 3;
+            this.BtnOk.Text = "ОК";
+            this.BtnOk.UseVisualStyleBackColor = true;
+            this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
+            // 
             // FormHistoryRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,6 +148,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "СУБД Гостиница";
             this.Load += new System.EventHandler(this.FormHistoryRoom_Load);
+            this.Shown += new System.EventHandler(this.FormHistoryRoom_Shown);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvHistory)).EndInit();
             this.ResumeLayout(false);

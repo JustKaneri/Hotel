@@ -53,6 +53,8 @@ namespace СУБД_Гостиница.Administrator
 
         private async void ActivateForm(Form form)
         {
+            PnlFragment.Controls.Clear();
+
             if (form == null)
             {
                 return;
@@ -61,6 +63,8 @@ namespace СУБД_Гостиница.Administrator
             if (CurrentForm != null)
             {
                 CurrentForm.Close();
+                CurrentForm.Dispose();
+                CurrentForm = null;
             }
 
             string conect = await Manager.GetConect();
@@ -68,6 +72,8 @@ namespace СУБД_Гостиница.Administrator
             if (!conect.Equals("OK"))
             {
                 form.Close();
+                form.Dispose();
+                form = null;
                 form = new FormNotConect();
             }
            
