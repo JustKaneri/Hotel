@@ -63,7 +63,7 @@
             this.CntInfo,
             this.CntHistory});
             this.CntMenu.Name = "CntMenu";
-            this.CntMenu.Size = new System.Drawing.Size(307, 144);
+            this.CntMenu.Size = new System.Drawing.Size(310, 144);
             this.CntMenu.Text = "Функции";
             this.CntMenu.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.CntMenuAdmin_Closing);
             // 
@@ -74,7 +74,7 @@
             this.CntReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CntReg.Image = ((System.Drawing.Image)(resources.GetObject("CntReg.Image")));
             this.CntReg.Name = "CntReg";
-            this.CntReg.Size = new System.Drawing.Size(306, 28);
+            this.CntReg.Size = new System.Drawing.Size(309, 28);
             this.CntReg.Text = "Регистрация";
             this.CntReg.Click += new System.EventHandler(this.CntReg_Click);
             // 
@@ -85,8 +85,8 @@
             this.CntDeReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CntDeReg.Image = ((System.Drawing.Image)(resources.GetObject("CntDeReg.Image")));
             this.CntDeReg.Name = "CntDeReg";
-            this.CntDeReg.Size = new System.Drawing.Size(306, 28);
-            this.CntDeReg.Text = "Снятие с регестрации";
+            this.CntDeReg.Size = new System.Drawing.Size(309, 28);
+            this.CntDeReg.Text = "Снятие с регистрации";
             this.CntDeReg.Click += new System.EventHandler(this.CntDeReg_Click);
             // 
             // CnContinie
@@ -96,7 +96,7 @@
             this.CnContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CnContinie.Image = ((System.Drawing.Image)(resources.GetObject("CnContinie.Image")));
             this.CnContinie.Name = "CnContinie";
-            this.CnContinie.Size = new System.Drawing.Size(306, 28);
+            this.CnContinie.Size = new System.Drawing.Size(309, 28);
             this.CnContinie.Text = "Продлить";
             this.CnContinie.Click += new System.EventHandler(this.CnContinie_Click);
             // 
@@ -107,7 +107,7 @@
             this.CntInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CntInfo.Image = ((System.Drawing.Image)(resources.GetObject("CntInfo.Image")));
             this.CntInfo.Name = "CntInfo";
-            this.CntInfo.Size = new System.Drawing.Size(306, 28);
+            this.CntInfo.Size = new System.Drawing.Size(309, 28);
             this.CntInfo.Text = "Информация";
             this.CntInfo.Click += new System.EventHandler(this.CntInfo_Click);
             // 
@@ -118,7 +118,7 @@
             this.CntHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CntHistory.Image = ((System.Drawing.Image)(resources.GetObject("CntHistory.Image")));
             this.CntHistory.Name = "CntHistory";
-            this.CntHistory.Size = new System.Drawing.Size(306, 28);
+            this.CntHistory.Size = new System.Drawing.Size(309, 28);
             this.CntHistory.Text = "История";
             this.CntHistory.Click += new System.EventHandler(this.CntHistory_Click);
             // 
@@ -134,7 +134,7 @@
             this.CntEditRoom,
             this.CnmRemont});
             this.CntMenuAdmin.Name = "CntMenuAdmin";
-            this.CntMenuAdmin.Size = new System.Drawing.Size(307, 228);
+            this.CntMenuAdmin.Size = new System.Drawing.Size(310, 228);
             this.CntMenuAdmin.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.CntMenuAdmin_Closing);
             // 
             // CnmRegAdm
@@ -144,7 +144,7 @@
             this.CnmRegAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CnmRegAdm.Image = ((System.Drawing.Image)(resources.GetObject("CnmRegAdm.Image")));
             this.CnmRegAdm.Name = "CnmRegAdm";
-            this.CnmRegAdm.Size = new System.Drawing.Size(306, 28);
+            this.CnmRegAdm.Size = new System.Drawing.Size(309, 28);
             this.CnmRegAdm.Text = "Регистрация";
             this.CnmRegAdm.Visible = false;
             this.CnmRegAdm.Click += new System.EventHandler(this.CntReg_Click);
@@ -156,8 +156,8 @@
             this.CnmDeRegAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CnmDeRegAdmin.Image = ((System.Drawing.Image)(resources.GetObject("CnmDeRegAdmin.Image")));
             this.CnmDeRegAdmin.Name = "CnmDeRegAdmin";
-            this.CnmDeRegAdmin.Size = new System.Drawing.Size(306, 28);
-            this.CnmDeRegAdmin.Text = "Снятие с регестрации";
+            this.CnmDeRegAdmin.Size = new System.Drawing.Size(309, 28);
+            this.CnmDeRegAdmin.Text = "Снятие с регистрации";
             this.CnmDeRegAdmin.Visible = false;
             this.CnmDeRegAdmin.Click += new System.EventHandler(this.CntDeReg_Click);
             // 
@@ -168,7 +168,7 @@
             this.CntContinie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CntContinie.Image = ((System.Drawing.Image)(resources.GetObject("CntContinie.Image")));
             this.CntContinie.Name = "CntContinie";
-            this.CntContinie.Size = new System.Drawing.Size(306, 28);
+            this.CntContinie.Size = new System.Drawing.Size(309, 28);
             this.CntContinie.Text = "Продлить";
             this.CntContinie.Visible = false;
             this.CntContinie.Click += new System.EventHandler(this.CnContinie_Click);
@@ -180,7 +180,7 @@
             this.CnmHistoryAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CnmHistoryAdm.Image = ((System.Drawing.Image)(resources.GetObject("CnmHistoryAdm.Image")));
             this.CnmHistoryAdm.Name = "CnmHistoryAdm";
-            this.CnmHistoryAdm.Size = new System.Drawing.Size(306, 28);
+            this.CnmHistoryAdm.Size = new System.Drawing.Size(309, 28);
             this.CnmHistoryAdm.Text = "История";
             this.CnmHistoryAdm.Click += new System.EventHandler(this.CntHistory_Click);
             // 
@@ -191,7 +191,7 @@
             this.CntInfoRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CntInfoRoom.Image = ((System.Drawing.Image)(resources.GetObject("CntInfoRoom.Image")));
             this.CntInfoRoom.Name = "CntInfoRoom";
-            this.CntInfoRoom.Size = new System.Drawing.Size(306, 28);
+            this.CntInfoRoom.Size = new System.Drawing.Size(309, 28);
             this.CntInfoRoom.Text = "Информация";
             this.CntInfoRoom.Click += new System.EventHandler(this.CntInfo_Click);
             // 
@@ -202,7 +202,7 @@
             this.CntEditRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CntEditRoom.Image = ((System.Drawing.Image)(resources.GetObject("CntEditRoom.Image")));
             this.CntEditRoom.Name = "CntEditRoom";
-            this.CntEditRoom.Size = new System.Drawing.Size(306, 28);
+            this.CntEditRoom.Size = new System.Drawing.Size(309, 28);
             this.CntEditRoom.Text = "Редактировать";
             this.CntEditRoom.Visible = false;
             this.CntEditRoom.Click += new System.EventHandler(this.CntEditRoom_Click);
@@ -214,7 +214,7 @@
             this.CnmRemont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.CnmRemont.Image = ((System.Drawing.Image)(resources.GetObject("CnmRemont.Image")));
             this.CnmRemont.Name = "CnmRemont";
-            this.CnmRemont.Size = new System.Drawing.Size(306, 28);
+            this.CnmRemont.Size = new System.Drawing.Size(309, 28);
             this.CnmRemont.Text = "Ремонт";
             this.CnmRemont.Visible = false;
             this.CnmRemont.Click += new System.EventHandler(this.CnmRemont_Click);

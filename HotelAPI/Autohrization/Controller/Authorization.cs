@@ -53,7 +53,17 @@ namespace HotelAPI.Autohrization.Controller
 
             string url = Properties.Resources.Url + "api/Authorization/GetRole";
 
-            HttpResponseMessage response = await Client.GetAsync(url);
+            HttpResponseMessage response;
+
+            try
+            {
+                response = await Client.GetAsync(url);
+            }
+            catch 
+            {
+                return null;
+            }
+            
 
             if (!response.StatusCode.ToString().Equals("OK"))
                 return null;
@@ -73,7 +83,16 @@ namespace HotelAPI.Autohrization.Controller
 
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = await Client.PostAsync(url, new FormUrlEncodedContent(param));
+            HttpResponseMessage response;
+
+            try
+            {
+                response = await Client.PostAsync(url, new FormUrlEncodedContent(param));
+            }
+            catch
+            {
+                return null;
+            }
 
             if (!response.StatusCode.ToString().Equals("OK"))
                 return null;

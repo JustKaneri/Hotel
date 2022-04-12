@@ -94,7 +94,7 @@ namespace HotelAPI.Rooms.Controller
         /// Возврат с ремонта
         /// </summary>
         /// <param name="id"></param>
-        public async void DeRepair(int id)
+        public async Task<string> DeRepair(int id)
         {
             Client = new HttpClient();
 
@@ -102,15 +102,21 @@ namespace HotelAPI.Rooms.Controller
 
             string url = Properties.Resources.Url + $"api/Rooms/DeRepair?Id={id}";
 
+            HttpResponseMessage httpResponse;
+
             try
             {
-                HttpResponseMessage httpResponse = await Client.PutAsync(url, null);
+              httpResponse =  await Client.PutAsync(url, null);
             }
             catch 
             {
-                
+                return "Not Conect";
             }
-            
+
+            if (!httpResponse.StatusCode.ToString().Equals("OK"))
+                return "Not Connect";
+
+            return "OK";
         }
 
         /// <summary>

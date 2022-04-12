@@ -111,23 +111,15 @@ namespace СУБД_Гостиница.Administrator
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormClients());
+            ActivateForm(new FormClients(Manager));
         }
 
         private void BtnMessage_Click(object sender, EventArgs e)
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            try
-            {
-                ActivateForm(new FormAlert(Manager));
-            }
-            catch 
-            {
+            ActivateForm(new FormAlert(Manager));
 
-                ActivateForm(new FormNotConect());
-            }
-            
         }
 
         private void BtnPersonal_Click(object sender, EventArgs e)

@@ -11,6 +11,8 @@ using HotelAPI.Alerts;
 using HotelAPI.Alerts.Controllers;
 using System.Net.Http;
 using HotelAPI.Rooms.Controller;
+using HotelAPI.Regestry.Controler;
+using HotelAPI.Client.Controller;
 
 namespace HotelAPI
 {
@@ -31,6 +33,16 @@ namespace HotelAPI
         public RoomController GetRoomController()
         {
             return new RoomController(User);
+        }
+
+        public RegestryController GetRegestryController()
+        {
+            return new RegestryController(User);
+        }
+        
+        public ClientController GetClientController()
+        {
+            return new ClientController(User);
         }
 
         public async Task<string> GetConect()
@@ -54,6 +66,8 @@ namespace HotelAPI
 
             return "OK";
         }
+
+        
 
         public async Task<string> PasswordVerification(string password)
         {

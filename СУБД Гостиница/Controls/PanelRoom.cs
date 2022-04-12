@@ -13,6 +13,9 @@ namespace СУБД_Гостиница.Controls
         public Label LbxStatus;
         public Label LbxNumber;
 
+        public int Id_Room;
+        public int Id_Reg;
+
         public PanelRoom()
         {
             this.LbxNumber = new System.Windows.Forms.Label();

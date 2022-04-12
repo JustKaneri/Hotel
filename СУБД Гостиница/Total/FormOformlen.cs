@@ -1,4 +1,8 @@
-﻿using System;
+﻿using HotelAPI;
+using HotelAPI.Regestry.Controler;
+using HotelAPI.Rooms.Controller;
+using HotelAPI.Rooms.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,29 +17,42 @@ namespace СУБД_Гостиница.Porte
 {
     public partial class FormOformlen : Form
     {
-        public FormOformlen()
-        {
-            InitializeComponent();
-        }
-
+        private MainManager Manager;
+        private int Id_Room;
+        private RoomController roomController;
+        private RegestryController regestryController;
         private Calendar calendar;
 
-        private void FormOformlen_Load(object sender, EventArgs e)
+        public int Id_Reg { get; private set;}
+
+        public FormOformlen(MainManager manager,int id)
         {
-            BtnReg.FlatAppearance.BorderColor = Colors.BorderButton;
+            InitializeComponent();
+            Manager = manager;
+            Id_Room = id;
 
-            CurrentYear.Text = DateTime.Now.Year + " Год";
+            roomController = Manager.GetRoomController();
+            regestryController = Manager.GetRegestryController();
+        }
 
-            List<DateTime> dtSt = new List<DateTime>();
-            dtSt.Add(new DateTime(2022, 3, 1));
-            dtSt.Add(new DateTime(2022, 3, 17));
 
-            List<DateTime> dtFn = new List<DateTime>();
-            dtFn.Add(new DateTime(2022, 3, 15));
-            dtFn.Add(new DateTime(2022, 4, 2));
+        private async void FormOformlen_Load(object sender, EventArgs e)
+        {
+            string conect = await Manager.GetConect();
 
-            calendar = new Calendar(dtSt, dtFn);
-            FillCalendar(calendar.SetNowMont(),calendar.NameMonth);
+            if (!conect.Equals("OK"))
+            {
+                MessageBox.Show("Нет соединения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Close();
+                return;
+            }
+
+            RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
+
+            CurrentYear.Text = DateTime.Now.Year + " год";
+
+            calendar = new Calendar(history.DateStart, history.DateFinish);
+            FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
         }
 
         private void FillCalendar(List<Calendar.DayMonth> list,string name)
@@ -68,9 +85,6 @@ namespace СУБД_Гостиница.Porte
 
             }
         }
-
-        
-        
 
         private void LbxNextMonth_Click(object sender, EventArgs e)
         {

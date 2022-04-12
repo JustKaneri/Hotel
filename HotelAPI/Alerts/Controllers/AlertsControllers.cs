@@ -44,8 +44,17 @@ namespace HotelAPI.Alerts.Controllers
 
             string url = Properties.Resources.Url + "api/Alerts/GetAlerts";
 
-            HttpResponseMessage Message = await Client.GetAsync(url);
+            HttpResponseMessage Message;
 
+            try
+            {
+                Message = await Client.GetAsync(url);
+            }
+            catch 
+            {
+                return null;
+            }
+            
             if (!Message.StatusCode.ToString().Equals("OK"))
                 return null;
 
@@ -85,22 +94,33 @@ namespace HotelAPI.Alerts.Controllers
         /// Создание нового оповещения
         /// </summary>
         /// <param name="alert"></param>
-        public async void CreateAlert(Alert alert)
+        public async Task<string> CreateAlert(Alert alert)
         {
             Client = new HttpClient();
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + "api/Alerts/CreateAlerts";
-
             string Json = JsonConvert.SerializeObject(alert);
 
             StringContent stringContent = new StringContent(Json, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage message = await Client.PostAsync(url,stringContent);
+            string url = Properties.Resources.Url + "api/Alerts/CreateAlerts";
+
+            HttpResponseMessage message;
+
+            try
+            {
+                message =  await Client.PostAsync(url, stringContent);
+            }
+            catch 
+            {
+                return "Not Conect";
+            }
 
             if (!message.StatusCode.ToString().Equals("OK"))
-                throw new Exception("Нет соединения с сервером");
+                return "Not Conect";
+
+            return "OK";
         }
     }
 }

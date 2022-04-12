@@ -1,4 +1,5 @@
 ﻿using HotelAPI;
+using HotelAPI.Alerts.Models;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Rooms.Model;
 using System;
@@ -70,7 +71,7 @@ namespace СУБД_Гостиница.Porte
                 }
 
                 PanelRoom panelRoom = new PanelRoom();
-                panelRoom.Tag = item.Id;
+                panelRoom.Id_Room = item.Id;
                 panelRoom.LbxNumber.Text = item.Name + "\r\n" + item.Status;
                 panelRoom.LbxNumber.Click += PanelRoom_Click;
                 TblRoom.Controls.Add(panelRoom, column, rows);
@@ -90,14 +91,13 @@ namespace СУБД_Гостиница.Porte
 
         private void CntReg_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(DgvRooms.CurrentCell.Value.ToString());
-            FormOformlen oformlen = new FormOformlen();
+            FormOformlen oformlen = new FormOformlen(Manager,CurrentRoom.Id_Room);
             oformlen.ShowDialog();
         }
 
         private void CntHistory_Click(object sender, EventArgs e)
         {
-            FormHistoryRoom formHistory = new FormHistoryRoom(Manager,int.Parse(CurrentRoom.Tag.ToString()));
+            FormHistoryRoom formHistory = new FormHistoryRoom(Manager,CurrentRoom.Id_Room);
             formHistory.Show();
         }
 
@@ -155,7 +155,7 @@ namespace СУБД_Гостиница.Porte
 
         private async void CntInfo_Click(object sender, EventArgs e)
         {
-            Room room = await roomController.GetRoomInfoAsync(int.Parse(CurrentRoom.Tag.ToString()));
+            Room room = await roomController.GetRoomInfoAsync(CurrentRoom.Id_Room);
 
             FormInfoRoom infoRoom = new FormInfoRoom(room);
             infoRoom.ShowDialog();
@@ -169,10 +169,19 @@ namespace СУБД_Гостиница.Porte
 
         private async void CnmRemont_Click(object sender, EventArgs e)
         {
-            FormRemont remont = new FormRemont(Manager, int.Parse(CurrentRoom.Tag.ToString()));
+
+            FormRemont remont = new FormRemont(Manager, CurrentRoom.Id_Room);
             if(remont.ShowDialog()== DialogResult.OK)
             {
                 rooms = await roomController.GetRooms();
+
+                string Text = String.Format($"Номер {CurrentRoom.LbxNumber.Text.Substring(0,3)} с {remont.GlDt} закрыт на ремонт.");
+
+                string result = await CreateAlert(Text);
+
+                await Task.Delay(1000);
+
+                MessageBox.Show("Номер закрыт на ремонт.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 FillTblRoom();
             }
@@ -188,11 +197,24 @@ namespace СУБД_Гостиница.Porte
         {
             MessageBox.Show("Для снятия с ремонта, укажите пароль", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             FormAssept assept = new FormAssept(Manager);
+
             if(assept.ShowDialog() == DialogResult.OK)
             {
-                roomController.DeRepair(int.Parse(CurrentRoom.Tag.ToString()));
+                string result = await roomController.DeRepair(CurrentRoom.Id_Room);
+
+                if (!result.Equals("OK"))
+                {
+                    MessageBox.Show("Не удалось снять с ремонта", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string Text = String.Format($"Номер {CurrentRoom.LbxNumber.Text.Substring(0, 3)} доступен для заселения.");
+
+                await CreateAlert(Text);
 
                 await Task.Delay(1000);
+
+                MessageBox.Show("Номер снят с ремонта.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 rooms = await roomController.GetRooms();
 
@@ -210,6 +232,32 @@ namespace СУБД_Гостиница.Porte
             CntReg.Visible = false;
             CnmRegAdm.Visible = false;
             CnmRemont.Visible = false;
+        }
+
+        private async Task<string> CreateAlert(string TextAlert)
+        {
+            Alert alert = new Alert();
+            alert.TextAlert = TextAlert;
+            alert.DateAlert = DateTime.Now;
+            alert.TypeAlert = "Room";
+
+            string result;
+
+            try
+            {
+                var alertsController = Manager.GetAlertsControllers();
+
+                result = await alertsController.CreateAlert(alert);
+            }
+            catch 
+            {
+                return "Not Conect";
+            }
+
+            if (!result.Equals("OK"))
+                return "Not Conect";
+
+            return "OK";
         }
     }
 }

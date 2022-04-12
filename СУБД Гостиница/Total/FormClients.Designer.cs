@@ -119,6 +119,7 @@
             this.Column2});
             this.DgvClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.DgvClients.Location = new System.Drawing.Point(38, 138);
+            this.DgvClients.MultiSelect = false;
             this.DgvClients.Name = "DgvClients";
             this.DgvClients.ReadOnly = true;
             this.DgvClients.RowHeadersVisible = false;
@@ -129,17 +130,18 @@
             this.DgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvClients.Size = new System.Drawing.Size(816, 343);
             this.DgvClients.TabIndex = 1;
+            this.DgvClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClients_CellContentClick);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Column1";
+            this.Column1.HeaderText = "ФИО";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Column2";
+            this.Column2.HeaderText = "Возраст";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Visible = false;
@@ -170,8 +172,8 @@
         private System.Windows.Forms.ComboBox CmxFind;
         private System.Windows.Forms.TextBox TbxFind;
         private System.Windows.Forms.DataGridView DgvClients;
+        private System.Windows.Forms.Button BtnFind;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button BtnFind;
     }
 }

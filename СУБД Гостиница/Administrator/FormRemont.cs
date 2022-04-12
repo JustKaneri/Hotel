@@ -1,4 +1,5 @@
 ﻿using HotelAPI;
+using HotelAPI.Alerts.Models;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Rooms.Model;
 using System;
@@ -21,12 +22,13 @@ namespace СУБД_Гостиница
 
         private int Id_Room;
 
+        public DateTime GlDt { get; private set; }
+
         public FormRemont(MainManager manager,int Id)
         {
             InitializeComponent();
             Manager = manager;
             Id_Room = Id;
-
             roomController = manager.GetRoomController();
         }
 
@@ -138,6 +140,8 @@ namespace СУБД_Гостиница
                 MessageBox.Show("Не удалось начать ремонт", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            GlDt = DtmStart.Value;
 
             DialogResult = DialogResult.OK;
         }

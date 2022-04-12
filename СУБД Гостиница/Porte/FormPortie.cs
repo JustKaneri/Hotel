@@ -103,7 +103,7 @@ namespace СУБД_Гостиница.Porte
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormClients());
+            ActivateForm(new FormClients(Manager));
         }
 
         private void BtnMessage_Click(object sender, EventArgs e)
