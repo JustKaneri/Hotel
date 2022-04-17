@@ -55,12 +55,16 @@ namespace СУБД_Гостиница
 
         private async void BtnLogIn_ClickAsync(object sender, EventArgs e)
         {
+            BtnLogIn.Enabled = false;
+
             string conect = await manager.GetConect(); 
         
             if(!conect.Equals("OK"))
             {
+                BtnLogIn.Enabled = true;
                 MessageBox.Show("Не соединения с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+                
             }
 
             Authorization authorization = manager.GetAutohrization(TbxLogin.Text, TbxPassword.Text);
@@ -74,6 +78,7 @@ namespace СУБД_Гостиница
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                BtnLogIn.Enabled = true;
                 return;
             }
 
@@ -86,7 +91,7 @@ namespace СУБД_Гостиница
                 FormAdmin admin = new FormAdmin(manager);
                 admin.ShowDialog();
             }
-            else
+            else if(user.RoleUser == "Porte")
             {
                 FormPortie formPortie = new FormPortie(manager);
                 formPortie.ShowDialog();
@@ -95,7 +100,7 @@ namespace СУБД_Гостиница
             this.Show();
             TbxLogin.Text = "";
             TbxPassword.Text = "";
-
+            BtnLogIn.Enabled = true;
 
         }
 

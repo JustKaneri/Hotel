@@ -42,13 +42,15 @@
             this.TbxPasportN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnSave = new СУБД_Гостиница.Controls.ButtonSpecial();
-            this.BtnEdit = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DgvHistory = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TbxPhone = new System.Windows.Forms.MaskedTextBox();
+            this.BtnCancel = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnEdit = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,7 +133,7 @@
             this.TbxOtch.Location = new System.Drawing.Point(104, 122);
             this.TbxOtch.Name = "TbxOtch";
             this.TbxOtch.ReadOnly = true;
-            this.TbxOtch.Size = new System.Drawing.Size(146, 27);
+            this.TbxOtch.Size = new System.Drawing.Size(147, 27);
             this.TbxOtch.TabIndex = 9;
             // 
             // label3
@@ -149,7 +151,8 @@
             this.TbxPasportS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.TbxPasportS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxPasportS.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxPasportS.Location = new System.Drawing.Point(150, 164);
+            this.TbxPasportS.Location = new System.Drawing.Point(151, 196);
+            this.TbxPasportS.MaxLength = 4;
             this.TbxPasportS.Name = "TbxPasportS";
             this.TbxPasportS.ReadOnly = true;
             this.TbxPasportS.Size = new System.Drawing.Size(100, 27);
@@ -159,7 +162,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(14, 171);
+            this.label4.Location = new System.Drawing.Point(15, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 10;
@@ -170,7 +173,8 @@
             this.TbxPasportN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.TbxPasportN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxPasportN.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxPasportN.Location = new System.Drawing.Point(150, 204);
+            this.TbxPasportN.Location = new System.Drawing.Point(151, 236);
+            this.TbxPasportN.MaxLength = 6;
             this.TbxPasportN.Name = "TbxPasportN";
             this.TbxPasportN.ReadOnly = true;
             this.TbxPasportN.Size = new System.Drawing.Size(100, 27);
@@ -180,7 +184,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(14, 206);
+            this.label5.Location = new System.Drawing.Point(15, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 20);
             this.label5.TabIndex = 12;
@@ -188,7 +192,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnSave);
+            this.groupBox1.Controls.Add(this.TbxPhone);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.BtnCancel);
             this.groupBox1.Controls.Add(this.BtnEdit);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.TbxPasportN);
@@ -207,34 +213,6 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Клиент";
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnSave.FlatAppearance.BorderSize = 2;
-            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSave.Location = new System.Drawing.Point(57, 334);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(160, 36);
-            this.BtnSave.TabIndex = 3;
-            this.BtnSave.Text = "Сохранить";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            // 
-            // BtnEdit
-            // 
-            this.BtnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnEdit.FlatAppearance.BorderSize = 2;
-            this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEdit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnEdit.Location = new System.Drawing.Point(57, 283);
-            this.BtnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(160, 36);
-            this.BtnEdit.TabIndex = 3;
-            this.BtnEdit.Text = "Редактировать";
-            this.BtnEdit.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -282,7 +260,7 @@
             this.Column1.HeaderText = "Номер";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
+            this.Column1.Width = 50;
             // 
             // Column2
             // 
@@ -297,6 +275,57 @@
             this.Column3.HeaderText = "Дата выезда";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(6, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Телефон";
+            // 
+            // TbxPhone
+            // 
+            this.TbxPhone.Enabled = false;
+            this.TbxPhone.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TbxPhone.Location = new System.Drawing.Point(90, 155);
+            this.TbxPhone.Mask = "+7(999)999-99-99";
+            this.TbxPhone.Name = "TbxPhone";
+            this.TbxPhone.Size = new System.Drawing.Size(177, 30);
+            this.TbxPhone.TabIndex = 16;
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnCancel.FlatAppearance.BorderSize = 2;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnCancel.Location = new System.Drawing.Point(57, 334);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(160, 36);
+            this.BtnCancel.TabIndex = 3;
+            this.BtnCancel.Text = "Отмена";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Visible = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // BtnEdit
+            // 
+            this.BtnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnEdit.FlatAppearance.BorderSize = 2;
+            this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEdit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnEdit.Location = new System.Drawing.Point(57, 283);
+            this.BtnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(160, 36);
+            this.BtnEdit.TabIndex = 3;
+            this.BtnEdit.Text = "Редактировать";
+            this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // FormInfoClients
             // 
@@ -316,6 +345,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "СУБД Гостиница";
             this.Load += new System.EventHandler(this.FormInfoClients_Load);
+            this.Shown += new System.EventHandler(this.FormInfoClients_Shown);
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -342,10 +372,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DgvHistory;
+        private Controls.ButtonSpecial BtnCancel;
+        private Controls.ButtonSpecial BtnEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private Controls.ButtonSpecial BtnSave;
-        private Controls.ButtonSpecial BtnEdit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox TbxPhone;
     }
 }

@@ -29,7 +29,12 @@ namespace СУБД_Гостиница
         private async void FormClients_Load(object sender, EventArgs e)
         {
             clients = await clientController.GetClient();
+            if(clients == null)
+            {
+                return;
+            }
             FillDgvClient();
+            CmxFind.SelectedIndex = 0;
         }
 
         private void FillDgvClient()
@@ -58,8 +63,36 @@ namespace СУБД_Гостиница
 
         private void DgvClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormInfoClients formInfoClients = new FormInfoClients();
+            int id = clients[e.RowIndex].Id;
+            FormInfoClients formInfoClients = new FormInfoClients(Manager,id);
             formInfoClients.ShowDialog();
+        }
+
+        private void BtnFind_Click(object sender, EventArgs e)
+        {
+            int index = -1;
+
+            switch (CmxFind.SelectedIndex)
+            {
+                case 0:
+                    index = clients.IndexOf(clients.Where(cl => cl.Fam.ToLower().StartsWith(TbxFind.Text.ToLower())).FirstOrDefault());
+                    break;
+                case 1:
+                    index = clients.IndexOf(clients.Where(cl => cl.Name.ToLower().StartsWith(TbxFind.Text.ToLower())).FirstOrDefault());
+                    break;
+                case 2:
+                    index = clients.IndexOf(clients.Where(cl => cl.Othc.ToLower().StartsWith(TbxFind.Text.ToLower())).FirstOrDefault());
+                    break;
+            }
+
+            if(index == -1)
+            {
+                MessageBox.Show("Клиент не найден", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            DgvClients.CurrentCell = DgvClients.Rows[index].Cells[0];
+            DgvClients.Rows[index].Selected = true;
         }
     }
 }

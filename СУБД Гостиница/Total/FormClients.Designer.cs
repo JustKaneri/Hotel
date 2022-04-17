@@ -70,6 +70,7 @@
             this.BtnFind.Text = "Поиск";
             this.BtnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnFind.UseVisualStyleBackColor = true;
+            this.BtnFind.Click += new System.EventHandler(this.BtnFind_Click);
             this.BtnFind.MouseEnter += new System.EventHandler(this.BtnFind_MouseEnter);
             this.BtnFind.MouseLeave += new System.EventHandler(this.BtnFind_MouseLeave);
             // 
@@ -82,10 +83,7 @@
             this.CmxFind.Items.AddRange(new object[] {
             "Фамилия",
             "Имя",
-            "Отчество",
-            "Этаж",
-            "Номер",
-            "Дата заселения"});
+            "Отчество"});
             this.CmxFind.Location = new System.Drawing.Point(342, 78);
             this.CmxFind.Name = "CmxFind";
             this.CmxFind.Size = new System.Drawing.Size(165, 32);
@@ -130,7 +128,7 @@
             this.DgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvClients.Size = new System.Drawing.Size(816, 343);
             this.DgvClients.TabIndex = 1;
-            this.DgvClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClients_CellContentClick);
+            this.DgvClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClients_CellContentClick);
             // 
             // Column1
             // 
