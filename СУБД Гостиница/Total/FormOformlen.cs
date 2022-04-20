@@ -1,4 +1,6 @@
 ﻿using HotelAPI;
+using HotelAPI.Client.Controller;
+using HotelAPI.Client.Model;
 using HotelAPI.Regestry.Controler;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Rooms.Model;
@@ -21,9 +23,15 @@ namespace СУБД_Гостиница.Porte
         private int Id_Room;
         private RoomController roomController;
         private RegestryController regestryController;
+        private ClientController clientController;
         private Calendar calendar;
+        private Room room;
+
 
         public int Id_Reg { get; private set;}
+
+        private bool IsEdit = false;
+        private ClientInfo client;
 
         public FormOformlen(MainManager manager,int id)
         {
@@ -33,6 +41,7 @@ namespace СУБД_Гостиница.Porte
 
             roomController = Manager.GetRoomController();
             regestryController = Manager.GetRegestryController();
+            clientController = Manager.GetClientController();
         }
 
 
@@ -53,6 +62,8 @@ namespace СУБД_Гостиница.Porte
 
             calendar = new Calendar(history.DateStart, history.DateFinish);
             FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
+
+            room = await roomController.GetRoomInfoAsync(Id_Room); 
         }
 
         private void FillCalendar(List<Calendar.DayMonth> list,string name)
@@ -98,8 +109,34 @@ namespace СУБД_Гостиница.Porte
 
         private void BtnSelect_Click(object sender, EventArgs e)
         {
-            FormSelectClient selectClient = new FormSelectClient();
-            selectClient.ShowDialog();
+            FormSelectClient selectClient = new FormSelectClient(Manager);
+            if(selectClient.ShowDialog() == DialogResult.OK)
+            {
+                GetSelectClient(selectClient.CurrentId);
+            }
+        }
+        
+        private async void GetSelectClient(int id)
+        {
+            client = await clientController.GetClientInfo(id);
+
+            TbxFam.Text = client.Fam;
+            TbxName.Text = client.Name;
+            TbxOtch.Text = client.Othc;
+            TbxNomer.Text = client.PasportN;
+            TbxSeria.Text = client.PasportS;
+            TbxPhone.Text = client.Phone;
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            client = null;
+            TbxFam.Clear();
+            TbxName.Clear();
+            TbxOtch.Clear();
+            TbxPhone.Clear();
+            TbxSeria.Clear();
+            TbxNomer.Clear();
         }
     }
 }
