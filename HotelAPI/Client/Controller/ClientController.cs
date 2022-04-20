@@ -143,27 +143,28 @@ namespace HotelAPI.Client.Controller
 
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            string url = Properties.Resources.Url + $"api/Client/UpdateClient?id={client.Id}";
+            string url = Properties.Resources.Url + $"api/Client/AddClient";
 
             HttpResponseMessage Message;
 
             try
             {
 
-                Message = await Client.PutAsync(url, content);
+                Message = await Client.PostAsync(url, content);
             }
             catch
             {
                 return "Not Conect";
             }
 
-
-            if (!Message.StatusCode.ToString().Equals("NoContent"))
-                return "Not Conect";
-
             string result = await Message.Content.ReadAsStringAsync();
 
-            return "OK";
+            int tmp = 0;
+
+            if(!int.TryParse(result,out tmp))
+                return "Not Conect";
+
+            return result;
         }
     }
 }

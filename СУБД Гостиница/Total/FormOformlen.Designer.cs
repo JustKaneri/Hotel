@@ -66,12 +66,12 @@
             this.LbxNextMonth = new System.Windows.Forms.Label();
             this.LbxLastMonth = new System.Windows.Forms.Label();
             this.CurrentYear = new System.Windows.Forms.Label();
-            this.BtnSelect = new СУБД_Гостиница.Controls.ButtonSpecial();
-            this.BtnReg = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.TbxFam = new System.Windows.Forms.TextBox();
             this.TbxPhone = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.BtnClear = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnReg = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnSelect = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvServis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCalendar)).BeginInit();
@@ -225,6 +225,7 @@
             this.DtmFinish.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.DtmFinish.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DtmFinish.Location = new System.Drawing.Point(1045, 387);
+            this.DtmFinish.MinDate = new System.DateTime(2022, 4, 20, 0, 0, 0, 0);
             this.DtmFinish.Name = "DtmFinish";
             this.DtmFinish.Size = new System.Drawing.Size(200, 30);
             this.DtmFinish.TabIndex = 15;
@@ -429,35 +430,6 @@
             this.CurrentYear.Text = "MonthName";
             this.CurrentYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BtnSelect
-            // 
-            this.BtnSelect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnSelect.FlatAppearance.BorderSize = 2;
-            this.BtnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSelect.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSelect.Location = new System.Drawing.Point(1057, 94);
-            this.BtnSelect.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnSelect.Name = "BtnSelect";
-            this.BtnSelect.Size = new System.Drawing.Size(188, 35);
-            this.BtnSelect.TabIndex = 3;
-            this.BtnSelect.Text = "Зарегистрирован";
-            this.BtnSelect.UseVisualStyleBackColor = true;
-            this.BtnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
-            // 
-            // BtnReg
-            // 
-            this.BtnReg.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnReg.FlatAppearance.BorderSize = 2;
-            this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReg.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnReg.Location = new System.Drawing.Point(887, 615);
-            this.BtnReg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnReg.Name = "BtnReg";
-            this.BtnReg.Size = new System.Drawing.Size(241, 46);
-            this.BtnReg.TabIndex = 3;
-            this.BtnReg.Text = "Зарегистрировать";
-            this.BtnReg.UseVisualStyleBackColor = true;
-            // 
             // TbxFam
             // 
             this.TbxFam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
@@ -501,6 +473,36 @@
             this.BtnClear.Text = "Очистить";
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // BtnReg
+            // 
+            this.BtnReg.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnReg.FlatAppearance.BorderSize = 2;
+            this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReg.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnReg.Location = new System.Drawing.Point(897, 615);
+            this.BtnReg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnReg.Name = "BtnReg";
+            this.BtnReg.Size = new System.Drawing.Size(241, 46);
+            this.BtnReg.TabIndex = 3;
+            this.BtnReg.Text = "Зарегистрировать";
+            this.BtnReg.UseVisualStyleBackColor = true;
+            this.BtnReg.Click += new System.EventHandler(this.BtnReg_Click);
+            // 
+            // BtnSelect
+            // 
+            this.BtnSelect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnSelect.FlatAppearance.BorderSize = 2;
+            this.BtnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSelect.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSelect.Location = new System.Drawing.Point(1057, 94);
+            this.BtnSelect.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnSelect.Name = "BtnSelect";
+            this.BtnSelect.Size = new System.Drawing.Size(188, 35);
+            this.BtnSelect.TabIndex = 3;
+            this.BtnSelect.Text = "Зарегистрирован";
+            this.BtnSelect.UseVisualStyleBackColor = true;
+            this.BtnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // FormOformlen
             // 

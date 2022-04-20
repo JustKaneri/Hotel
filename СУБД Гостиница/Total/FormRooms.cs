@@ -89,10 +89,14 @@ namespace СУБД_Гостиница.Porte
             TblRoom.ResumeLayout();
         }
 
-        private void CntReg_Click(object sender, EventArgs e)
+        private async void CntReg_Click(object sender, EventArgs e)
         {
             FormOformlen oformlen = new FormOformlen(Manager,CurrentRoom.Id_Room);
-            oformlen.ShowDialog();
+            if(oformlen.ShowDialog()== DialogResult.OK)
+            {
+                string result = await CreateAlert($"В номер {CurrentRoom.LbxNumber.Text.Substring(0,3)} зарегистрирован постоялец");
+                FillTblRoom();
+            }
         }
 
         private void CntHistory_Click(object sender, EventArgs e)

@@ -54,9 +54,7 @@ namespace HotelAPI.Regestry.Controler
 
             string result = await Message.Content.ReadAsStringAsync();
 
-            reg = JsonConvert.DeserializeObject<Regestration>(result);
-
-            return reg.ToString();
+            return result.ToString();
         }
 
         /// <summary>

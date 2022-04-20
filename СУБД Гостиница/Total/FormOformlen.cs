@@ -2,6 +2,7 @@
 using HotelAPI.Client.Controller;
 using HotelAPI.Client.Model;
 using HotelAPI.Regestry.Controler;
+using HotelAPI.Regestry.Model;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Rooms.Model;
 using System;
@@ -42,6 +43,8 @@ namespace СУБД_Гостиница.Porte
             roomController = Manager.GetRoomController();
             regestryController = Manager.GetRegestryController();
             clientController = Manager.GetClientController();
+
+            DtmFinish.MinDate = DateTime.Now;
         }
 
 
@@ -112,6 +115,7 @@ namespace СУБД_Гостиница.Porte
             FormSelectClient selectClient = new FormSelectClient(Manager);
             if(selectClient.ShowDialog() == DialogResult.OK)
             {
+                IsEdit = true;
                 GetSelectClient(selectClient.CurrentId);
             }
         }
@@ -128,15 +132,146 @@ namespace СУБД_Гостиница.Porte
             TbxPhone.Text = client.Phone;
         }
 
+        private void CheckData()
+        {
+            if (string.IsNullOrWhiteSpace(TbxFam.Text))
+                throw new Exception("Введите фамилию");
+
+            if (string.IsNullOrWhiteSpace(TbxName.Text))
+                throw new Exception("Введите имя");
+
+            if (string.IsNullOrWhiteSpace(TbxNomer.Text))
+                throw new Exception("Введите номер паспорта");
+
+            if (string.IsNullOrWhiteSpace(TbxSeria.Text))
+                throw new Exception("Введите серию паспорта");
+
+            int tmp = 0;
+
+            if (!int.TryParse(TbxNomer.Text, out tmp))
+                throw new Exception("Не корректное значение номера паспорта");
+
+            if (!int.TryParse(TbxSeria.Text, out tmp))
+                throw new Exception("Не корректное значение серии паспорта");
+
+            string phone = TbxPhone.Text;
+
+            phone = phone.Replace(" ", "");
+
+            if (phone.Length < 11)
+                throw new Exception("Не корректный номер");
+        }
+
         private void BtnClear_Click(object sender, EventArgs e)
         {
             client = null;
+            IsEdit = false;
             TbxFam.Clear();
             TbxName.Clear();
             TbxOtch.Clear();
             TbxPhone.Clear();
             TbxSeria.Clear();
             TbxNomer.Clear();
+        }
+
+        private async void BtnReg_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show($"Проживание в номере будет стоить: {GetPrice()}\r\nПродолжить?", "Цена", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (res == DialogResult.No)
+                return;
+
+            try
+            {
+                CheckData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string resulClient = "";
+
+            if(IsEdit)
+            {
+                resulClient = await EditClient();
+            }
+            else
+            {
+                resulClient = await AddClient();
+            }
+
+            if (resulClient.Equals("Not Conect"))
+            {
+                MessageBox.Show("Не удалось зарегистрировать данного пользователя","Внимание",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
+            Regestration reg = new Regestration();
+            reg.Id_Client = client.Id;
+            reg.Id_Nomer = room.Id;
+            reg.FullPrice = (float)GetPrice();
+            reg.DateStart = DtmStart.Value;
+            reg.DateEnd = DtmFinish.Value;
+
+            string result = await regestryController.Registration(reg);
+
+            if (result.Equals("error"))
+            {
+                MessageBox.Show("Не удалось зарегистрировать данного пользователя", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Id_Reg = int.Parse(result);
+
+            MessageBox.Show("Клиент зарегистрирован", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+
+            DialogResult = DialogResult.OK;
+
+        }
+
+        private double GetPrice()
+        {
+            int countDay = (DtmFinish.Value - DtmStart.Value).Days;
+
+            return room.Money * countDay;
+        }
+
+        private async Task<string> AddClient()
+        {
+            client = new ClientInfo();
+            client.Fam = TbxFam.Text;
+            client.Name = TbxName.Text;
+            client.Othc = TbxOtch.Text;
+            client.PasportN = TbxNomer.Text;
+            client.PasportS = TbxSeria.Text;
+            client.Phone = TbxPhone.Text;
+
+            string result = await clientController.AddClient(client);
+
+            int tmp = 0;
+
+            if(int.TryParse(result,out tmp))
+            {
+                client.Id = int.Parse(result);
+            }
+
+            return result;
+        }
+
+        private async Task<string> EditClient()
+        {
+            client.Fam = TbxFam.Text;
+            client.Name = TbxName.Text;
+            client.Othc = TbxOtch.Text;
+            client.PasportN = TbxNomer.Text;
+            client.PasportS = TbxSeria.Text;
+            client.Phone = TbxPhone.Text;
+
+            string result = await clientController.UpdateClient(client);
+
+            return result;
         }
     }
 }
