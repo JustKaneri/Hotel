@@ -13,6 +13,7 @@ using System.Net.Http;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Regestry.Controler;
 using HotelAPI.Client.Controller;
+using HotelAPI.Servis.Controller;
 
 namespace HotelAPI
 {
@@ -43,6 +44,11 @@ namespace HotelAPI
         public ClientController GetClientController()
         {
             return new ClientController(User);
+        }
+
+        public ServisController GetServisController()
+        {
+            return new ServisController(User); 
         }
 
         public async Task<string> GetConect()

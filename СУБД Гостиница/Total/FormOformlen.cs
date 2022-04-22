@@ -5,6 +5,8 @@ using HotelAPI.Regestry.Controler;
 using HotelAPI.Regestry.Model;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Rooms.Model;
+using HotelAPI.Servis.Controller;
+using HotelAPI.Servis.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,14 +27,14 @@ namespace СУБД_Гостиница.Porte
         private RoomController roomController;
         private RegestryController regestryController;
         private ClientController clientController;
+        private ServisController servisController;
         private Calendar calendar;
         private Room room;
-
-
-        public int Id_Reg { get; private set;}
-
+        private List<ServisInfo> servis;
         private bool IsEdit = false;
         private ClientInfo client;
+
+        public int Id_Reg { get; private set;}
 
         public FormOformlen(MainManager manager,int id)
         {
@@ -43,10 +45,10 @@ namespace СУБД_Гостиница.Porte
             roomController = Manager.GetRoomController();
             regestryController = Manager.GetRegestryController();
             clientController = Manager.GetClientController();
+            servisController = Manager.GetServisController();
 
             DtmFinish.MinDate = DateTime.Now;
         }
-
 
         private async void FormOformlen_Load(object sender, EventArgs e)
         {
@@ -66,7 +68,19 @@ namespace СУБД_Гостиница.Porte
             calendar = new Calendar(history.DateStart, history.DateFinish);
             FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
 
-            room = await roomController.GetRoomInfoAsync(Id_Room); 
+            room = await roomController.GetRoomInfoAsync(Id_Room);
+
+            servis = await servisController.GetServis();
+
+            FillServisDgv();
+        }
+
+        private void FillServisDgv()
+        {
+            foreach (var item in servis)
+            {
+                DgvServis.Rows.Add(item.Name, item.Count, item.Price);
+            }
         }
 
         private void FillCalendar(List<Calendar.DayMonth> list,string name)
@@ -176,10 +190,11 @@ namespace СУБД_Гостиница.Porte
 
         private async void BtnReg_Click(object sender, EventArgs e)
         {
-            var res = MessageBox.Show($"Проживание в номере будет стоить: {GetPrice()}\r\nПродолжить?", "Цена", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (res == DialogResult.No)
+            if(!CheckServis())
+            {
+                MessageBox.Show("Укажите корректное значение в кол-во доп. услуг","Внимание",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
+            }
 
             try
             {
@@ -190,6 +205,11 @@ namespace СУБД_Гостиница.Porte
                 MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            var res = MessageBox.Show($"Проживание в номере будет стоить: {GetPrice()}\r\nПродолжить?", "Цена", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (res == DialogResult.No)
+                return;
 
             string resulClient = "";
 
@@ -225,6 +245,20 @@ namespace СУБД_Гостиница.Porte
 
             Id_Reg = int.Parse(result);
 
+
+            for (int i = 0; i < DgvServis.RowCount; i++)
+            {
+                if (DgvServis[3, i].Value == null)
+                    continue;
+
+
+                if (DgvServis[4,i].Value.ToString().ToLower().Equals("true"))
+                {
+                    int count = int.Parse(DgvServis[3, i].Value.ToString());
+                    result = await servisController.AddServisInRegestry(Id_Reg, servis[i].Id_Servis,count);
+                }
+            }
+
             MessageBox.Show("Клиент зарегистрирован", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             DialogResult = DialogResult.OK;
@@ -233,9 +267,62 @@ namespace СУБД_Гостиница.Porte
 
         private double GetPrice()
         {
-            int countDay = (DtmFinish.Value - DtmStart.Value).Days;
+            int countDay = (DtmFinish.Value.Day - DtmStart.Value.Day) + 1;
 
-            return room.Money * countDay;
+            int summ = 0;
+
+            for (int i = 0; i < DgvServis.RowCount; i++)
+            {
+                if (DgvServis[4, i].Value == null)
+                    continue;
+
+                if (DgvServis[4, i].Value.ToString().ToLower().Equals("true"))
+                {
+                    int price = int.Parse(DgvServis[2, i].Value.ToString());
+
+                    int count = -1;
+
+                    if (DgvServis[3, i].Value == null)
+                        continue;
+
+                    int.TryParse(DgvServis[3, i].Value.ToString(), out count);
+
+
+                    summ += count * price;
+                }
+            }
+
+            return room.Money * countDay + summ;
+        }
+
+        private bool CheckServis()
+        {
+            for (int i = 0; i < DgvServis.RowCount; i++)
+            {
+                if (DgvServis[4, i].Value == null)
+                    continue;
+
+                if (DgvServis[4, i].Value.ToString().ToLower().Equals("true"))
+                {
+                    int all = int.Parse(DgvServis[1, i].Value.ToString());
+
+                    int count = -1;
+
+                    if (DgvServis[3, i].Value == null)
+                        continue;
+
+                    int.TryParse(DgvServis[3, i].Value.ToString(), out count);
+
+                    if (count == -1)
+                        return false;
+
+                    if (all - count < 0)
+                        return false;
+                }
+            }
+
+            return true;
+
         }
 
         private async Task<string> AddClient()

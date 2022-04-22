@@ -68,6 +68,8 @@
     <Compile Include="Rooms\Model\Room.cs" />
     <Compile Include="Rooms\Model\RoomHistory.cs" />
     <Compile Include="Client\Model\ClientHalfInfo.cs" />
+    <Compile Include="Servis\Controller\ServisController.cs" />
+    <Compile Include="Servis\Model\ServisInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
