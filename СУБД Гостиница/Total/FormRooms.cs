@@ -1,5 +1,6 @@
 ﻿using HotelAPI;
 using HotelAPI.Alerts.Models;
+using HotelAPI.Regestry.Controler;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Rooms.Model;
 using System;
@@ -34,10 +35,12 @@ namespace СУБД_Гостиница.Porte
         private PanelRoom CurrentRoom;
         private RoomController roomController;
         private List<Room> rooms;
+        private RegestryController regestryController;
 
         private async void FormRoomsPortie_Load(object sender, EventArgs e)
         {
             roomController = Manager.GetRoomController();
+            regestryController = Manager.GetRegestryController();
 
             TblRoom.SuspendLayout();
 
@@ -95,6 +98,8 @@ namespace СУБД_Гостиница.Porte
             if(oformlen.ShowDialog()== DialogResult.OK)
             {
                 string result = await CreateAlert($"В номер {CurrentRoom.LbxNumber.Text.Substring(0,3)} зарегистрирован постоялец");
+                await Task.Delay(1000);
+                rooms = await roomController.GetRooms();
                 FillTblRoom();
             }
         }
@@ -105,12 +110,32 @@ namespace СУБД_Гостиница.Porte
             formHistory.Show();
         }
 
-        private void CntDeReg_Click(object sender, EventArgs e)
+        private async void CntDeReg_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Для снятия с регистрации, укажите пароль", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             FormAssept formAssept = new FormAssept(Manager);
             if(formAssept.ShowDialog() == DialogResult.OK)
             {
-                
+                string result = await regestryController.DeRegistration(CurrentRoom.Id_Room);
+
+                if (!result.Equals("OK"))
+                {
+                    MessageBox.Show("Не удалось снять регистрации", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string Text = String.Format($"Номер {CurrentRoom.LbxNumber.Text.Substring(0, 3)} доступен для заселения.");
+
+                await CreateAlert(Text);
+
+                await Task.Delay(1000);
+
+                MessageBox.Show("Номер свободен", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                rooms = await roomController.GetRooms();
+
+                FillTblRoom();
             }
         }
 

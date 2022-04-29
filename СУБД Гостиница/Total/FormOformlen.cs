@@ -267,7 +267,7 @@ namespace СУБД_Гостиница.Porte
 
         private double GetPrice()
         {
-            int countDay = (DtmFinish.Value.Day - DtmStart.Value.Day) + 1;
+            int countDay = (DtmFinish.Value - DtmStart.Value).Days + 1;
 
             int summ = 0;
 
