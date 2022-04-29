@@ -66,11 +66,11 @@ namespace HotelAPI.Servis.Controller
             }
             catch
             {
-                return "Not Content";
+                return "Not Conect";
             }
 
             if (!Message.StatusCode.ToString().Equals("OK"))
-                return "Not Content";
+                return "Not Conect";
 
             return "OK";
         }

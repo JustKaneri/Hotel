@@ -9,11 +9,6 @@ using HotelAPI.Servis.Controller;
 using HotelAPI.Servis.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using СУБД_Гостиница.Total;
@@ -237,7 +232,7 @@ namespace СУБД_Гостиница.Porte
 
             string result = await regestryController.Registration(reg);
 
-            if (result.Equals("error"))
+            if (result.Equals("Not Conect"))
             {
                 MessageBox.Show("Не удалось зарегистрировать данного пользователя", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -267,7 +262,7 @@ namespace СУБД_Гостиница.Porte
 
         private double GetPrice()
         {
-            int countDay = (DtmFinish.Value - DtmStart.Value).Days + 1;
+            int countDay = (int)Math.Round((DtmFinish.Value - DtmStart.Value).TotalDays) + 1;
 
             int summ = 0;
 

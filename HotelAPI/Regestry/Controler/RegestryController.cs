@@ -21,6 +21,39 @@ namespace HotelAPI.Regestry.Controler
         }
 
         /// <summary>
+        /// Получить дату окончания проживания в гостинице
+        /// </summary>
+        /// <param name="id_Room"></param>
+        /// <returns></returns>
+        public async Task<string> GetFinsihDateRegestry(int id_Room)
+        {
+            Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + $"api/Regestration/GetFinishDateRegestry?id_room={id_Room}";
+            
+            HttpResponseMessage Message;
+
+            try
+            {
+                Message = await Client.GetAsync(url);
+            }
+            catch
+            {
+                return "Not Conect";
+            }
+
+
+            if (!Message.StatusCode.ToString().Equals("OK"))
+                return "Not Conect";
+
+            string result = await Message.Content.ReadAsStringAsync();
+
+            return result.ToString();
+        }
+
+        /// <summary>
         /// Регистрация
         /// </summary>
         /// <param name="reg"></param>
@@ -83,7 +116,7 @@ namespace HotelAPI.Regestry.Controler
             }
 
             if (!httpResponse.StatusCode.ToString().Equals("OK"))
-                return "Not Connect";
+                return "Not Conect";
 
 
             return "OK";

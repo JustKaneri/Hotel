@@ -218,8 +218,11 @@ namespace СУБД_Гостиница.Porte
 
         private void CnContinie_Click(object sender, EventArgs e)
         {
-            FormContinie continie = new FormContinie();
-            continie.ShowDialog();
+            FormContinie continie = new FormContinie(Manager,CurrentRoom.Id_Room);
+            if(continie.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
         private async void BtnDeRemont_Click(object sender, EventArgs e)

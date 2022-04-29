@@ -80,12 +80,12 @@ namespace HotelAPI.Rooms.Controller
             }
             catch 
             {
-                return "error";
+                return "Not Conect";
             }
 
           
             if (!Message.StatusCode.ToString().Equals("OK"))
-                return "error";
+                return "Not Conect";
 
             return "OK";
         }
@@ -114,7 +114,7 @@ namespace HotelAPI.Rooms.Controller
             }
 
             if (!httpResponse.StatusCode.ToString().Equals("OK"))
-                return "Not Connect";
+                return "Not Conect";
 
             return "OK";
         }

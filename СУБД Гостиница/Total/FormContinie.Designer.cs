@@ -32,7 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbxTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtmFinish = new System.Windows.Forms.DateTimePicker();
             this.buttonSpecial2 = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.BtnContinie = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel3.SuspendLayout();
@@ -74,13 +74,13 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "До:";
             // 
-            // dateTimePicker1
+            // DtmFinish
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(151, 115);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(259, 30);
-            this.dateTimePicker1.TabIndex = 6;
+            this.DtmFinish.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DtmFinish.Location = new System.Drawing.Point(151, 115);
+            this.DtmFinish.Name = "DtmFinish";
+            this.DtmFinish.Size = new System.Drawing.Size(259, 30);
+            this.DtmFinish.TabIndex = 6;
             // 
             // buttonSpecial2
             // 
@@ -95,6 +95,7 @@
             this.buttonSpecial2.TabIndex = 3;
             this.buttonSpecial2.Text = "Отмена";
             this.buttonSpecial2.UseVisualStyleBackColor = true;
+            this.buttonSpecial2.Click += new System.EventHandler(this.buttonSpecial2_Click);
             // 
             // BtnContinie
             // 
@@ -109,13 +110,14 @@
             this.BtnContinie.TabIndex = 3;
             this.BtnContinie.Text = "Продлить";
             this.BtnContinie.UseVisualStyleBackColor = true;
+            this.BtnContinie.Click += new System.EventHandler(this.BtnContinie_Click);
             // 
             // FormContinie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 240);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DtmFinish);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSpecial2);
             this.Controls.Add(this.BtnContinie);
@@ -128,6 +130,7 @@
             this.Name = "FormContinie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "СУБД Гостиница";
+            this.Load += new System.EventHandler(this.FormContinie_Load);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,6 +144,6 @@
         private Controls.ButtonSpecial BtnContinie;
         private Controls.ButtonSpecial buttonSpecial2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DtmFinish;
     }
 }
