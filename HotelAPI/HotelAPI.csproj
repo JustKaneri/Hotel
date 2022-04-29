@@ -70,6 +70,8 @@
     <Compile Include="Client\Model\ClientHalfInfo.cs" />
     <Compile Include="Servis\Controller\ServisController.cs" />
     <Compile Include="Servis\Model\ServisInfo.cs" />
+    <Compile Include="TypeNomer\Controller\TypeNomerController.cs" />
+    <Compile Include="TypeNomer\Model\TypeNomers.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

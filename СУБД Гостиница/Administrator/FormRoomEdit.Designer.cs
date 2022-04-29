@@ -31,14 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRoomEdit));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CmbType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TbxNomer = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TbxPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.TbxCntPers = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LstPhoto = new System.Windows.Forms.ListView();
@@ -46,10 +44,10 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbxTitle = new System.Windows.Forms.Label();
-            this.BtnAddImage = new СУБД_Гостиница.Controls.ButtonSpecial();
-            this.BtnDelImage = new СУБД_Гостиница.Controls.ButtonSpecial();
-            this.BtnCancel = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.BtnSave = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnCancel = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnDelImage = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnAddImage = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -57,50 +55,39 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.CmbType);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.TbxNomer);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TbxPrice);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TbxCntPers);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(13, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(346, 401);
+            this.groupBox1.Size = new System.Drawing.Size(346, 387);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Общая информация";
             // 
-            // comboBox2
+            // CmbType
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(17, 355);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(304, 32);
-            this.comboBox2.TabIndex = 10;
+            this.CmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbType.FormattingEnabled = true;
+            this.CmbType.Location = new System.Drawing.Point(17, 284);
+            this.CmbType.Name = "CmbType";
+            this.CmbType.Size = new System.Drawing.Size(304, 32);
+            this.CmbType.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 328);
+            this.label5.Location = new System.Drawing.Point(13, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 24);
             this.label5.TabIndex = 9;
             this.label5.Text = "Тип номера";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 212);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(304, 32);
-            this.comboBox1.TabIndex = 8;
             // 
             // TbxNomer
             // 
@@ -108,7 +95,7 @@
             this.TbxNomer.Location = new System.Drawing.Point(17, 67);
             this.TbxNomer.Name = "TbxNomer";
             this.TbxNomer.Size = new System.Drawing.Size(304, 30);
-            this.TbxNomer.TabIndex = 7;
+            this.TbxNomer.TabIndex = 1;
             // 
             // label4
             // 
@@ -122,36 +109,30 @@
             // TbxPrice
             // 
             this.TbxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbxPrice.Location = new System.Drawing.Point(17, 279);
+            this.TbxPrice.Location = new System.Drawing.Point(17, 208);
             this.TbxPrice.Name = "TbxPrice";
             this.TbxPrice.Size = new System.Drawing.Size(304, 30);
-            this.TbxPrice.TabIndex = 5;
+            this.TbxPrice.TabIndex = 3;
+            this.TbxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxPrice_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 252);
+            this.label3.Location = new System.Drawing.Point(13, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "Цена";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 185);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Этаж";
-            // 
             // TbxCntPers
             // 
             this.TbxCntPers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxCntPers.Location = new System.Drawing.Point(17, 139);
+            this.TbxCntPers.MaxLength = 1;
             this.TbxCntPers.Name = "TbxCntPers";
             this.TbxCntPers.Size = new System.Drawing.Size(304, 30);
-            this.TbxCntPers.TabIndex = 1;
+            this.TbxCntPers.TabIndex = 2;
+            this.TbxCntPers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxPrice_KeyPress);
             // 
             // label1
             // 
@@ -204,20 +185,35 @@
             this.LbxTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LbxTitle.UseCompatibleTextRendering = true;
             // 
-            // BtnAddImage
+            // BtnSave
             // 
-            this.BtnAddImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnAddImage.FlatAppearance.BorderSize = 2;
-            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddImage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnAddImage.Location = new System.Drawing.Point(364, 486);
-            this.BtnAddImage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnAddImage.Name = "BtnAddImage";
-            this.BtnAddImage.Size = new System.Drawing.Size(156, 39);
-            this.BtnAddImage.TabIndex = 3;
-            this.BtnAddImage.Text = "Добавить";
-            this.BtnAddImage.UseVisualStyleBackColor = true;
-            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
+            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnSave.FlatAppearance.BorderSize = 2;
+            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnSave.Location = new System.Drawing.Point(975, 550);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(154, 49);
+            this.BtnSave.TabIndex = 5;
+            this.BtnSave.Text = "Сохранить";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnCancel.FlatAppearance.BorderSize = 2;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnCancel.Location = new System.Drawing.Point(30, 551);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(154, 49);
+            this.BtnCancel.TabIndex = 6;
+            this.BtnCancel.Text = "Отмена";
+            this.BtnCancel.UseVisualStyleBackColor = true;
             // 
             // BtnDelImage
             // 
@@ -234,34 +230,20 @@
             this.BtnDelImage.UseVisualStyleBackColor = true;
             this.BtnDelImage.Click += new System.EventHandler(this.BtnDelImage_Click);
             // 
-            // BtnCancel
+            // BtnAddImage
             // 
-            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnCancel.FlatAppearance.BorderSize = 2;
-            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnCancel.Location = new System.Drawing.Point(30, 551);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(154, 49);
-            this.BtnCancel.TabIndex = 3;
-            this.BtnCancel.Text = "Отмена";
-            this.BtnCancel.UseVisualStyleBackColor = true;
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnSave.FlatAppearance.BorderSize = 2;
-            this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSave.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSave.Location = new System.Drawing.Point(975, 550);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(154, 49);
-            this.BtnSave.TabIndex = 3;
-            this.BtnSave.Text = "Сохранить";
-            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnAddImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnAddImage.FlatAppearance.BorderSize = 2;
+            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddImage.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnAddImage.Location = new System.Drawing.Point(364, 486);
+            this.BtnAddImage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnAddImage.Name = "BtnAddImage";
+            this.BtnAddImage.Size = new System.Drawing.Size(156, 39);
+            this.BtnAddImage.TabIndex = 3;
+            this.BtnAddImage.Text = "Добавить";
+            this.BtnAddImage.UseVisualStyleBackColor = true;
+            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
             // 
             // FormRoomEdit
             // 
@@ -298,7 +280,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TbxPrice;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbxCntPers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView LstPhoto;
@@ -306,9 +287,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label LbxTitle;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CmbType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
         private Controls.ButtonSpecial BtnAddImage;
         private Controls.ButtonSpecial BtnDelImage;
         private Controls.ButtonSpecial BtnCancel;

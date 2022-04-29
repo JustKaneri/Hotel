@@ -44,7 +44,6 @@ namespace HotelAPI.Regestry.Controler
                 return "Not Conect";
             }
 
-
             if (!Message.StatusCode.ToString().Equals("OK"))
                 return "Not Conect";
 

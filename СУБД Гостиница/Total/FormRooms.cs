@@ -190,10 +190,19 @@ namespace СУБД_Гостиница.Porte
             infoRoom.ShowDialog();
         }
 
-        private void CntEditRoom_Click(object sender, EventArgs e)
+        private async void CntEditRoom_Click(object sender, EventArgs e)
         {
-            FormRoomEdit roomEdit = new FormRoomEdit();
-            roomEdit.ShowDialog();
+            FormRoomEdit roomEdit = new FormRoomEdit(Manager, CurrentRoom.Id_Room);
+            if(roomEdit.ShowDialog() == DialogResult.OK)
+            {
+                await Task.Delay(1000);
+
+                rooms = await roomController.GetRooms();
+
+                FillTblRoom();
+
+                await CreateAlert($"В ифнормацию о номере {CurrentRoom.LbxNumber.Text.Substring(0, 3)} были внесены изменения.");
+            }
         }
 
         private async void CnmRemont_Click(object sender, EventArgs e)
@@ -219,10 +228,7 @@ namespace СУБД_Гостиница.Porte
         private void CnContinie_Click(object sender, EventArgs e)
         {
             FormContinie continie = new FormContinie(Manager,CurrentRoom.Id_Room);
-            if(continie.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            continie.ShowDialog();
         }
 
         private async void BtnDeRemont_Click(object sender, EventArgs e)

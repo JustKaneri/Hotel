@@ -14,6 +14,7 @@ using HotelAPI.Rooms.Controller;
 using HotelAPI.Regestry.Controler;
 using HotelAPI.Client.Controller;
 using HotelAPI.Servis.Controller;
+using HotelAPI.TypeNomer.Controller;
 
 namespace HotelAPI
 {
@@ -51,6 +52,11 @@ namespace HotelAPI
             return new ServisController(User); 
         }
 
+        public TypeNomerController GetTypeNomerController()
+        {
+            return new TypeNomerController(User);
+        }
+
         public async Task<string> GetConect()
         {
             HttpClient client = new HttpClient();
@@ -72,8 +78,6 @@ namespace HotelAPI
 
             return "OK";
         }
-
-        
 
         public async Task<string> PasswordVerification(string password)
         {

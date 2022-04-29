@@ -91,6 +91,42 @@ namespace HotelAPI.Rooms.Controller
         }
 
         /// <summary>
+        /// Обновление информации о номере
+        /// </summary>
+        /// <param name="room"></param>
+        /// <returns></returns>
+        public async Task<string> RoomEdit(Room room)
+        {
+            Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + $"api/Rooms/UpdateRoom?id={room.Id}";
+
+            string Json = JsonConvert.SerializeObject(room);
+
+            StringContent content = new StringContent(Json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage Message;
+
+            try
+            {
+                Message = await Client.PutAsync(url, content);
+            }
+            catch
+            {
+                return "Not Conect";
+            }
+
+
+            if (!Message.StatusCode.ToString().Equals("OK"))
+                return "Not Conect";
+
+            return "OK";
+        }
+
+
+        /// <summary>
         /// Возврат с ремонта
         /// </summary>
         /// <param name="id"></param>
