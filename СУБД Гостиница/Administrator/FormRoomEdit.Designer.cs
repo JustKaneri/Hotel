@@ -159,6 +159,10 @@
             this.ImgList.ImageSize = new System.Drawing.Size(320, 179);
             this.ImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "Файлы изображений (*.bmp, *.jpg, *.png)|*.bmp;*.jpg;*.png";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));

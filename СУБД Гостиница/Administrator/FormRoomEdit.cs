@@ -130,16 +130,32 @@ namespace СУБД_Гостиница
                     return;
                 }
 
+                PhotoNomers photoNomer = new PhotoNomers();
+                photoNomer.Id_Nomer = res;
+                photoNomers.Add(photoNomer);
+
                 ImgList.Images.Add(igm);
                 LstPhoto.Items.Add(ImgList.Images.Count.ToString(), ImgList.Images.Count - 1);
             }
         }
 
-
-        private void BtnDelImage_Click(object sender, EventArgs e)
+        private async void BtnDelImage_Click(object sender, EventArgs e)
         {
             if (LstPhoto.SelectedItems.Count == 0)
                 return;
+
+            var answer = MessageBox.Show("Удалить выбранную фотографию?\r\nДанную операцию нельзя будет отменить", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (answer == DialogResult.No)
+                return;
+
+            string res = await photoNomerController.DeletePhoto(photoNomers[LstPhoto.SelectedIndices[0]].Id_Photo);
+
+            if(!res.Equals("OK"))
+            {
+                MessageBox.Show("Не удалось удалить фото", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             ImgList.Images.RemoveAt(LstPhoto.SelectedIndices[0]);
             LstPhoto.Items.Remove(LstPhoto.SelectedItems[0]);
