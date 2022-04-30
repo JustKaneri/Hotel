@@ -1,16 +1,14 @@
 ﻿using HotelAPI;
+using HotelAPI.PhotoNomer.Controller;
+using HotelAPI.PhotoNomer.Model;
 using HotelAPI.Rooms.Controller;
 using HotelAPI.Rooms.Model;
 using HotelAPI.TypeNomer.Controller;
 using HotelAPI.TypeNomer.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace СУБД_Гостиница
@@ -20,8 +18,11 @@ namespace СУБД_Гостиница
         private MainManager Manager;
         private RoomController roomController;
         private TypeNomerController typeNomerController;
+        private PhotoNomerController photoNomerController;
         private Room roomInfo;
         private int Id_Room;
+
+        private List<PhotoNomers> photoNomers;
         private List<TypeNomers> typeNomers;
 
         public FormRoomEdit(MainManager manager,int id_room)
@@ -32,6 +33,7 @@ namespace СУБД_Гостиница
 
             roomController = Manager.GetRoomController();
             typeNomerController = Manager.GetTypeNomerController();
+            photoNomerController = Manager.GetPhotoNomerController();
             Id_Room = id_room;
         }
 
@@ -62,6 +64,32 @@ namespace СУБД_Гостиница
             FillTypeNomer();
 
             CmbType.SelectedItem = roomInfo.TypeRoom;
+
+            photoNomers = await photoNomerController.GetPhotoNomers(Id_Room);
+
+            FillImageList();
+        }
+
+        private void FillImageList()
+        {
+            ImgList.Images.Clear();
+            LstPhoto.Items.Clear();
+
+            foreach (var item in photoNomers)
+            {
+                System.Net.WebRequest request = System.Net.WebRequest.Create(item.PhotoPath);
+                System.Net.WebResponse resp = request.GetResponse();
+                Stream respStream = resp.GetResponseStream();
+                Bitmap bmp = new Bitmap(respStream);
+                respStream.Dispose();
+                
+                ImgList.Images.Add(bmp);
+            }
+
+            for (int i = 0; i < ImgList.Images.Count; i++)
+            {
+                LstPhoto.Items.Add((i + 1).ToString(), i);
+            }
         }
 
         private void FillTypeNomer()
@@ -72,14 +100,38 @@ namespace СУБД_Гостиница
             }
         }
 
-        private void BtnAddImage_Click(object sender, EventArgs e)
+        private async void BtnAddImage_Click(object sender, EventArgs e)
         {
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ImgList.Images.Add(Image.FromFile(openFileDialog1.FileName));
-                ListViewItem item = new ListViewItem();
-                item.ImageIndex = ImgList.Images.Count-1;
-                LstPhoto.Items.Add(item);
+                Image igm = null;
+
+                try
+                {
+                    igm = Image.FromFile(openFileDialog1.FileName);
+                }
+                catch
+                {
+                }
+
+                byte[] photo = new byte[0];
+
+                using (var ms = new MemoryStream())
+                {
+                    igm.Save(ms, igm.RawFormat);
+                    photo = ms.ToArray();
+                }
+
+                int res = await photoNomerController.AddPhoto(Id_Room, photo, Path.GetFileName(openFileDialog1.FileName));
+
+                if(res == -1)
+                {
+                    MessageBox.Show("Не удалось добавить фото", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                ImgList.Images.Add(igm);
+                LstPhoto.Items.Add(ImgList.Images.Count.ToString(), ImgList.Images.Count - 1);
             }
         }
 
