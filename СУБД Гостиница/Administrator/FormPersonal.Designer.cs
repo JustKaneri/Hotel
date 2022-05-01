@@ -98,6 +98,7 @@
             this.DgvPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvPersonal.Size = new System.Drawing.Size(776, 313);
             this.DgvPersonal.TabIndex = 6;
+            this.DgvPersonal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPersonal_CellDoubleClick);
             // 
             // Column1
             // 

@@ -34,8 +34,6 @@
             this.BtnDel = new System.Windows.Forms.Button();
             this.CmbxPost = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.TbxPhone = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.TbxPass = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TbxLogin = new System.Windows.Forms.TextBox();
@@ -100,7 +98,7 @@
             this.CmbxPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbxPost.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CmbxPost.FormattingEnabled = true;
-            this.CmbxPost.Location = new System.Drawing.Point(540, 319);
+            this.CmbxPost.Location = new System.Drawing.Point(540, 269);
             this.CmbxPost.Name = "CmbxPost";
             this.CmbxPost.Size = new System.Drawing.Size(269, 32);
             this.CmbxPost.TabIndex = 64;
@@ -109,30 +107,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(420, 319);
+            this.label12.Location = new System.Drawing.Point(420, 269);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(114, 24);
             this.label12.TabIndex = 63;
             this.label12.Text = "Должность";
-            // 
-            // TbxPhone
-            // 
-            this.TbxPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbxPhone.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxPhone.Location = new System.Drawing.Point(528, 269);
-            this.TbxPhone.Name = "TbxPhone";
-            this.TbxPhone.Size = new System.Drawing.Size(281, 30);
-            this.TbxPhone.TabIndex = 62;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(425, 269);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 24);
-            this.label11.TabIndex = 61;
-            this.label11.Text = "Телефон";
             // 
             // TbxPass
             // 
@@ -329,8 +308,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CmbxPost);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.TbxPhone);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.TbxPass);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TbxLogin);
@@ -372,8 +349,6 @@
         private System.Windows.Forms.Button BtnDel;
         private System.Windows.Forms.ComboBox CmbxPost;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox TbxPhone;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TbxPass;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TbxLogin;

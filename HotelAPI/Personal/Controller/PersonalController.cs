@@ -193,5 +193,36 @@ namespace HotelAPI.Personal.Controller
 
             return "OK";
         }
+
+        /// <summary>
+        /// Получить список должностей
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Post>> GetPosts()
+        {
+            Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + "api/Post/GetPost";
+
+            HttpResponseMessage Message;
+
+            try
+            {
+                Message = await Client.GetAsync(url);
+            }
+            catch
+            {
+                return null;
+            }
+
+            if (!Message.StatusCode.ToString().Equals("OK"))
+                return null;
+
+            string result = await Message.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<List<Post>>(result);
+        }
     }
 }

@@ -109,5 +109,14 @@ namespace СУБД_Гостиница
             DgvPersonal.CurrentCell = DgvPersonal.Rows[index].Cells[0];
             DgvPersonal.Rows[index].Selected = true;
         }
+
+        private void DgvPersonal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormEditPersonal editPersonal = new FormEditPersonal(Manager,personales[e.RowIndex].Id);
+            if(editPersonal.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

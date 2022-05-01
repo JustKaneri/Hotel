@@ -57,6 +57,7 @@
     <Compile Include="Personal\Controller\PersonalController.cs" />
     <Compile Include="Personal\Model\HapfPersonalInfo.cs" />
     <Compile Include="Personal\Model\PersonalInfo.cs" />
+    <Compile Include="Personal\Model\Post.cs" />
     <Compile Include="Personal\Model\Posts.cs" />
     <Compile Include="PhotoNomer\Controller\PhotoNomerController.cs" />
     <Compile Include="PhotoNomer\Model\PhotoNomers.cs" />
