@@ -126,7 +126,7 @@ namespace СУБД_Гостиница.Administrator
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormPersonal());
+            ActivateForm(new FormPersonal(Manager));
         }
 
         private void BtnStatic_Click(object sender, EventArgs e)

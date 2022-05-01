@@ -64,6 +64,7 @@
             this.DgvAlert.RowHeadersVisible = false;
             this.DgvAlert.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Georgia", 12.8F);
             this.DgvAlert.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.DgvAlert.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.DgvAlert.RowTemplate.Height = 80;
             this.DgvAlert.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvAlert.Size = new System.Drawing.Size(839, 377);

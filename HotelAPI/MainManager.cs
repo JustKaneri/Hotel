@@ -16,6 +16,7 @@ using HotelAPI.Client.Controller;
 using HotelAPI.Servis.Controller;
 using HotelAPI.TypeNomer.Controller;
 using HotelAPI.PhotoNomer.Controller;
+using HotelAPI.Personal.Controller;
 
 namespace HotelAPI
 {
@@ -26,6 +27,11 @@ namespace HotelAPI
         public Authorization GetAutohrization(string login, string password)
         {
             return new Authorization(login,password);
+        }
+
+        public PersonalController GetPersonalController()
+        {
+            return new PersonalController(User);
         }
 
         public PhotoNomerController GetPhotoNomerController()

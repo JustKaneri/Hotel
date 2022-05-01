@@ -33,7 +33,7 @@ namespace СУБД_Гостиница
 
             foreach (var item in alerts)
             {
-                DgvAlert.Rows.Add(item.DateAlert.Date , item.TextAlert);
+                DgvAlert.Rows.Add(item.DateAlert.ToShortDateString() , item.TextAlert);
             }
         }
 
@@ -45,7 +45,7 @@ namespace СУБД_Гостиница
 
             foreach (var item in alerts)
             {
-                DgvAlert.Rows.Add(item.DateAlert.Date, item.TextAlert);
+                DgvAlert.Rows.Add(item.DateAlert.ToShortDateString(), item.TextAlert);
             }
         }
 
@@ -57,7 +57,7 @@ namespace СУБД_Гостиница
 
             foreach (var item in alerts)
             {
-                DgvAlert.Rows.Add(item.DateAlert.Date, item.TextAlert);
+                DgvAlert.Rows.Add(item.DateAlert.ToShortDateString(), item.TextAlert);
             }
         }
 
@@ -69,7 +69,7 @@ namespace СУБД_Гостиница
 
             foreach (var item in alerts)
             {
-                DgvAlert.Rows.Add(item.DateAlert.Date, item.TextAlert);
+                DgvAlert.Rows.Add(item.DateAlert.ToShortDateString(), item.TextAlert);
             }
         }
     }

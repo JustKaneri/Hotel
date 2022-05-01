@@ -55,6 +55,7 @@
             this.BtnFind.Text = "Поиск";
             this.BtnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnFind.UseVisualStyleBackColor = true;
+            this.BtnFind.Click += new System.EventHandler(this.BtnFind_Click);
             this.BtnFind.MouseEnter += new System.EventHandler(this.BtnFind_MouseEnter);
             this.BtnFind.MouseLeave += new System.EventHandler(this.BtnFind_MouseLeave);
             // 
@@ -90,7 +91,8 @@
             this.DgvPersonal.ReadOnly = true;
             this.DgvPersonal.RowHeadersVisible = false;
             this.DgvPersonal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DgvPersonal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
+            this.DgvPersonal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.DgvPersonal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.DgvPersonal.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvPersonal.RowTemplate.Height = 50;
             this.DgvPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -99,20 +101,21 @@
             // 
             // Column1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.HeaderText = "Column1";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
             // 
             // Column2
             // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "Column2";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
             // 
             // BtnAdd
             // 
+            this.BtnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnAdd.FlatAppearance.BorderSize = 2;
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -152,8 +155,8 @@
         private System.Windows.Forms.Button BtnFind;
         private System.Windows.Forms.TextBox TbxFind;
         private System.Windows.Forms.DataGridView DgvPersonal;
+        private Controls.ButtonSpecial BtnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private Controls.ButtonSpecial BtnAdd;
     }
 }

@@ -54,6 +54,10 @@
     <Compile Include="Client\Model\ClientHistory.cs" />
     <Compile Include="Client\Model\ClientInfo.cs" />
     <Compile Include="MainManager.cs" />
+    <Compile Include="Personal\Controller\PersonalController.cs" />
+    <Compile Include="Personal\Model\HapfPersonalInfo.cs" />
+    <Compile Include="Personal\Model\PersonalInfo.cs" />
+    <Compile Include="Personal\Model\Posts.cs" />
     <Compile Include="PhotoNomer\Controller\PhotoNomerController.cs" />
     <Compile Include="PhotoNomer\Model\PhotoNomers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
