@@ -119,6 +119,12 @@
     <Compile Include="Total\FormInfoClients.Designer.cs">
       <DependentUpon>FormInfoClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Total\FormInfoRegestry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Total\FormInfoRegestry.Designer.cs">
+      <DependentUpon>FormInfoRegestry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Total\FormInfoRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Total\FormInfoClients.resx">
       <DependentUpon>FormInfoClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Total\FormInfoRegestry.resx">
+      <DependentUpon>FormInfoRegestry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Total\FormInfoRoom.resx">
       <DependentUpon>FormInfoRoom.cs</DependentUpon>

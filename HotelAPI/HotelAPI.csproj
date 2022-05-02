@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Regestry\Controller\RegestryController.cs" />
     <Compile Include="Regestry\Model\Regestration.cs" />
+    <Compile Include="Regestry\Model\RegestryInfo.cs" />
     <Compile Include="Rooms\Controller\RoomController.cs" />
     <Compile Include="Rooms\Model\Equpment.cs" />
     <Compile Include="Rooms\Model\Repair.cs" />

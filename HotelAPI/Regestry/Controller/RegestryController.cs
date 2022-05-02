@@ -20,6 +20,33 @@ namespace HotelAPI.Regestry.Controler
             User = user;
         }
 
+        public async Task<RegestryInfo> GetRegestryInfo(int id_Room)
+        {
+            Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + $"api/Regestration/GetInfo?id_room={id_Room}";
+
+            HttpResponseMessage Message;
+
+            try
+            {
+                Message = await Client.GetAsync(url);
+            }
+            catch
+            {
+                return null;
+            }
+
+            if (!Message.StatusCode.ToString().Equals("OK"))
+                return null;
+
+            string result = await Message.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<RegestryInfo>(result);
+        }
+
         /// <summary>
         /// Получить дату окончания проживания в гостинице
         /// </summary>

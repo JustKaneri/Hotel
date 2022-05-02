@@ -21,21 +21,19 @@ namespace СУБД_Гостиница.Porte
     public partial class FormRooms : Form
     {
         private MainManager Manager;
-
-        public FormRooms(MainManager manager)
-        {
-            InitializeComponent();
-
-            Manager = manager;
-            
-        }
-        
-        private Color ColorReapair = Color.FromArgb(195,37,48);
+        private Color ColorReapair = Color.FromArgb(195, 37, 48);
         private Color ColorBusy = Color.FromArgb(53, 54, 82);
         private PanelRoom CurrentRoom;
         private RoomController roomController;
         private List<Room> rooms;
         private RegestryController regestryController;
+
+        public FormRooms(MainManager manager)
+        {
+            InitializeComponent();
+
+            Manager = manager;           
+        }
 
         private async void FormRoomsPortie_Load(object sender, EventArgs e)
         {
@@ -65,7 +63,6 @@ namespace СУБД_Гостиница.Porte
             }
             
         }
-
 
         public void FillTblRoom()
         {
@@ -176,6 +173,8 @@ namespace СУБД_Гостиница.Porte
                 CnmDeRegAdmin.Visible = true;
                 CnContinie.Visible = true;
                 CntContinie.Visible = true;
+                CnmInfoReg.Visible = true;
+                CnmInfoRegAdmin.Visible = true;
             }
             else
             {
@@ -305,6 +304,12 @@ namespace СУБД_Гостиница.Porte
                 return "Not Conect";
 
             return "OK";
+        }
+
+        private void CnmInfoRegAdmin_Click(object sender, EventArgs e)
+        {
+            FormInfoRegestry formInfoRegestry = new FormInfoRegestry(Manager,CurrentRoom.Id_Room);
+            formInfoRegestry.ShowDialog();
         }
     }
 }
