@@ -112,14 +112,12 @@ namespace HotelAPI.Personal.Controller
             }
             catch
             {
-                return "Not Conect";
+                return "Не удалось добавить пользователя";
             }
 
 
             if (!Message.StatusCode.ToString().Equals("OK"))
-                  return "Not Conect";
-
-            string result = await Message.Content.ReadAsStringAsync();
+                  return await Message.Content.ReadAsStringAsync();
 
             return "OK";
         }

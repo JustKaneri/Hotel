@@ -75,7 +75,7 @@ namespace СУБД_Гостиница
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            FormPersonalAdding formPersonal = new FormPersonalAdding();
+            FormPersonalAdding formPersonal = new FormPersonalAdding(Manager);
             formPersonal.ShowDialog();
         }
 
