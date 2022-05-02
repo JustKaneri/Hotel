@@ -42,15 +42,15 @@
             this.TbxPasportN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TbxPhone = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BtnCancel = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnEdit = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DgvHistory = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TbxPhone = new System.Windows.Forms.MaskedTextBox();
-            this.BtnCancel = new СУБД_Гостиница.Controls.ButtonSpecial();
-            this.BtnEdit = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -214,6 +214,57 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Клиент";
             // 
+            // TbxPhone
+            // 
+            this.TbxPhone.Enabled = false;
+            this.TbxPhone.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TbxPhone.Location = new System.Drawing.Point(90, 155);
+            this.TbxPhone.Mask = "+7(999)999-99-99";
+            this.TbxPhone.Name = "TbxPhone";
+            this.TbxPhone.Size = new System.Drawing.Size(177, 30);
+            this.TbxPhone.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(6, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Телефон";
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnCancel.FlatAppearance.BorderSize = 2;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnCancel.Location = new System.Drawing.Point(57, 334);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(160, 36);
+            this.BtnCancel.TabIndex = 3;
+            this.BtnCancel.Text = "Отмена";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Visible = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // BtnEdit
+            // 
+            this.BtnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
+            this.BtnEdit.FlatAppearance.BorderSize = 2;
+            this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEdit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnEdit.Location = new System.Drawing.Point(57, 283);
+            this.BtnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(160, 36);
+            this.BtnEdit.TabIndex = 3;
+            this.BtnEdit.Text = "Редактировать";
+            this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.DgvHistory);
@@ -249,7 +300,8 @@
             this.DgvHistory.ReadOnly = true;
             this.DgvHistory.RowHeadersVisible = false;
             this.DgvHistory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Georgia", 12.8F);
-            this.DgvHistory.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
+            this.DgvHistory.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.DgvHistory.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.DgvHistory.RowTemplate.Height = 80;
             this.DgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvHistory.Size = new System.Drawing.Size(352, 370);
@@ -275,57 +327,6 @@
             this.Column3.HeaderText = "Дата выезда";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(6, 162);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Телефон";
-            // 
-            // TbxPhone
-            // 
-            this.TbxPhone.Enabled = false;
-            this.TbxPhone.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxPhone.Location = new System.Drawing.Point(90, 155);
-            this.TbxPhone.Mask = "+7(999)999-99-99";
-            this.TbxPhone.Name = "TbxPhone";
-            this.TbxPhone.Size = new System.Drawing.Size(177, 30);
-            this.TbxPhone.TabIndex = 16;
-            // 
-            // BtnCancel
-            // 
-            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnCancel.FlatAppearance.BorderSize = 2;
-            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnCancel.Location = new System.Drawing.Point(57, 334);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(160, 36);
-            this.BtnCancel.TabIndex = 3;
-            this.BtnCancel.Text = "Отмена";
-            this.BtnCancel.UseVisualStyleBackColor = true;
-            this.BtnCancel.Visible = false;
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // BtnEdit
-            // 
-            this.BtnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.BtnEdit.FlatAppearance.BorderSize = 2;
-            this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEdit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnEdit.Location = new System.Drawing.Point(57, 283);
-            this.BtnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(160, 36);
-            this.BtnEdit.TabIndex = 3;
-            this.BtnEdit.Text = "Редактировать";
-            this.BtnEdit.UseVisualStyleBackColor = true;
-            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // FormInfoClients
             // 
