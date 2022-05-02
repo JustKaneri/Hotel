@@ -42,12 +42,21 @@ namespace СУБД_Гостиница
                 return;
             }
 
-            FillData();
-
-            for (int i = 0; i < Client.History.DateStart.Count; i++)
+            try
             {
-                DgvHistory.Rows.Add(Client.History.NameNomer[i], Client.History.DateStart[i].ToShortDateString(), Client.History.DateFinish[i].ToShortDateString());
+                FillData();
+
+                for (int i = 0; i < Client.History.DateStart.Count; i++)
+                {
+                    DgvHistory.Rows.Add(Client.History.NameNomer[i], Client.History.DateStart[i].ToShortDateString(), Client.History.DateFinish[i].ToShortDateString());
+                }
             }
+            catch
+            {
+                return;
+            }
+
+            
         }
 
         private void FillData()

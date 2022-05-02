@@ -62,10 +62,18 @@ namespace СУБД_Гостиница
                 return;
             }
 
-            for (int i = 0; i < history.DateStart.Count; i++)
+            try
             {
-                DgvHistory.Rows.Add(history.DateStart[i].ToString("dd.MM.yyyy"), history.DateFinish[i].ToString("dd.MM.yyyy"), history.FIO[i]);
+                for (int i = 0; i < history.DateStart.Count; i++)
+                {
+                    DgvHistory.Rows.Add(history.DateStart[i].ToString("dd.MM.yyyy"), history.DateFinish[i].ToString("dd.MM.yyyy"), history.FIO[i]);
+                }
             }
+            catch 
+            {
+                return;
+            }
+           
         }
     }
 }

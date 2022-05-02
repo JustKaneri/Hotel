@@ -39,22 +39,31 @@ namespace СУБД_Гостиница.Porte
 
         private async void FormRoomsPortie_Load(object sender, EventArgs e)
         {
+
             roomController = Manager.GetRoomController();
             regestryController = Manager.GetRegestryController();
 
-            TblRoom.SuspendLayout();
-
-            TblRoom.Controls.Clear(); 
-
-            rooms = await roomController.GetRooms();
-
-            if(rooms == null)
+            try
             {
-                Close();
+                TblRoom.SuspendLayout();
+
+                TblRoom.Controls.Clear();
+
+                rooms = await roomController.GetRooms();
+
+                if (rooms == null)
+                {
+                    Close();
+                    return;
+                }
+
+                FillTblRoom();
+            }
+            catch
+            {
                 return;
             }
-
-            FillTblRoom();
+            
         }
 
 

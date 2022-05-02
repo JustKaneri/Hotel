@@ -32,12 +32,21 @@ namespace СУБД_Гостиница.Total
         private async void FormSelectClient_Load(object sender, EventArgs e)
         {
             clients = await clientController.GetClient();
+
             if (clients == null)
             {
                 Close();
                 return;
             }
-            FillDgvClient();
+            try
+            {
+                FillDgvClient();
+            }
+            catch 
+            {
+                return;
+                throw;
+            }
         }
 
         private void FillDgvClient()

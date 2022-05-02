@@ -45,6 +45,7 @@ namespace СУБД_Гостиница.Total
             }
             catch
             {
+                return;
             }
             
         }

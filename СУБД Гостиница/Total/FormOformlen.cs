@@ -58,16 +58,25 @@ namespace СУБД_Гостиница.Porte
 
             RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
 
-            CurrentYear.Text = DateTime.Now.Year + " год";
+            try
+            {
+                CurrentYear.Text = DateTime.Now.Year + " год";
 
-            calendar = new Calendar(history.DateStart, history.DateFinish);
-            FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
+                calendar = new Calendar(history.DateStart, history.DateFinish);
+                FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
 
-            room = await roomController.GetRoomInfoAsync(Id_Room);
+                room = await roomController.GetRoomInfoAsync(Id_Room);
 
-            servis = await servisController.GetServis();
+                servis = await servisController.GetServis();
 
-            FillServisDgv();
+                FillServisDgv();
+            }
+            catch
+            {
+                return;
+            }
+
+            
         }
 
         private void FillServisDgv()

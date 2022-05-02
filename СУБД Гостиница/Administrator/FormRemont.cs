@@ -45,10 +45,18 @@ namespace СУБД_Гостиница
 
             RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
 
-            CurrentYear.Text = DateTime.Now.Year + " год";
+            try
+            {
+                CurrentYear.Text = DateTime.Now.Year + " год";
 
-            calendar = new Calendar(history.DateStart, history.DateFinish);
-            FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
+                calendar = new Calendar(history.DateStart, history.DateFinish);
+                FillCalendar(calendar.SetNowMont(), calendar.NameMonth);
+            }
+            catch
+            {
+                return;
+            }
+            
         }
 
         private void FillCalendar(List<Calendar.DayMonth> list, string name)

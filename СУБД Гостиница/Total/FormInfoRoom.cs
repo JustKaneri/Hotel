@@ -17,15 +17,23 @@ namespace СУБД_Гостиница
         {
             InitializeComponent();
 
-            TbxCountPerson.Text = room.CountPerson.ToString();
-            TbxPrice.Text = room.Money.ToString();
-            TbxStatus.Text = room.Status;
-            TbxType.Text = room.TypeRoom;
-
-            foreach (var item in room.Equpments)
+            try
             {
-                LstEqupm.Items.Add(item.Name);
+                TbxCountPerson.Text = room.CountPerson.ToString();
+                TbxPrice.Text = room.Money.ToString();
+                TbxStatus.Text = room.Status;
+                TbxType.Text = room.TypeRoom;
+
+                foreach (var item in room.Equpments)
+                {
+                    LstEqupm.Items.Add(item.Name);
+                }
             }
+            catch 
+            {
+                return;
+            }
+            
         }
 
         private void FormInfoRoom_Load(object sender, EventArgs e)

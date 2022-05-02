@@ -33,8 +33,16 @@ namespace СУБД_Гостиница
             {
                 return;
             }
-            FillDgvClient();
-            CmxFind.SelectedIndex = 0;
+
+            try
+            {
+                FillDgvClient();
+                CmxFind.SelectedIndex = 0;
+            }
+            catch
+            {
+                return;
+            }
         }
 
         private void FillDgvClient()

@@ -57,17 +57,26 @@ namespace СУБД_Гостиница
                 return;
             }
 
-            TbxCntPers.Text = roomInfo.CountPerson.ToString();
-            TbxNomer.Text = roomInfo.Name;
-            TbxPrice.Text = roomInfo.Money.ToString();
 
-            FillTypeNomer();
+            try
+            {
+                TbxCntPers.Text = roomInfo.CountPerson.ToString();
+                TbxNomer.Text = roomInfo.Name;
+                TbxPrice.Text = roomInfo.Money.ToString();
 
-            CmbType.SelectedItem = roomInfo.TypeRoom;
+                FillTypeNomer();
 
-            photoNomers = await photoNomerController.GetPhotoNomers(Id_Room);
+                CmbType.SelectedItem = roomInfo.TypeRoom;
 
-            FillImageList();
+                photoNomers = await photoNomerController.GetPhotoNomers(Id_Room);
+
+                FillImageList();
+            }
+            catch 
+            {
+                return;
+            }
+           
         }
 
         private void FillImageList()

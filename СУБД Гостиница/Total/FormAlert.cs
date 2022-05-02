@@ -31,10 +31,18 @@ namespace СУБД_Гостиница
                 throw new Exception("Сервер не доступен");
             }
 
-            foreach (var item in alerts)
+            try
             {
-                DgvAlert.Rows.Add(item.DateAlert.ToShortDateString() , item.TextAlert);
+                foreach (var item in alerts)
+                {
+                    DgvAlert.Rows.Add(item.DateAlert.ToShortDateString(), item.TextAlert);
+                }
             }
+            catch
+            {
+                return;
+            }
+            
         }
 
         private void RbxRoom_CheckedChanged(object sender, EventArgs e)
