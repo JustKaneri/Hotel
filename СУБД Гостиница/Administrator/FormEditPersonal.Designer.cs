@@ -94,6 +94,7 @@
             this.BtnDel.TabIndex = 19;
             this.BtnDel.Text = "Уволить";
             this.BtnDel.UseVisualStyleBackColor = true;
+            this.BtnDel.Click += new System.EventHandler(this.BtnDel_Click);
             // 
             // CmbxPost
             // 

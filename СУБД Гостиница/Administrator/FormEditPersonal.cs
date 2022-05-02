@@ -124,7 +124,28 @@ namespace СУБД_Гостиница
                 return;
             }
 
+            MessageBox.Show("Изменения сохранены", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             DialogResult = DialogResult.OK;
+        }
+
+        private async void BtnDel_Click(object sender, EventArgs e)
+        {
+           MessageBox.Show("Для увольнения работника, введите пароль", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            FormAssept formAssept = new FormAssept(Manager);
+            if (formAssept.ShowDialog() == DialogResult.OK)
+            {
+                string result = await personalController.DismissalPersonal(Id_Personal);
+
+                if (!result.Equals("OK"))
+                {
+                    MessageBox.Show("Не удалось уволить работника", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                MessageBox.Show("Работник уволен", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void CheckData()
@@ -166,5 +187,7 @@ namespace СУБД_Гостиница
             if (!long.TryParse(TbxInn.Text, out tmpL))
                 throw new Exception("Не корректное значение полиса");
         }
+
+
     }
 }

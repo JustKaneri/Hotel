@@ -178,7 +178,7 @@ namespace HotelAPI.Personal.Controller
 
             try
             {
-                Message = await Client.DeleteAsync(url);
+                Message = await Client.PutAsync(url,null);
             }
             catch
             {
