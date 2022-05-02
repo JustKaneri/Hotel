@@ -28,6 +28,8 @@ namespace СУБД_Гостиница
             Manager = manager;
             Id_Personal = id_Personal;
 
+            DtmBorn.MaxDate = DateTime.Now.AddYears(-16);
+
             personalController = Manager.GetPersonalController();
         }
 
@@ -54,7 +56,7 @@ namespace СУБД_Гостиница
             try
             {
                 FillCmb();
-                FillData();
+                WriteDataPersonal();
             }
             catch
             {
@@ -72,17 +74,97 @@ namespace СУБД_Гостиница
 
         private void FillData()
         {
+            personal.Fam = TbxFam.Text;
+            personal.Name = TbxName.Text;
+            personal.Othc = TbxOtch.Text;
+            personal.PasportN = TbxNomer.Text;
+            personal.PasportS = TbxSeria.Text;
+            personal.Polic = TbxPolic.Text;
+            personal.DateBorn = DtmBorn.Value;
+            personal.INN = TbxInn.Text;
+            personal.Password = TbxPass.Text;
+            personal.IdPost = posts[CmbxPost.SelectedIndex].Id_Post;
+            
+        }
+
+        private void WriteDataPersonal()
+        {
             TbxFam.Text = personal.Fam;
             TbxName.Text = personal.Name;
             TbxOtch.Text = personal.Othc;
             TbxNomer.Text = personal.PasportN;
             TbxSeria.Text = personal.PasportS;
-            DtmBorn.Value = personal.DateBorn ?? DateTime.Now;
+            TbxPolic.Text = personal.Polic;
+            DtmBorn.Value = personal.DateBorn ?? DtmBorn.Value;
             TbxInn.Text = personal.INN;
             TbxLogin.Text = personal.Login;
             TbxPass.Text = personal.Password;
             CmbxPost.SelectedIndex = posts.IndexOf(posts.Where(ps => ps.Name.Equals(personal.PostPersonal.Name[0])).First());
         }
 
+        private async void BtnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CheckData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            FillData();
+
+            string resultUpdate = await personalController.EditPersonal(personal);
+
+            if(!resultUpdate.Equals("OK"))
+            {
+                MessageBox.Show("Не удалось сохранить изменения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult = DialogResult.OK;
+        }
+
+        private void CheckData()
+        {
+            foreach (var item in this.Controls)
+            {
+                if(item is TextBox)
+                {
+                    if (string.IsNullOrWhiteSpace((item as TextBox).Text))
+                        throw new Exception("Введите " + (item as TextBox).Tag);
+                }
+            }
+
+            int tmp = 0;
+
+            if (!int.TryParse(TbxNomer.Text, out tmp))
+                throw new Exception("Не корректное значение номера паспорта");
+
+            if (!int.TryParse(TbxNomer.Text, out tmp))
+                throw new Exception("Не корректное значение серии паспорта");
+
+            long tmpL = 0;
+
+            if (TbxNomer.Text.Length < 6)
+                throw new Exception("Не корректное значение номера паспорта");
+
+            if (TbxSeria.Text.Length < 4)
+                throw new Exception("Не корректное значение серии паспорта");
+
+            if (TbxInn.Text.Length < 12)
+                throw new Exception("Не корректное значение ИНН");
+
+            if (TbxPolic.Text.Length < 16)
+                throw new Exception("Не корректное значение полиса");
+
+            if (!long.TryParse(TbxInn.Text,out tmpL))
+                throw new Exception("Не корректное значение ИНН");
+
+            if (!long.TryParse(TbxInn.Text, out tmpL))
+                throw new Exception("Не корректное значение полиса");
+        }
     }
 }

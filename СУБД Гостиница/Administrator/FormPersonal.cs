@@ -51,6 +51,8 @@ namespace СУБД_Гостиница
 
         private void FillPersonalDGV()
         {
+            DgvPersonal.Rows.Clear();
+
             foreach (var item in personales)
             {
                 DgvPersonal.Rows.Add(item.PostPersonal.Name[0], item.Fam + " " + item.Name + " " + item.Othc);
@@ -110,12 +112,31 @@ namespace СУБД_Гостиница
             DgvPersonal.Rows[index].Selected = true;
         }
 
-        private void DgvPersonal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void DgvPersonal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             FormEditPersonal editPersonal = new FormEditPersonal(Manager,personales[e.RowIndex].Id);
             if(editPersonal.ShowDialog() == DialogResult.OK)
             {
+                await Task.Delay(1000);
 
+                personales = await personalController.GetHalfPersonal();
+
+                if (personales == null)
+                {
+                    MessageBox.Show("Нет соединения с сервером", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Close();
+                    return;
+                }
+
+                try
+                {
+                    FillPersonalDGV();
+                }
+                catch
+                {
+                    Close();
+                    return;
+                }
             }
         }
     }

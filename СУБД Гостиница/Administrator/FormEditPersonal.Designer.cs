@@ -52,6 +52,8 @@
             this.TbxFam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.TbxPolic = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.BtnSave = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +100,7 @@
             this.CmbxPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbxPost.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CmbxPost.FormattingEnabled = true;
-            this.CmbxPost.Location = new System.Drawing.Point(540, 269);
+            this.CmbxPost.Location = new System.Drawing.Point(540, 312);
             this.CmbxPost.Name = "CmbxPost";
             this.CmbxPost.Size = new System.Drawing.Size(269, 32);
             this.CmbxPost.TabIndex = 64;
@@ -107,37 +109,39 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(420, 269);
+            this.label12.Location = new System.Drawing.Point(420, 312);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(114, 24);
+            this.label12.Size = new System.Drawing.Size(120, 24);
             this.label12.TabIndex = 63;
-            this.label12.Text = "Должность";
+            this.label12.Text = "Должность:";
             // 
             // TbxPass
             // 
             this.TbxPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxPass.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxPass.Location = new System.Drawing.Point(528, 228);
+            this.TbxPass.Location = new System.Drawing.Point(528, 271);
             this.TbxPass.Name = "TbxPass";
             this.TbxPass.Size = new System.Drawing.Size(281, 30);
             this.TbxPass.TabIndex = 60;
+            this.TbxPass.Tag = "пароль";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(425, 228);
+            this.label10.Location = new System.Drawing.Point(425, 271);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 24);
+            this.label10.Size = new System.Drawing.Size(86, 24);
             this.label10.TabIndex = 59;
-            this.label10.Text = "Пароль";
+            this.label10.Text = "Пароль:";
             // 
             // TbxLogin
             // 
             this.TbxLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbxLogin.Location = new System.Drawing.Point(528, 187);
+            this.TbxLogin.Location = new System.Drawing.Point(528, 230);
             this.TbxLogin.Name = "TbxLogin";
+            this.TbxLogin.ReadOnly = true;
             this.TbxLogin.Size = new System.Drawing.Size(281, 30);
             this.TbxLogin.TabIndex = 58;
             // 
@@ -145,11 +149,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(425, 187);
+            this.label9.Location = new System.Drawing.Point(425, 230);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 24);
+            this.label9.Size = new System.Drawing.Size(75, 24);
             this.label9.TabIndex = 57;
-            this.label9.Text = "Логин";
+            this.label9.Text = "Логин:";
             // 
             // DtmBorn
             // 
@@ -175,9 +179,11 @@
             this.TbxInn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxInn.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbxInn.Location = new System.Drawing.Point(528, 142);
+            this.TbxInn.MaxLength = 12;
             this.TbxInn.Name = "TbxInn";
             this.TbxInn.Size = new System.Drawing.Size(281, 30);
             this.TbxInn.TabIndex = 54;
+            this.TbxInn.Tag = "ИНН";
             // 
             // label7
             // 
@@ -194,9 +200,11 @@
             this.TbxNomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxNomer.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbxNomer.Location = new System.Drawing.Point(180, 313);
+            this.TbxNomer.MaxLength = 6;
             this.TbxNomer.Name = "TbxNomer";
             this.TbxNomer.Size = new System.Drawing.Size(216, 30);
             this.TbxNomer.TabIndex = 52;
+            this.TbxNomer.Tag = "номер паспорта";
             // 
             // label6
             // 
@@ -213,9 +221,11 @@
             this.TbxSeria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TbxSeria.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbxSeria.Location = new System.Drawing.Point(180, 269);
+            this.TbxSeria.MaxLength = 4;
             this.TbxSeria.Name = "TbxSeria";
             this.TbxSeria.Size = new System.Drawing.Size(216, 30);
             this.TbxSeria.TabIndex = 50;
+            this.TbxSeria.Tag = "серию паспорта";
             // 
             // label5
             // 
@@ -254,6 +264,7 @@
             this.TbxName.Name = "TbxName";
             this.TbxName.Size = new System.Drawing.Size(281, 30);
             this.TbxName.TabIndex = 46;
+            this.TbxName.Tag = "имя";
             // 
             // TbxFam
             // 
@@ -263,6 +274,7 @@
             this.TbxFam.Name = "TbxFam";
             this.TbxFam.Size = new System.Drawing.Size(281, 30);
             this.TbxFam.TabIndex = 45;
+            this.TbxFam.Tag = "фамилию";
             // 
             // label2
             // 
@@ -284,6 +296,27 @@
             this.label3.TabIndex = 65;
             this.label3.Text = "Имя:";
             // 
+            // TbxPolic
+            // 
+            this.TbxPolic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TbxPolic.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TbxPolic.Location = new System.Drawing.Point(528, 187);
+            this.TbxPolic.MaxLength = 16;
+            this.TbxPolic.Name = "TbxPolic";
+            this.TbxPolic.Size = new System.Drawing.Size(281, 30);
+            this.TbxPolic.TabIndex = 67;
+            this.TbxPolic.Tag = "полис";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(425, 190);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 24);
+            this.label11.TabIndex = 66;
+            this.label11.Text = "Полис:";
+            // 
             // BtnSave
             // 
             this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
@@ -297,6 +330,7 @@
             this.BtnSave.TabIndex = 3;
             this.BtnSave.Text = "Сохранить";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // FormEditPersonal
             // 
@@ -304,6 +338,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(832, 520);
+            this.Controls.Add(this.TbxPolic);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CmbxPost);
@@ -368,5 +404,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Controls.ButtonSpecial BtnSave;
+        private System.Windows.Forms.TextBox TbxPolic;
+        private System.Windows.Forms.Label label11;
     }
 }

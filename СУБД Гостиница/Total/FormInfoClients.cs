@@ -127,7 +127,13 @@ namespace СУБД_Гостиница
 
             int tmp = 0;
 
-            if(!int.TryParse(TbxPasportN.Text,out tmp))
+            if (TbxPasportN.Text.Length < 6)
+                throw new Exception("Не корректное значение номера паспорта");
+
+            if (TbxPasportS.Text.Length < 4)
+                throw new Exception("Не корректное значение серии паспорта");
+
+            if (!int.TryParse(TbxPasportN.Text,out tmp))
                 throw new Exception("Не корректное значение номера паспорта");
 
             if (!int.TryParse(TbxPasportS.Text, out tmp))
