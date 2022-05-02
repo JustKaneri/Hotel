@@ -291,6 +291,7 @@
             this.BtnCheck.TabIndex = 10;
             this.BtnCheck.Text = "Чек лист";
             this.BtnCheck.UseVisualStyleBackColor = true;
+            this.BtnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
             // 
             // BtnOk
             // 
