@@ -108,9 +108,9 @@ namespace СУБД_Гостиница.Porte
 
         private void BtnMessage_Click(object sender, EventArgs e)
         {
-            //EnableButton(SelectBtn);
-            //ActivateButton((Button)(sender));
-            //ActivateForm(new FormAlert());
+            EnableButton(SelectBtn);
+            ActivateButton((Button)(sender));
+            ActivateForm(new FormAlert(Manager));
         }
 
         private void BtnMenu_Click(object sender, EventArgs e)

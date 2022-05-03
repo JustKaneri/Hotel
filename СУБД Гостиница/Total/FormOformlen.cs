@@ -1,4 +1,5 @@
 ﻿using HotelAPI;
+using HotelAPI.Alerts.Models;
 using HotelAPI.Client.Controller;
 using HotelAPI.Client.Model;
 using HotelAPI.Regestry.Controler;
@@ -346,6 +347,8 @@ namespace СУБД_Гостиница.Porte
             if(int.TryParse(result,out tmp))
             {
                 client.Id = int.Parse(result);
+
+                await CreateAlert("В систему добавлен новый пользователь");
             }
 
             return result;
@@ -361,8 +364,35 @@ namespace СУБД_Гостиница.Porte
             client.Phone = TbxPhone.Text;
 
             string result = await clientController.UpdateClient(client);
-
+            
             return result;
         }
+
+        private async Task<string> CreateAlert(string TextAlert)
+        {
+            Alert alert = new Alert();
+            alert.TextAlert = TextAlert;
+            alert.DateAlert = DateTime.Now;
+            alert.TypeAlert = "Room";
+
+            string result;
+
+            try
+            {
+                var alertsController = Manager.GetAlertsControllers();
+
+                result = await alertsController.CreateAlert(alert);
+            }
+            catch
+            {
+                return "Not Conect";
+            }
+
+            if (!result.Equals("OK"))
+                return "Not Conect";
+
+            return "OK";
+        }
+
     }
 }
