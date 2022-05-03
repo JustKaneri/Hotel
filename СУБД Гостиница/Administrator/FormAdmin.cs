@@ -133,7 +133,7 @@ namespace СУБД_Гостиница.Administrator
         {
             EnableButton(SelectBtn);
             ActivateButton((Button)(sender));
-            ActivateForm(new FormStatistic());
+            ActivateForm(new FormStatistic(Manager));
         }
 
         private void HidePanel()

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HotelAPI;
+using HotelAPI.Statistic.Contoller;
+using HotelAPI.Statistic.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,50 +10,88 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace СУБД_Гостиница
 {
     public partial class FormStatistic : Form
     {
-        public FormStatistic()
+        private MainManager Manager;
+        private StatisticController statisticController;
+        private StatisticInfo info;
+
+        public FormStatistic(MainManager manager)
         {
             InitializeComponent();
+
+            Manager = manager;
+            statisticController = Manager.GetStatisticController();
         }
 
-        private void FormStatistic_Load(object sender, EventArgs e)
+        private async void FormStatistic_Load(object sender, EventArgs e)
         {
+            info = await statisticController.GetStatisticInfo();
 
+            if(info == null)
+            {
+                MessageBox.Show("Нет соединения с сервером", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            chart3.Series.Clear();
+            try
+            {
+                LbxCountClient.Text = info.CountPeople.ToString();
+                LbxPribel.Text = info.Prible.ToString();
+                LbxRashod.Text = info.Rashod.ToString();
 
-            chart3.Series.Add("V1");
-            chart3.Series["V1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-            chart3.Series["V1"].Points.AddXY("Зима", 20);
-            chart3.Series["V1"].Points.AddXY("Лето", 51);
-            chart3.Series["V1"].Points.AddXY("Осень", 21);
-            chart3.Series["V1"].Points.AddXY("Весна", 16);
-
-            chart2.Series.Clear();
-
-            chart2.Series.Add("V1");
-            chart2.Series["V1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-            chart2.Series["V1"].Points.AddXY("Зима", 20);
-            chart2.Series["V1"].Points.AddXY("Лето", 51);
-            chart2.Series["V1"].Points.AddXY("Осень", 21);
-            chart2.Series["V1"].Points.AddXY("Весна", 16);
-
+                FillChartSession();
+                FillChartMoney();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
-        private void BtnOtch_MouseEnter(object sender, EventArgs e)
+        private void FillChartMoney()
         {
-            BtnOtch.BackColor = Colors.ButtonMousEnter;
-            BtnOtch.ForeColor = Colors.ButtonForeSelect;
+            ChrtRash.Series.Clear();
+
+            var prib =  ChrtRash.Series.Add("Прибыль");
+            prib.ChartType = SeriesChartType.Column;
+            prib.Points.AddXY("Зима", info.LstPrible[0] == 0 ? info.LstPrible[0] + 1: info.LstPrible[0]);
+            prib.Points.AddXY("Весна", info.LstPrible[1] == 0 ? info.LstPrible[1] + 1 : info.LstPrible[1]);
+            prib.Points.AddXY("Лето", info.LstPrible[2] == 0 ? info.LstPrible[2] + 1 : info.LstPrible[2]);
+            prib.Points.AddXY("Осень", info.LstPrible[3] == 0 ? info.LstPrible[3] + 1 : info.LstPrible[3]);
+
+            var rash =  ChrtRash.Series.Add("Расходы");
+            rash.ChartType = SeriesChartType.Column;
+            rash.Points.AddXY("Зима", info.LStRashod[0] == 0 ? info.LStRashod[0] + 1 : info.LStRashod[0]);
+            rash.Points.AddXY("Весна", info.LStRashod[1] == 0 ? info.LStRashod[1] + 1 : info.LStRashod[1]);
+            rash.Points.AddXY("Лето", info.LStRashod[2] == 0 ? info.LStRashod[2] + 1 : info.LStRashod[2]);
+            rash.Points.AddXY("Осень", info.LStRashod[3] == 0 ? info.LStRashod[3] + 1 : info.LStRashod[3]);
         }
 
-        private void BtnOtch_MouseLeave(object sender, EventArgs e)
+        private void FillChartSession()
         {
-            BtnOtch.BackColor = Colors.ButtonMousLeave;
-            BtnOtch.ForeColor = Colors.ButtonForeNoSelect;
+            ChrtSession.Series.Clear();
+
+            ChrtSession.Series.Add("Зима");
+            ChrtSession.Series["Зима"].ChartType = SeriesChartType.Column;
+            ChrtSession.Series["Зима"].Points.AddY(info.Session[0]==0 ?info.Session[0]+1:info.Session[0]);
+
+            ChrtSession.Series.Add("Весна");
+            ChrtSession.Series["Весна"].ChartType = SeriesChartType.Column;
+            ChrtSession.Series["Весна"].Points.AddY(info.Session[1] == 0 ? info.Session[1] + 1 : info.Session[1]);
+
+            ChrtSession.Series.Add("Лето");
+            ChrtSession.Series["Лето"].ChartType = SeriesChartType.Column;
+            ChrtSession.Series["Лето"].Points.AddY(info.Session[2] == 0 ? info.Session[2] + 1 : info.Session[2]);
+
+            ChrtSession.Series.Add("Осень");
+            ChrtSession.Series["Осень"].ChartType = SeriesChartType.Column;
+            ChrtSession.Series["Осень"].Points.AddY(info.Session[3] == 0 ? info.Session[3] + 1 : info.Session[3]);
         }
     }
 }

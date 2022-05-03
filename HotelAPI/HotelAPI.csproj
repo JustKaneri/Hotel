@@ -78,6 +78,8 @@
     <Compile Include="Client\Model\ClientHalfInfo.cs" />
     <Compile Include="Servis\Controller\ServisController.cs" />
     <Compile Include="Servis\Model\ServisInfo.cs" />
+    <Compile Include="Statistic\Contoller\StatisticController.cs" />
+    <Compile Include="Statistic\Model\StatisticInfo.cs" />
     <Compile Include="TypeNomer\Controller\TypeNomerController.cs" />
     <Compile Include="TypeNomer\Model\TypeNomers.cs" />
   </ItemGroup>

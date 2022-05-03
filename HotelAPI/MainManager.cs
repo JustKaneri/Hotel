@@ -17,12 +17,18 @@ using HotelAPI.Servis.Controller;
 using HotelAPI.TypeNomer.Controller;
 using HotelAPI.PhotoNomer.Controller;
 using HotelAPI.Personal.Controller;
+using HotelAPI.Statistic.Contoller;
 
 namespace HotelAPI
 {
     public class MainManager
     {
         public CurrentUser User { get; set;}
+
+        public StatisticController GetStatisticController()
+        {
+            return new StatisticController(User);
+        }
 
         public Authorization GetAutohrization(string login, string password)
         {
