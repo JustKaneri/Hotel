@@ -90,7 +90,7 @@
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(154, 49);
-            this.BtnAdd.TabIndex = 3;
+            this.BtnAdd.TabIndex = 12;
             this.BtnAdd.Text = "Добавить";
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
@@ -103,7 +103,7 @@
             this.TbxPolic.MaxLength = 16;
             this.TbxPolic.Name = "TbxPolic";
             this.TbxPolic.Size = new System.Drawing.Size(281, 30);
-            this.TbxPolic.TabIndex = 89;
+            this.TbxPolic.TabIndex = 8;
             this.TbxPolic.Tag = "полис";
             // 
             // label11
@@ -131,6 +131,7 @@
             this.CmbxPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbxPost.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CmbxPost.FormattingEnabled = true;
+            this.CmbxPost.ItemHeight = 24;
             this.CmbxPost.Location = new System.Drawing.Point(540, 291);
             this.CmbxPost.Name = "CmbxPost";
             this.CmbxPost.Size = new System.Drawing.Size(269, 32);
@@ -153,7 +154,7 @@
             this.TbxPass.Location = new System.Drawing.Point(528, 250);
             this.TbxPass.Name = "TbxPass";
             this.TbxPass.Size = new System.Drawing.Size(281, 30);
-            this.TbxPass.TabIndex = 84;
+            this.TbxPass.TabIndex = 10;
             this.TbxPass.Tag = "пароль";
             // 
             // label10
@@ -173,7 +174,7 @@
             this.TbxLogin.Location = new System.Drawing.Point(528, 209);
             this.TbxLogin.Name = "TbxLogin";
             this.TbxLogin.Size = new System.Drawing.Size(281, 30);
-            this.TbxLogin.TabIndex = 82;
+            this.TbxLogin.TabIndex = 9;
             // 
             // label9
             // 
@@ -192,7 +193,7 @@
             this.DtmBorn.Location = new System.Drawing.Point(180, 336);
             this.DtmBorn.Name = "DtmBorn";
             this.DtmBorn.Size = new System.Drawing.Size(216, 30);
-            this.DtmBorn.TabIndex = 80;
+            this.DtmBorn.TabIndex = 6;
             // 
             // label8
             // 
@@ -212,7 +213,7 @@
             this.TbxInn.MaxLength = 12;
             this.TbxInn.Name = "TbxInn";
             this.TbxInn.Size = new System.Drawing.Size(281, 30);
-            this.TbxInn.TabIndex = 78;
+            this.TbxInn.TabIndex = 7;
             this.TbxInn.Tag = "ИНН";
             // 
             // label7
@@ -233,7 +234,7 @@
             this.TbxNomer.MaxLength = 6;
             this.TbxNomer.Name = "TbxNomer";
             this.TbxNomer.Size = new System.Drawing.Size(216, 30);
-            this.TbxNomer.TabIndex = 76;
+            this.TbxNomer.TabIndex = 5;
             this.TbxNomer.Tag = "номер паспорта";
             // 
             // label6
@@ -254,7 +255,7 @@
             this.TbxSeria.MaxLength = 4;
             this.TbxSeria.Name = "TbxSeria";
             this.TbxSeria.Size = new System.Drawing.Size(216, 30);
-            this.TbxSeria.TabIndex = 74;
+            this.TbxSeria.TabIndex = 4;
             this.TbxSeria.Tag = "серию паспорта";
             // 
             // label13
@@ -274,7 +275,7 @@
             this.TbxOtch.Location = new System.Drawing.Point(115, 207);
             this.TbxOtch.Name = "TbxOtch";
             this.TbxOtch.Size = new System.Drawing.Size(281, 30);
-            this.TbxOtch.TabIndex = 72;
+            this.TbxOtch.TabIndex = 3;
             // 
             // label14
             // 
@@ -293,7 +294,7 @@
             this.TbxName.Location = new System.Drawing.Point(115, 166);
             this.TbxName.Name = "TbxName";
             this.TbxName.Size = new System.Drawing.Size(281, 30);
-            this.TbxName.TabIndex = 70;
+            this.TbxName.TabIndex = 2;
             this.TbxName.Tag = "имя";
             // 
             // TbxFam
@@ -303,7 +304,7 @@
             this.TbxFam.Location = new System.Drawing.Point(115, 121);
             this.TbxFam.Name = "TbxFam";
             this.TbxFam.Size = new System.Drawing.Size(281, 30);
-            this.TbxFam.TabIndex = 69;
+            this.TbxFam.TabIndex = 1;
             this.TbxFam.Tag = "фамилию";
             // 
             // label15
@@ -326,7 +327,7 @@
             this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(154, 49);
-            this.BtnCancel.TabIndex = 90;
+            this.BtnCancel.TabIndex = 13;
             this.BtnCancel.Text = "Отмена";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);

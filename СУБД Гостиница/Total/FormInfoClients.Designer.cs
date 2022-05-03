@@ -102,7 +102,7 @@
             this.TbxFam.Name = "TbxFam";
             this.TbxFam.ReadOnly = true;
             this.TbxFam.Size = new System.Drawing.Size(146, 27);
-            this.TbxFam.TabIndex = 5;
+            this.TbxFam.TabIndex = 1;
             // 
             // label2
             // 
@@ -123,7 +123,7 @@
             this.TbxName.Name = "TbxName";
             this.TbxName.ReadOnly = true;
             this.TbxName.Size = new System.Drawing.Size(146, 27);
-            this.TbxName.TabIndex = 7;
+            this.TbxName.TabIndex = 2;
             // 
             // TbxOtch
             // 
@@ -134,7 +134,7 @@
             this.TbxOtch.Name = "TbxOtch";
             this.TbxOtch.ReadOnly = true;
             this.TbxOtch.Size = new System.Drawing.Size(147, 27);
-            this.TbxOtch.TabIndex = 9;
+            this.TbxOtch.TabIndex = 3;
             // 
             // label3
             // 
@@ -156,7 +156,7 @@
             this.TbxPasportS.Name = "TbxPasportS";
             this.TbxPasportS.ReadOnly = true;
             this.TbxPasportS.Size = new System.Drawing.Size(100, 27);
-            this.TbxPasportS.TabIndex = 11;
+            this.TbxPasportS.TabIndex = 4;
             // 
             // label4
             // 
@@ -178,7 +178,7 @@
             this.TbxPasportN.Name = "TbxPasportN";
             this.TbxPasportN.ReadOnly = true;
             this.TbxPasportN.Size = new System.Drawing.Size(100, 27);
-            this.TbxPasportN.TabIndex = 13;
+            this.TbxPasportN.TabIndex = 5;
             // 
             // label5
             // 
@@ -244,7 +244,7 @@
             this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(160, 36);
-            this.BtnCancel.TabIndex = 3;
+            this.BtnCancel.TabIndex = 7;
             this.BtnCancel.Text = "Отмена";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Visible = false;
@@ -260,7 +260,7 @@
             this.BtnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(160, 36);
-            this.BtnEdit.TabIndex = 3;
+            this.BtnEdit.TabIndex = 6;
             this.BtnEdit.Text = "Редактировать";
             this.BtnEdit.UseVisualStyleBackColor = true;
             this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
