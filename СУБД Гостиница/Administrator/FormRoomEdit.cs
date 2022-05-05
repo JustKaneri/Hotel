@@ -140,7 +140,7 @@ namespace СУБД_Гостиница
                 }
 
                 PhotoNomers photoNomer = new PhotoNomers();
-                photoNomer.Id_Nomer = res;
+                photoNomer.Id_Photo = res;
                 photoNomers.Add(photoNomer);
 
                 ImgList.Images.Add(igm);
@@ -166,8 +166,10 @@ namespace СУБД_Гостиница
                 return;
             }
 
+            photoNomers.RemoveAt(LstPhoto.SelectedIndices[0]);
             ImgList.Images.RemoveAt(LstPhoto.SelectedIndices[0]);
             LstPhoto.Items.Remove(LstPhoto.SelectedItems[0]);
+            
         }
 
         private async void BtnSave_Click(object sender, EventArgs e)

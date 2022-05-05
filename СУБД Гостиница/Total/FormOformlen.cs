@@ -373,7 +373,7 @@ namespace СУБД_Гостиница.Porte
             Alert alert = new Alert();
             alert.TextAlert = TextAlert;
             alert.DateAlert = DateTime.Now;
-            alert.TypeAlert = "Room";
+            alert.TypeAlert = "Client";
 
             string result;
 

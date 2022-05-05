@@ -163,6 +163,9 @@ namespace СУБД_Гостиница.Porte
 
             if (CurrentRoom.LbxNumber.Text.Contains("ремонт")) 
             {
+                if (!Manager.User.RoleUser.Equals("Admin"))
+                    return;
+
                 CntDeRemont.Show(Cursor.Position);
                 return;
             }

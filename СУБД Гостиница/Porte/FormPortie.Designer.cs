@@ -36,16 +36,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnMenu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.PbxLine = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LbxTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlFragment = new System.Windows.Forms.Panel();
-            this.PbxLine = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -165,6 +165,17 @@
             this.panel3.Size = new System.Drawing.Size(857, 96);
             this.panel3.TabIndex = 2;
             // 
+            // PbxLine
+            // 
+            this.PbxLine.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PbxLine.Image = ((System.Drawing.Image)(resources.GetObject("PbxLine.Image")));
+            this.PbxLine.Location = new System.Drawing.Point(0, 78);
+            this.PbxLine.Name = "PbxLine";
+            this.PbxLine.Size = new System.Drawing.Size(857, 18);
+            this.PbxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxLine.TabIndex = 3;
+            this.PbxLine.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -206,17 +217,6 @@
             this.PnlFragment.Size = new System.Drawing.Size(857, 442);
             this.PnlFragment.TabIndex = 3;
             // 
-            // PbxLine
-            // 
-            this.PbxLine.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PbxLine.Image = ((System.Drawing.Image)(resources.GetObject("PbxLine.Image")));
-            this.PbxLine.Location = new System.Drawing.Point(0, 78);
-            this.PbxLine.Name = "PbxLine";
-            this.PbxLine.Size = new System.Drawing.Size(857, 18);
-            this.PbxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PbxLine.TabIndex = 3;
-            this.PbxLine.TabStop = false;
-            // 
             // FormPortie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -234,9 +234,9 @@
             this.Load += new System.EventHandler(this.FormPortie_Load);
             this.PnlMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).EndInit();
             this.ResumeLayout(false);
 
         }

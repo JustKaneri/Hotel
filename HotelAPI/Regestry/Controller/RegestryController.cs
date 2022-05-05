@@ -104,12 +104,12 @@ namespace HotelAPI.Regestry.Controler
             }
             catch
             {
-                return "error";
+                return "Not Conect";
             }
 
 
             if (!Message.StatusCode.ToString().Equals("OK"))
-                return "error";
+                return "Not Conect";
 
             string result = await Message.Content.ReadAsStringAsync();
 
