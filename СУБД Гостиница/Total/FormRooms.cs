@@ -37,7 +37,6 @@ namespace СУБД_Гостиница.Porte
 
         private async void FormRoomsPortie_Load(object sender, EventArgs e)
         {
-
             roomController = Manager.GetRoomController();
             regestryController = Manager.GetRegestryController();
 
@@ -123,7 +122,7 @@ namespace СУБД_Гостиница.Porte
             FormAssept formAssept = new FormAssept(Manager);
             if(formAssept.ShowDialog() == DialogResult.OK)
             {
-                string result = await regestryController.DeRegistration(CurrentRoom.Id_Room);
+                string result = await regestryController.DeRegistration(CurrentRoom.Id_Room,DateTime.Now);
 
                 if (!result.Equals("OK"))
                 {
@@ -185,6 +184,9 @@ namespace СУБД_Гостиница.Porte
                 CntReg.Visible = true;
                 CnmRegAdm.Visible = true;
                 CntEditRoom.Visible = true;
+
+                CnmInfoReg.Visible = false;
+                CnmInfoRegAdmin.Visible = false;
             }
 
             if (!Manager.User.RoleUser.Equals("Admin"))
@@ -249,7 +251,7 @@ namespace СУБД_Гостиница.Porte
 
             if(assept.ShowDialog() == DialogResult.OK)
             {
-                string result = await roomController.DeRepair(CurrentRoom.Id_Room);
+                string result = await roomController.DeRepair(CurrentRoom.Id_Room,DateTime.Now);
 
                 if (!result.Equals("OK"))
                 {

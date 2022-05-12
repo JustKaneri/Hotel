@@ -130,13 +130,13 @@ namespace HotelAPI.Rooms.Controller
         /// Возврат с ремонта
         /// </summary>
         /// <param name="id"></param>
-        public async Task<string> DeRepair(int id)
+        public async Task<string> DeRepair(int Id,DateTime dtFinish)
         {
             Client = new HttpClient();
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + $"api/Rooms/DeRepair?Id={id}";
+            string url = Properties.Resources.Url + $"api/Rooms/DeRepair?Id={Id}&dtFinish={dtFinish}";
 
             HttpResponseMessage httpResponse;
 

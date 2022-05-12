@@ -153,13 +153,13 @@ namespace HotelAPI.Regestry.Controler
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<string> DeRegistration(int Id)
+        public async Task<string> DeRegistration(int Id, DateTime dtFinish)
         {
             Client = new HttpClient();
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + $"api/Regestration/DeReg?id={Id}";
+            string url = Properties.Resources.Url + $"api/Regestration/DeReg?id={Id}&DtFinish={dtFinish}";
 
             HttpResponseMessage httpResponse;
 
