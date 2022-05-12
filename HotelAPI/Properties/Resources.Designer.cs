@@ -61,7 +61,7 @@ namespace HotelAPI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://localhost:50956/.
+        ///   Looks up a localized string similar to http://www.hostel.somee.com/.
         /// </summary>
         internal static string Url {
             get {
