@@ -57,25 +57,44 @@ namespace СУБД_Гостиница
         private void FillChartMoney()
         {
             ChrtRash.Series.Clear();
+            ChrtRash.Titles.Add("Прибыль и расходы за год");
+
+            double prible = 0;
+
+            for (int i = 0; i < info.LstPrible.Count; i++)
+            {
+                prible += info.LstPrible[i];
+            }
+
+            double rashod = 0;
+
+            for (int i = 0; i < info.LStRashod.Count; i++)
+            {
+                rashod += info.LStRashod[i];
+            }
+
+            if (rashod == 0)
+                rashod = 1;
+
+            if (prible == 0)
+                prible = 1;
 
             var prib =  ChrtRash.Series.Add("Прибыль");
-            prib.ChartType = SeriesChartType.Column;
-            prib.Points.AddXY("Зима", info.LstPrible[0] == 0 ? info.LstPrible[0] + 1: info.LstPrible[0]);
-            prib.Points.AddXY("Весна", info.LstPrible[1] == 0 ? info.LstPrible[1] + 1 : info.LstPrible[1]);
-            prib.Points.AddXY("Лето", info.LstPrible[2] == 0 ? info.LstPrible[2] + 1 : info.LstPrible[2]);
-            prib.Points.AddXY("Осень", info.LstPrible[3] == 0 ? info.LstPrible[3] + 1 : info.LstPrible[3]);
+            prib.ChartType = SeriesChartType.Pie;
+            prib.Points.AddXY("Прибыль",prible);
+            prib.Points.AddXY("Расходы",rashod);
 
-            var rash =  ChrtRash.Series.Add("Расходы");
-            rash.ChartType = SeriesChartType.Column;
-            rash.Points.AddXY("Зима", info.LStRashod[0] == 0 ? info.LStRashod[0] + 1 : info.LStRashod[0]);
-            rash.Points.AddXY("Весна", info.LStRashod[1] == 0 ? info.LStRashod[1] + 1 : info.LStRashod[1]);
-            rash.Points.AddXY("Лето", info.LStRashod[2] == 0 ? info.LStRashod[2] + 1 : info.LStRashod[2]);
-            rash.Points.AddXY("Осень", info.LStRashod[3] == 0 ? info.LStRashod[3] + 1 : info.LStRashod[3]);
+
+            //var rash = ChrtRash.Series.Add();
+            //rash.ChartType = SeriesChartType.Pie;
+            
         }
 
         private void FillChartSession()
         {
             ChrtSession.Series.Clear();
+            ChrtSession.Titles.Add("Кол-во посещений каждый сезон");
+
 
             ChrtSession.Series.Add("Зима");
             ChrtSession.Series["Зима"].ChartType = SeriesChartType.Column;

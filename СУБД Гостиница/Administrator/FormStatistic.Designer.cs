@@ -39,14 +39,14 @@
             this.ChrtRash = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChrtSession = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.LbxCountClient = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.LbxPribel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.LbxRashod = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.BtnOtch = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChrtRash)).BeginInit();
@@ -82,6 +82,7 @@
             // ChrtRash
             // 
             this.ChrtRash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
             chartArea1.Name = "ChartArea1";
             this.ChrtRash.ChartAreas.Add(chartArea1);
             this.ChrtRash.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -100,6 +101,7 @@
             // ChrtSession
             // 
             this.ChrtSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
             chartArea2.Name = "ChartArea1";
             this.ChrtSession.ChartAreas.Add(chartArea2);
             this.tableLayoutPanel1.SetColumnSpan(this.ChrtSession, 2);
@@ -127,27 +129,18 @@
             this.panel2.Size = new System.Drawing.Size(278, 203);
             this.panel2.TabIndex = 4;
             // 
-            // panel3
+            // LbxCountClient
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
-            this.panel3.Controls.Add(this.LbxPribel);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(287, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(278, 203);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
-            this.panel4.Controls.Add(this.LbxRashod);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(571, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(280, 203);
-            this.panel4.TabIndex = 6;
+            this.LbxCountClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LbxCountClient.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxCountClient.ForeColor = System.Drawing.Color.Black;
+            this.LbxCountClient.Location = new System.Drawing.Point(44, 50);
+            this.LbxCountClient.Name = "LbxCountClient";
+            this.LbxCountClient.Size = new System.Drawing.Size(190, 120);
+            this.LbxCountClient.TabIndex = 1;
+            this.LbxCountClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -161,6 +154,30 @@
             this.label1.Text = "Кол-во гостей в этом месяце:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.panel3.Controls.Add(this.LbxPribel);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(287, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(278, 203);
+            this.panel3.TabIndex = 5;
+            // 
+            // LbxPribel
+            // 
+            this.LbxPribel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LbxPribel.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxPribel.ForeColor = System.Drawing.Color.Black;
+            this.LbxPribel.Location = new System.Drawing.Point(41, 50);
+            this.LbxPribel.Name = "LbxPribel";
+            this.LbxPribel.Size = new System.Drawing.Size(190, 120);
+            this.LbxPribel.TabIndex = 2;
+            this.LbxPribel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -173,6 +190,30 @@
             this.label2.Text = "Прибыль в этом месяце:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
+            this.panel4.Controls.Add(this.LbxRashod);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(571, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(280, 203);
+            this.panel4.TabIndex = 6;
+            // 
+            // LbxRashod
+            // 
+            this.LbxRashod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LbxRashod.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LbxRashod.ForeColor = System.Drawing.Color.Black;
+            this.LbxRashod.Location = new System.Drawing.Point(53, 50);
+            this.LbxRashod.Name = "LbxRashod";
+            this.LbxRashod.Size = new System.Drawing.Size(190, 120);
+            this.LbxRashod.TabIndex = 2;
+            this.LbxRashod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -184,39 +225,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Расходы в этом месяце:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // LbxCountClient
-            // 
-            this.LbxCountClient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbxCountClient.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LbxCountClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.LbxCountClient.Location = new System.Drawing.Point(0, 50);
-            this.LbxCountClient.Name = "LbxCountClient";
-            this.LbxCountClient.Size = new System.Drawing.Size(278, 153);
-            this.LbxCountClient.TabIndex = 1;
-            this.LbxCountClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LbxPribel
-            // 
-            this.LbxPribel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbxPribel.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LbxPribel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.LbxPribel.Location = new System.Drawing.Point(0, 50);
-            this.LbxPribel.Name = "LbxPribel";
-            this.LbxPribel.Size = new System.Drawing.Size(278, 153);
-            this.LbxPribel.TabIndex = 2;
-            this.LbxPribel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LbxRashod
-            // 
-            this.LbxRashod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbxRashod.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LbxRashod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
-            this.LbxRashod.Location = new System.Drawing.Point(0, 50);
-            this.LbxRashod.Name = "LbxRashod";
-            this.LbxRashod.Size = new System.Drawing.Size(280, 153);
-            this.LbxRashod.TabIndex = 2;
-            this.LbxRashod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnOtch
             // 
