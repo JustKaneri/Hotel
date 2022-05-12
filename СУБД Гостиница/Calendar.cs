@@ -16,7 +16,7 @@ namespace СУБД_Гостиница
         {
             public string Name;
             public int NumWeek;
-            public bool IsFree;
+            public bool IsFree ;
         }
 
         public Dictionary<string, List<DayMonth>> Months = new Dictionary<string, List<DayMonth>>();
@@ -36,6 +36,8 @@ namespace СУБД_Гостиница
                 for (int day = 1; day <= CountDay; day++)
                 {
                     DayMonth dayMonth;
+                    dayMonth.IsFree = true;
+
                     dayMonth.Name = day.ToString();
                     DateTime curretnDate = new DateTime(currentYear, month, day);
                     dayMonth.NumWeek = curretnDate.DayOfWeek == DayOfWeek.Sunday ? 7 : (int)curretnDate.DayOfWeek;
