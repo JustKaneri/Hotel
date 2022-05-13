@@ -56,13 +56,16 @@ namespace СУБД_Гостиница
 
         private bool SetStatusDay(DateTime date,List<DateTime> Start, List<DateTime> Finish)
         {
+            bool isFree = true;
+
             for (int i = 0; i < Start.Count; i++)
             {
-                if (date >= Start[i] && date <= Finish[i])
-                    return false;
+        
+                if (date.Date >= Start[i].Date && date.Date <= Finish[i].Date)
+                    isFree = false;
             }
 
-            return true;
+            return isFree;
         }
 
         public List<DayMonth> SetNowMont()

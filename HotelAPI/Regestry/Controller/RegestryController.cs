@@ -128,7 +128,7 @@ namespace HotelAPI.Regestry.Controler
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + $"api/Regestration/ContinieReg?id={Id}&dtFinish={date.ToShortDateString()}";
+            string url = Properties.Resources.Url + $"api/Regestration/ContinieReg?id={Id}&dtFinish={date.Date + new TimeSpan(10,0,0)}";
 
             HttpResponseMessage httpResponse;
 

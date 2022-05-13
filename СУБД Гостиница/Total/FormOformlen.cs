@@ -44,6 +44,7 @@ namespace СУБД_Гостиница.Porte
             servisController = Manager.GetServisController();
 
             DtmFinish.MinDate = DateTime.Now;
+            DtmStart.MinDate = DateTime.Now;
         }
 
         private async void FormOformlen_Load(object sender, EventArgs e)
@@ -238,7 +239,9 @@ namespace СУБД_Гостиница.Porte
             reg.Id_Nomer = room.Id;
             reg.FullPrice = (float)GetPrice();
             reg.DateStart = DtmStart.Value;
-            reg.DateEnd = DtmFinish.Value;
+            reg.DateEnd = DtmFinish.Value.Date + new TimeSpan(22,00,00);
+
+
 
             string result = await regestryController.Registration(reg);
 

@@ -43,6 +43,8 @@ namespace СУБД_Гостиница
                 return;
             }
 
+            DtmStart.MinDate = DateTime.Now.Date;
+
             RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
 
             try

@@ -31,7 +31,7 @@ namespace HotelAPI.Rooms.Controller
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + $"api/Rooms/GetRooms?Date={DateTime.Now.ToString("dd.MM.yyyy")}";
+            string url = Properties.Resources.Url + $"api/Rooms/GetRooms?Date={DateTime.Now}";
 
             HttpResponseMessage Message;
 
@@ -198,7 +198,7 @@ namespace HotelAPI.Rooms.Controller
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + $"api/Rooms/GetRoomInfo?Id={Id}&Date={DateTime.Now.ToString("dd.MM.yyyy")}";
+            string url = Properties.Resources.Url + $"api/Rooms/GetRoomInfo?Id={Id}&Date={DateTime.Now}";
 
             HttpResponseMessage Message;
 

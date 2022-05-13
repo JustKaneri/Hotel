@@ -201,7 +201,6 @@
             // DtmStart
             // 
             this.DtmStart.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.DtmStart.Enabled = false;
             this.DtmStart.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DtmStart.Location = new System.Drawing.Point(814, 193);
             this.DtmStart.Name = "DtmStart";
