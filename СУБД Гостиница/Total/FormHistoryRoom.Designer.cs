@@ -92,6 +92,7 @@
             this.DgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvHistory.Size = new System.Drawing.Size(732, 407);
             this.DgvHistory.TabIndex = 4;
+            this.DgvHistory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHistory_CellDoubleClick);
             // 
             // Column1
             // 

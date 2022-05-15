@@ -20,8 +20,10 @@ namespace СУБД_Гостиница.Total
     {
         private MainManager Manager;
         private int Id_Room;
+        private int Id_Reg;
         private RegestryController regestryControoler;
         private RegestryInfo info;
+        private bool IsOld = false;
 
         public FormInfoRegestry(MainManager manager,int id_Room)
         {
@@ -33,9 +35,24 @@ namespace СУБД_Гостиница.Total
             regestryControoler = Manager.GetRegestryController();
         }
 
+        public FormInfoRegestry(MainManager manager, int id_reg,bool IsOld)
+        {
+            InitializeComponent();
+
+            Manager = manager;
+            Id_Reg = id_reg;
+
+            regestryControoler = Manager.GetRegestryController();
+
+            this.IsOld = IsOld;
+        }
+
         private async void FormInfoRegestry_Load(object sender, EventArgs e)
         {
-            info = await regestryControoler.GetRegestryInfo(Id_Room);
+            if (!IsOld)
+                info = await regestryControoler.GetRegestryInfo(Id_Room);
+            else
+                info = await regestryControoler.GetRegestryOldInfo(Id_Reg);
 
             if(info == null)
             {

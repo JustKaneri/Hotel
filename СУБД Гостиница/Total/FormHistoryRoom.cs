@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using СУБД_Гостиница.Total;
 
 namespace СУБД_Гостиница
 {
@@ -22,6 +23,7 @@ namespace СУБД_Гостиница
         private MainManager Manager;
         private RoomController roomController;
         private int Id_Room;
+        private RoomHistory history;
 
         public FormHistoryRoom(MainManager manager,int id)
         {
@@ -53,7 +55,7 @@ namespace СУБД_Гостиница
                 return;
             }
 
-            RoomHistory history = await roomController.GetHistoryRoom(Id_Room);
+            history = await roomController.GetHistoryRoom(Id_Room);
 
             if (history == null)
             {
@@ -74,6 +76,15 @@ namespace СУБД_Гостиница
                 return;
             }
            
+        }
+
+        private void DgvHistory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (history.IdReg[e.RowIndex] == -1)
+                return;
+
+            FormInfoRegestry infoReg = new FormInfoRegestry(Manager, history.IdReg[e.RowIndex],true);
+            infoReg.ShowDialog();
         }
     }
 }
