@@ -8,5 +8,6 @@ namespace HotelAPI.Client.Model
         public List<DateTime> DateStart { get; set; }
         public List<DateTime> DateFinish { get; set; }
         public List<string> NameNomer { get; set; }
+        public List<int> IdRegs { get; set; }
     }
 }

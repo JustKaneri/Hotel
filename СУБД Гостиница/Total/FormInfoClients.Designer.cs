@@ -299,13 +299,14 @@
             this.DgvHistory.Name = "DgvHistory";
             this.DgvHistory.ReadOnly = true;
             this.DgvHistory.RowHeadersVisible = false;
-            this.DgvHistory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Georgia", 12.8F);
+            this.DgvHistory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DgvHistory.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
             this.DgvHistory.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.DgvHistory.RowTemplate.Height = 80;
             this.DgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvHistory.Size = new System.Drawing.Size(352, 370);
             this.DgvHistory.TabIndex = 1;
+            this.DgvHistory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHistory_CellDoubleClick);
             // 
             // Column1
             // 

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using СУБД_Гостиница.Total;
 
 namespace СУБД_Гостиница
 {
@@ -172,6 +173,12 @@ namespace СУБД_Гостиница
             BtnEdit.Text = "Редактировать";
             BtnCancel.Visible = false;
             DeBlockTbx(false);
+        }
+
+        private void DgvHistory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormInfoRegestry infoReg = new FormInfoRegestry(Manager, Client.History.IdRegs[e.RowIndex], true);
+            infoReg.ShowDialog();
         }
     }
 }
