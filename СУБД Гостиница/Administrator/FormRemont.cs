@@ -117,8 +117,11 @@ namespace СУБД_Гостиница
 
         private async void BtnRem_Click(object sender, EventArgs e)
         {
+            BtnRem.Enabled = false;
+
             if(string.IsNullOrWhiteSpace(TbxPrice.Text))
             {
+                BtnRem.Enabled = true;
                 MessageBox.Show("Укажите стоймость ремонта", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -127,12 +130,14 @@ namespace СУБД_Гостиница
 
             if(!double.TryParse(TbxPrice.Text,out tmp))
             {
+                BtnRem.Enabled = true;
                 MessageBox.Show("Укажите коректную стоймость ремонта", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if(DateTime.Now.Date > DtmStart.Value.Date)
             {
+                BtnRem.Enabled = true;
                 MessageBox.Show("Дата начала не может быть в прошлом времени", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -147,11 +152,14 @@ namespace СУБД_Гостиница
 
             if(!result.Equals("OK"))
             {
+                BtnRem.Enabled = true;
                 MessageBox.Show("Не удалось начать ремонт", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             GlDt = DtmStart.Value;
+
+            BtnRem.Enabled = true;
 
             DialogResult = DialogResult.OK;
         }

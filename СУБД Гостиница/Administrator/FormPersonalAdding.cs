@@ -128,15 +128,20 @@ namespace СУБД_Гостиница
 
         private async void BtnAdd_Click(object sender, EventArgs e)
         {
+            BtnAdd.Enabled = false;
+
             try
             {
                 CheckData();
             }
             catch (Exception ex)
             {
+                BtnAdd.Enabled = true;
                 MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            
 
             personal = new PersonalInfo();
 
@@ -151,6 +156,8 @@ namespace СУБД_Гостиница
             }
 
             MessageBox.Show("Пользователь добавлен", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            BtnAdd.Enabled = true;
 
             DialogResult = DialogResult.OK;
         }

@@ -196,8 +196,11 @@ namespace СУБД_Гостиница.Porte
 
         private async void BtnReg_Click(object sender, EventArgs e)
         {
+            BtnReg.Enabled = false;
+
             if(!CheckServis())
             {
+                BtnReg.Enabled = true;
                 MessageBox.Show("Укажите корректное значение в кол-во доп. услуг","Внимание",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
@@ -208,6 +211,7 @@ namespace СУБД_Гостиница.Porte
             }
             catch (Exception ex)
             {
+                BtnReg.Enabled = true;
                 MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -230,6 +234,7 @@ namespace СУБД_Гостиница.Porte
 
             if (resulClient.Equals("Not Conect"))
             {
+                BtnReg.Enabled = true;
                 MessageBox.Show("Не удалось зарегистрировать данного пользователя","Внимание",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
@@ -239,14 +244,13 @@ namespace СУБД_Гостиница.Porte
             reg.Id_Nomer = room.Id;
             reg.FullPrice = (float)GetPrice();
             reg.DateStart = DtmStart.Value;
-            reg.DateEnd = DtmFinish.Value.Date + new TimeSpan(22,00,00);
-
-
-
+            reg.DateEnd = DtmFinish.Value.Date + new TimeSpan(23,59,0);
+            
             string result = await regestryController.Registration(reg);
 
             if (result.Equals("Not Conect"))
             {
+                BtnReg.Enabled = true;
                 MessageBox.Show("Не удалось зарегистрировать данного пользователя", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -269,6 +273,7 @@ namespace СУБД_Гостиница.Porte
 
             MessageBox.Show("Клиент зарегистрирован", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
+            BtnReg.Enabled = true;
             DialogResult = DialogResult.OK;
 
         }

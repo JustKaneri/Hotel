@@ -104,12 +104,15 @@ namespace СУБД_Гостиница
 
         private async void BtnSave_Click(object sender, EventArgs e)
         {
+            BtnSave.Enabled = false;
+
             try
             {
                 CheckData();
             }
             catch (Exception ex)
             {
+                BtnSave.Enabled = true;
                 MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -120,17 +123,22 @@ namespace СУБД_Гостиница
 
             if(!resultUpdate.Equals("OK"))
             {
+                BtnSave.Enabled = true;
                 MessageBox.Show("Не удалось сохранить изменения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             MessageBox.Show("Изменения сохранены", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            BtnSave.Enabled = true;
+
             DialogResult = DialogResult.OK;
         }
 
         private async void BtnDel_Click(object sender, EventArgs e)
         {
+            BtnDel.Enabled = false;
+
            MessageBox.Show("Для увольнения работника, введите пароль", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             FormAssept formAssept = new FormAssept(Manager);
@@ -140,14 +148,18 @@ namespace СУБД_Гостиница
 
                 if (!result.Equals("OK"))
                 {
+                    BtnDel.Enabled = true;
                     MessageBox.Show("Не удалось уволить работника", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 MessageBox.Show("Работник уволен", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                
                 DialogResult = DialogResult.OK;
             }
+            BtnDel.Enabled = true;
         }
 
         private void CheckData()
