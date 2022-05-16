@@ -39,14 +39,12 @@
             this.BtnMenu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PbxLine = new System.Windows.Forms.PictureBox();
-            this.PbxMessage = new System.Windows.Forms.PictureBox();
             this.LbxTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlFragment = new System.Windows.Forms.Panel();
             this.PnlMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,7 +196,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.PbxLine);
-            this.panel3.Controls.Add(this.PbxMessage);
             this.panel3.Controls.Add(this.LbxTitle);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -217,17 +214,6 @@
             this.PbxLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxLine.TabIndex = 4;
             this.PbxLine.TabStop = false;
-            // 
-            // PbxMessage
-            // 
-            this.PbxMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PbxMessage.Image = global::СУБД_Гостиница.Properties.Resources.MiniMessag;
-            this.PbxMessage.Location = new System.Drawing.Point(832, 41);
-            this.PbxMessage.Name = "PbxMessage";
-            this.PbxMessage.Size = new System.Drawing.Size(37, 33);
-            this.PbxMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PbxMessage.TabIndex = 2;
-            this.PbxMessage.TabStop = false;
             // 
             // LbxTitle
             // 
@@ -270,6 +256,7 @@
             this.Controls.Add(this.PnlMenu);
             this.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1184, 626);
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "СУБД Гостиница (администратор)";
@@ -277,7 +264,6 @@
             this.PnlMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbxLine)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -292,7 +278,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnMenu;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox PbxMessage;
         private System.Windows.Forms.Label LbxTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnStatic;
