@@ -145,6 +145,8 @@ namespace СУБД_Гостиница
                 }
 
                 MessageBox.Show("Работник уволен", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult = DialogResult.OK;
             }
         }
 

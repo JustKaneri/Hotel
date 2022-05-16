@@ -73,10 +73,32 @@ namespace СУБД_Гостиница
             BtnFind.Image = Properties.Resources.MiniSearhB;
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private async void BtnAdd_Click(object sender, EventArgs e)
         {
             FormPersonalAdding formPersonal = new FormPersonalAdding(Manager);
-            formPersonal.ShowDialog();
+            if(formPersonal.ShowDialog() == DialogResult.OK)
+            {
+                await Task.Delay(2000);
+
+                personales = await personalController.GetHalfPersonal();
+
+                if (personales == null)
+                {
+                    MessageBox.Show("Нет соединения с сервером", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Close();
+                    return;
+                }
+
+                try
+                {
+                    FillPersonalDGV();
+                }
+                catch
+                {
+                    Close();
+                    return;
+                }
+            }
         }
 
         private void BtnFind_Click(object sender, EventArgs e)
@@ -117,7 +139,7 @@ namespace СУБД_Гостиница
             FormEditPersonal editPersonal = new FormEditPersonal(Manager,personales[e.RowIndex].Id);
             if(editPersonal.ShowDialog() == DialogResult.OK)
             {
-                await Task.Delay(1000);
+                await Task.Delay(2000);
 
                 personales = await personalController.GetHalfPersonal();
 
