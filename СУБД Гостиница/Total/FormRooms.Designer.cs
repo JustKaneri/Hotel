@@ -31,15 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRooms));
             this.CntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.CntMenuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.TblRoom = new System.Windows.Forms.TableLayoutPanel();
-            this.CntDeRemont = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CnmInfoReg = new System.Windows.Forms.ToolStripMenuItem();
             this.CntReg = new System.Windows.Forms.ToolStripMenuItem();
             this.CntDeReg = new System.Windows.Forms.ToolStripMenuItem();
             this.CnContinie = new System.Windows.Forms.ToolStripMenuItem();
             this.CntInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.CntHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.CntMenuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CnmInfoRegAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmRegAdm = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmDeRegAdmin = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,10 +46,14 @@
             this.CntInfoRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.CntEditRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.CnmRemont = new System.Windows.Forms.ToolStripMenuItem();
+            this.TblRoom = new System.Windows.Forms.TableLayoutPanel();
+            this.CntDeRemont = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BtnDeRemont = new System.Windows.Forms.ToolStripMenuItem();
+            this.PbxLoad = new System.Windows.Forms.PictureBox();
             this.CntMenu.SuspendLayout();
             this.CntMenuAdmin.SuspendLayout();
             this.CntDeRemont.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLoad)).BeginInit();
             this.SuspendLayout();
             // 
             // CntMenu
@@ -66,55 +68,9 @@
             this.CntInfo,
             this.CntHistory});
             this.CntMenu.Name = "CntMenu";
-            this.CntMenu.Size = new System.Drawing.Size(377, 200);
+            this.CntMenu.Size = new System.Drawing.Size(377, 172);
             this.CntMenu.Text = "Функции";
             this.CntMenu.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.CntMenuAdmin_Closing);
-            // 
-            // CntMenuAdmin
-            // 
-            this.CntMenuAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.CntMenuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CnmInfoRegAdmin,
-            this.CnmRegAdm,
-            this.CnmDeRegAdmin,
-            this.CntContinie,
-            this.CnmHistoryAdm,
-            this.CntInfoRoom,
-            this.CntEditRoom,
-            this.CnmRemont});
-            this.CntMenuAdmin.Name = "CntMenuAdmin";
-            this.CntMenuAdmin.Size = new System.Drawing.Size(377, 228);
-            this.CntMenuAdmin.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.CntMenuAdmin_Closing);
-            // 
-            // TblRoom
-            // 
-            this.TblRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TblRoom.ColumnCount = 5;
-            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.Location = new System.Drawing.Point(24, 12);
-            this.TblRoom.Margin = new System.Windows.Forms.Padding(3, 3, 266, 3);
-            this.TblRoom.Name = "TblRoom";
-            this.TblRoom.RowCount = 4;
-            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TblRoom.Size = new System.Drawing.Size(812, 426);
-            this.TblRoom.TabIndex = 2;
-            // 
-            // CntDeRemont
-            // 
-            this.CntDeRemont.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.CntDeRemont.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnDeRemont});
-            this.CntDeRemont.Name = "CntDeRemont";
-            this.CntDeRemont.Size = new System.Drawing.Size(263, 32);
             // 
             // CnmInfoReg
             // 
@@ -182,6 +138,22 @@
             this.CntHistory.Size = new System.Drawing.Size(376, 28);
             this.CntHistory.Text = "История";
             this.CntHistory.Click += new System.EventHandler(this.CntHistory_Click);
+            // 
+            // CntMenuAdmin
+            // 
+            this.CntMenuAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CntMenuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CnmInfoRegAdmin,
+            this.CnmRegAdm,
+            this.CnmDeRegAdmin,
+            this.CntContinie,
+            this.CnmHistoryAdm,
+            this.CntInfoRoom,
+            this.CntEditRoom,
+            this.CnmRemont});
+            this.CntMenuAdmin.Name = "CntMenuAdmin";
+            this.CntMenuAdmin.Size = new System.Drawing.Size(377, 228);
+            this.CntMenuAdmin.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.CntMenuAdmin_Closing);
             // 
             // CnmInfoRegAdmin
             // 
@@ -277,6 +249,37 @@
             this.CnmRemont.Visible = false;
             this.CnmRemont.Click += new System.EventHandler(this.CnmRemont_Click);
             // 
+            // TblRoom
+            // 
+            this.TblRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TblRoom.ColumnCount = 5;
+            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.Location = new System.Drawing.Point(24, 12);
+            this.TblRoom.Margin = new System.Windows.Forms.Padding(3, 3, 266, 3);
+            this.TblRoom.Name = "TblRoom";
+            this.TblRoom.RowCount = 4;
+            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TblRoom.Size = new System.Drawing.Size(812, 426);
+            this.TblRoom.TabIndex = 2;
+            this.TblRoom.Visible = false;
+            // 
+            // CntDeRemont
+            // 
+            this.CntDeRemont.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CntDeRemont.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnDeRemont});
+            this.CntDeRemont.Name = "CntDeRemont";
+            this.CntDeRemont.Size = new System.Drawing.Size(263, 32);
+            // 
             // BtnDeRemont
             // 
             this.BtnDeRemont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(190)))), ((int)(((byte)(175)))));
@@ -288,12 +291,26 @@
             this.BtnDeRemont.Text = "Снятие с ремонта";
             this.BtnDeRemont.Click += new System.EventHandler(this.BtnDeRemont_Click);
             // 
+            // PbxLoad
+            // 
+            this.PbxLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbxLoad.Image = ((System.Drawing.Image)(resources.GetObject("PbxLoad.Image")));
+            this.PbxLoad.Location = new System.Drawing.Point(-1, 0);
+            this.PbxLoad.Name = "PbxLoad";
+            this.PbxLoad.Size = new System.Drawing.Size(864, 452);
+            this.PbxLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxLoad.TabIndex = 3;
+            this.PbxLoad.TabStop = false;
+            // 
             // FormRooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(860, 450);
+            this.Controls.Add(this.PbxLoad);
             this.Controls.Add(this.TblRoom);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Book Antiqua", 7.8F);
@@ -304,6 +321,7 @@
             this.CntMenu.ResumeLayout(false);
             this.CntMenuAdmin.ResumeLayout(false);
             this.CntDeRemont.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLoad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,5 +347,6 @@
         private System.Windows.Forms.ToolStripMenuItem BtnDeRemont;
         private System.Windows.Forms.ToolStripMenuItem CnmInfoReg;
         private System.Windows.Forms.ToolStripMenuItem CnmInfoRegAdmin;
+        private System.Windows.Forms.PictureBox PbxLoad;
     }
 }

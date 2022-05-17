@@ -32,7 +32,9 @@ namespace СУБД_Гостиница.Porte
         {
             InitializeComponent();
 
-            Manager = manager;           
+            Manager = manager;
+
+            PbxLoad.SendToBack();
         }
 
         private async void FormRoomsPortie_Load(object sender, EventArgs e)
@@ -95,6 +97,8 @@ namespace СУБД_Гостиница.Porte
             }
 
             TblRoom.ResumeLayout();
+
+            TblRoom.Visible = true;
         }
 
         private async void CntReg_Click(object sender, EventArgs e)
@@ -104,6 +108,7 @@ namespace СУБД_Гостиница.Porte
             {
                 string result = await CreateAlert($"В номер {CurrentRoom.LbxNumber.Text.Substring(0,3)} зарегистрирован постоялец");
                 await Task.Delay(1000);
+                TblRoom.Visible = false;
                 rooms = await roomController.GetRooms();
                 FillTblRoom();
             }
@@ -137,6 +142,8 @@ namespace СУБД_Гостиница.Porte
                 await Task.Delay(1000);
 
                 MessageBox.Show("Номер свободен", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                TblRoom.Visible = false;
 
                 rooms = await roomController.GetRooms();
 
@@ -210,6 +217,8 @@ namespace СУБД_Гостиница.Porte
             {
                 await Task.Delay(1000);
 
+                TblRoom.Visible = false;
+
                 rooms = await roomController.GetRooms();
 
                 FillTblRoom();
@@ -266,6 +275,8 @@ namespace СУБД_Гостиница.Porte
                 await Task.Delay(1000);
 
                 MessageBox.Show("Номер снят с ремонта.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                TblRoom.Visible = false;
 
                 rooms = await roomController.GetRooms();
 
