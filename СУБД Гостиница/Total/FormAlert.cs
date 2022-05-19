@@ -28,7 +28,8 @@ namespace СУБД_Гостиница
 
             if (alerts == null)
             {
-                throw new Exception("Сервер не доступен");
+                Close();
+                return;
             }
 
             try

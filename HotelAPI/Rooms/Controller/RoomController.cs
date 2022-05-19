@@ -31,7 +31,7 @@ namespace HotelAPI.Rooms.Controller
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + "api/Rooms/GetRooms";
+            string url = Properties.Resources.Url + $"api/Rooms/GetRooms?Date={DateTime.Now.ToString("dd.MM.yyyy")}";
 
             HttpResponseMessage Message;
 
@@ -192,13 +192,13 @@ namespace HotelAPI.Rooms.Controller
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>
-        public async Task<Room> GetRoomInfoAsync(int v)
+        public async Task<Room> GetRoomInfoAsync(int Id)
         {
             Client = new HttpClient();
 
             Client.DefaultRequestHeaders.Add("Authorization", User.Token);
 
-            string url = Properties.Resources.Url + $"api/Rooms/GetRoomInfo?Id={v}";
+            string url = Properties.Resources.Url + $"api/Rooms/GetRoomInfo?Id={Id}&Date={DateTime.Now.ToString("dd.MM.yyyy")}";
 
             HttpResponseMessage Message;
 
