@@ -35,7 +35,9 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAdd = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.PbxLoad = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPersonal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLoad)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnFind
@@ -130,11 +132,22 @@
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
+            // PbxLoad
+            // 
+            this.PbxLoad.Image = ((System.Drawing.Image)(resources.GetObject("PbxLoad.Image")));
+            this.PbxLoad.Location = new System.Drawing.Point(207, 68);
+            this.PbxLoad.Name = "PbxLoad";
+            this.PbxLoad.Size = new System.Drawing.Size(403, 313);
+            this.PbxLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxLoad.TabIndex = 8;
+            this.PbxLoad.TabStop = false;
+            // 
             // FormPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 434);
+            this.Controls.Add(this.PbxLoad);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.BtnFind);
             this.Controls.Add(this.TbxFind);
@@ -146,6 +159,7 @@
             this.Text = " СУБД Гостиница";
             this.Load += new System.EventHandler(this.FormPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPersonal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxLoad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +173,6 @@
         private Controls.ButtonSpecial BtnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.PictureBox PbxLoad;
     }
 }

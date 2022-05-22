@@ -47,6 +47,7 @@ namespace СУБД_Гостиница
                 Close();
                 return;
             }
+            
         }
 
         private void FillPersonalDGV()
@@ -57,6 +58,8 @@ namespace СУБД_Гостиница
             {
                 DgvPersonal.Rows.Add(item.PostPersonal.Name[0], item.Fam + " " + item.Name + " " + item.Othc);
             }
+
+            PbxLoad.Visible = false;
         }
 
         private void BtnFind_MouseEnter(object sender, EventArgs e)
@@ -78,6 +81,9 @@ namespace СУБД_Гостиница
             FormPersonalAdding formPersonal = new FormPersonalAdding(Manager);
             if(formPersonal.ShowDialog() == DialogResult.OK)
             {
+                PbxLoad.Visible = true;
+                DgvPersonal.Rows.Clear();
+
                 await Task.Delay(2000);
 
                 personales = await personalController.GetHalfPersonal();
@@ -139,6 +145,8 @@ namespace СУБД_Гостиница
             FormEditPersonal editPersonal = new FormEditPersonal(Manager,personales[e.RowIndex].Id);
             if(editPersonal.ShowDialog() == DialogResult.OK)
             {
+                PbxLoad.Visible = true;
+                DgvPersonal.Rows.Clear();
                 await Task.Delay(2000);
 
                 personales = await personalController.GetHalfPersonal();

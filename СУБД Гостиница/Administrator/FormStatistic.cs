@@ -96,21 +96,13 @@ namespace СУБД_Гостиница
             ChrtSession.Titles.Add("Кол-во посещений каждый сезон");
 
 
-            ChrtSession.Series.Add("Зима");
-            ChrtSession.Series["Зима"].ChartType = SeriesChartType.Column;
-            ChrtSession.Series["Зима"].Points.AddY(info.Session[0]==0 ?info.Session[0]+1:info.Session[0]);
+            List<string> names = new List<string>() { "Зима", "Весна", "Лето", "Осень" };
 
-            ChrtSession.Series.Add("Весна");
-            ChrtSession.Series["Весна"].ChartType = SeriesChartType.Column;
-            ChrtSession.Series["Весна"].Points.AddY(info.Session[1] == 0 ? info.Session[1] + 1 : info.Session[1]);
-
-            ChrtSession.Series.Add("Лето");
-            ChrtSession.Series["Лето"].ChartType = SeriesChartType.Column;
-            ChrtSession.Series["Лето"].Points.AddY(info.Session[2] == 0 ? info.Session[2] + 1 : info.Session[2]);
-
-            ChrtSession.Series.Add("Осень");
-            ChrtSession.Series["Осень"].ChartType = SeriesChartType.Column;
-            ChrtSession.Series["Осень"].Points.AddY(info.Session[3] == 0 ? info.Session[3] + 1 : info.Session[3]);
+            ChrtSession.Series.Add("Кол-во посещений каждый сезон");
+            ChrtSession.Series[0].ChartType = SeriesChartType.Column;
+            ChrtSession.Series[0].Points.DataBindXY(names,info.Session);
+            ChrtSession.Series[0].IsValueShownAsLabel = true;
+            ChrtSession.Series[0].Font = new Font("Georgia", 16);
         }
     }
 }

@@ -111,6 +111,7 @@
             this.ChrtSession.Location = new System.Drawing.Point(3, 212);
             this.ChrtSession.Name = "ChrtSession";
             series2.ChartArea = "ChartArea1";
+            series2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.ChrtSession.Series.Add(series2);
