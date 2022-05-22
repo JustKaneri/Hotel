@@ -96,6 +96,10 @@ namespace СУБД_Гостиница
                 FormPortie formPortie = new FormPortie(manager);
                 formPortie.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Недостаточно прав для авторизации, обратитесь к администратору", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             this.Show();
             TbxLogin.Text = "";
