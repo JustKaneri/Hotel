@@ -20,7 +20,6 @@ namespace СУБД_Гостиница.Porte
         public FormPortie(MainManager manager)
         {
             InitializeComponent();
-            HidePanel();
             Manager = manager;
         }
 
@@ -28,7 +27,7 @@ namespace СУБД_Гостиница.Porte
         private Button SelectBtn;
         private Form CurrentForm;
 
-        private Boolean IsShow = false;
+        private Boolean IsShow = true;
 
         /// <summary>
         /// Изменений нажатой кнопки.
@@ -36,11 +35,7 @@ namespace СУБД_Гостиница.Porte
         /// <param name="CurrentBtn"></param>
         private void ActivateButton(Button CurrentBtn)
         {
-            //CurrentBtn.ImageAlign = ContentAlignment.MiddleRight;
-            //CurrentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
             CursorSelectBtn.Location = CurrentBtn.Location;
-            //CurrentBtn.BackColor = Color.White;
-            //CurrentBtn.ForeColor = Color.Black;
             SelectBtn = CurrentBtn;
             LbxTitle.Text = CurrentBtn.Tag.ToString();
         }
@@ -53,11 +48,6 @@ namespace СУБД_Гостиница.Porte
         {
             if (CurrentBtn == null)
                 return;
-
-            //CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            //CurrentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            //CurrentBtn.BackColor = Colors.PanelColor;
-
         }
 
         private void ActivateForm(Form form)

@@ -27,7 +27,7 @@ namespace СУБД_Гостиница.Administrator
         private Button SelectBtn;
         private Form CurrentForm;
 
-        public bool IsShow { get; private set; }
+        public bool IsShow { get; private set; } = true;
 
         /// <summary>
         /// Изменений нажатой кнопки.
@@ -95,7 +95,7 @@ namespace СУБД_Гостиница.Administrator
             this.Controls.Add(CursorSelectBtn);
             CursorSelectBtn.BringToFront();
 
-            HidePanel();
+            //HidePanel();
 
             BtnNomer_Click(BtnNomer, null);
         }
@@ -148,8 +148,7 @@ namespace СУБД_Гостиница.Administrator
                     item.Text = "";
                     (item as Button).ImageAlign = ContentAlignment.MiddleCenter;
                 }
-
-
+                
             }
         }
 

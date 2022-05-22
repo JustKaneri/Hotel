@@ -74,6 +74,7 @@
             this.BtnMessage.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnMessage.Size = new System.Drawing.Size(194, 68);
             this.BtnMessage.TabIndex = 3;
+            this.BtnMessage.Tag = "Оповещения";
             this.BtnMessage.Text = "Оповещения";
             this.BtnMessage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnMessage.UseVisualStyleBackColor = true;
@@ -93,6 +94,7 @@
             this.BtnClients.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnClients.Size = new System.Drawing.Size(194, 68);
             this.BtnClients.TabIndex = 2;
+            this.BtnClients.Tag = "Клиенты";
             this.BtnClients.Text = "Клиенты";
             this.BtnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnClients.UseVisualStyleBackColor = true;
@@ -112,6 +114,7 @@
             this.BtnNomer.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnNomer.Size = new System.Drawing.Size(194, 68);
             this.BtnNomer.TabIndex = 5;
+            this.BtnNomer.Tag = "Номера";
             this.BtnNomer.Text = "Номера";
             this.BtnNomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnNomer.UseVisualStyleBackColor = true;
@@ -145,6 +148,7 @@
             this.BtnMenu.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.BtnMenu.Size = new System.Drawing.Size(194, 96);
             this.BtnMenu.TabIndex = 1;
+            this.BtnMenu.Tag = "Меню";
             this.BtnMenu.Text = "Меню";
             this.BtnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnMenu.UseVisualStyleBackColor = true;
