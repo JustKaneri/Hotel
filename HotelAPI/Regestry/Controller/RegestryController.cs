@@ -205,5 +205,31 @@ namespace HotelAPI.Regestry.Controler
 
             return "OK";
         }
+
+        public async Task<string> DeleteRegistration(int Id_Reg)
+        {
+            Client = new HttpClient();
+
+            Client.DefaultRequestHeaders.Add("Authorization", User.Token);
+
+            string url = Properties.Resources.Url + $"api/Regestration/DeleteReg?id_Reg={Id_Reg}";
+
+            HttpResponseMessage httpResponse;
+
+            try
+            {
+                httpResponse = await Client.DeleteAsync(url);
+            }
+            catch
+            {
+                return "Not Conect";
+            }
+
+            if (!httpResponse.StatusCode.ToString().Equals("OK"))
+                return "Not Connect";
+
+
+            return "OK";
+        }
     }
 }

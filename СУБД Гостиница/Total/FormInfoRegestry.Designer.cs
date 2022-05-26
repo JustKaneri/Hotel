@@ -30,32 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoRegestry));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TbxFam = new System.Windows.Forms.TextBox();
-            this.TbxName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TbxOtch = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.TbxPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.TbxOtch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TbxName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TbxFam = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DgvServis = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TbxEnd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TbxStart = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbxTitle = new System.Windows.Forms.Label();
-            this.DgvServis = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnCheck = new СУБД_Гостиница.Controls.ButtonSpecial();
             this.BtnOk = new СУБД_Гостиница.Controls.ButtonSpecial();
+            this.BtnDel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvServis)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -76,40 +77,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Гость";
             // 
-            // label1
+            // TbxPhone
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Фамилия:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TbxPhone.Location = new System.Drawing.Point(496, 76);
+            this.TbxPhone.Name = "TbxPhone";
+            this.TbxPhone.ReadOnly = true;
+            this.TbxPhone.Size = new System.Drawing.Size(263, 30);
+            this.TbxPhone.TabIndex = 7;
             // 
-            // TbxFam
+            // label4
             // 
-            this.TbxFam.Location = new System.Drawing.Point(115, 40);
-            this.TbxFam.Name = "TbxFam";
-            this.TbxFam.ReadOnly = true;
-            this.TbxFam.Size = new System.Drawing.Size(263, 30);
-            this.TbxFam.TabIndex = 1;
-            // 
-            // TbxName
-            // 
-            this.TbxName.Location = new System.Drawing.Point(496, 40);
-            this.TbxName.Name = "TbxName";
-            this.TbxName.ReadOnly = true;
-            this.TbxName.Size = new System.Drawing.Size(263, 30);
-            this.TbxName.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(422, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Имя:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(390, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 24);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Телефон:";
             // 
             // TbxOtch
             // 
@@ -128,22 +111,40 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Отчество:";
             // 
-            // TbxPhone
+            // TbxName
             // 
-            this.TbxPhone.Location = new System.Drawing.Point(496, 76);
-            this.TbxPhone.Name = "TbxPhone";
-            this.TbxPhone.ReadOnly = true;
-            this.TbxPhone.Size = new System.Drawing.Size(263, 30);
-            this.TbxPhone.TabIndex = 7;
+            this.TbxName.Location = new System.Drawing.Point(496, 40);
+            this.TbxName.Name = "TbxName";
+            this.TbxName.ReadOnly = true;
+            this.TbxName.Size = new System.Drawing.Size(263, 30);
+            this.TbxName.TabIndex = 3;
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(390, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 24);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Телефон:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(422, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Имя:";
+            // 
+            // TbxFam
+            // 
+            this.TbxFam.Location = new System.Drawing.Point(115, 40);
+            this.TbxFam.Name = "TbxFam";
+            this.TbxFam.ReadOnly = true;
+            this.TbxFam.Size = new System.Drawing.Size(263, 30);
+            this.TbxFam.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Фамилия:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox2
             // 
@@ -160,6 +161,62 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Номер";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 24);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Доп. услуги:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // DgvServis
+            // 
+            this.DgvServis.AllowUserToAddRows = false;
+            this.DgvServis.AllowUserToDeleteRows = false;
+            this.DgvServis.AllowUserToResizeColumns = false;
+            this.DgvServis.AllowUserToResizeRows = false;
+            this.DgvServis.BackgroundColor = System.Drawing.Color.White;
+            this.DgvServis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvServis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.DgvServis.GridColor = System.Drawing.Color.White;
+            this.DgvServis.Location = new System.Drawing.Point(10, 106);
+            this.DgvServis.MultiSelect = false;
+            this.DgvServis.Name = "DgvServis";
+            this.DgvServis.ReadOnly = true;
+            this.DgvServis.RowHeadersVisible = false;
+            this.DgvServis.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.DgvServis.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DgvServis.RowTemplate.Height = 27;
+            this.DgvServis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvServis.Size = new System.Drawing.Size(736, 123);
+            this.DgvServis.TabIndex = 4;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Название";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Кол-во";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Цена за 1 услугу";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // TbxEnd
             // 
@@ -222,69 +279,13 @@
             this.LbxTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LbxTitle.UseCompatibleTextRendering = true;
             // 
-            // DgvServis
-            // 
-            this.DgvServis.AllowUserToAddRows = false;
-            this.DgvServis.AllowUserToDeleteRows = false;
-            this.DgvServis.AllowUserToResizeColumns = false;
-            this.DgvServis.AllowUserToResizeRows = false;
-            this.DgvServis.BackgroundColor = System.Drawing.Color.White;
-            this.DgvServis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvServis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.DgvServis.GridColor = System.Drawing.Color.White;
-            this.DgvServis.Location = new System.Drawing.Point(10, 106);
-            this.DgvServis.MultiSelect = false;
-            this.DgvServis.Name = "DgvServis";
-            this.DgvServis.ReadOnly = true;
-            this.DgvServis.RowHeadersVisible = false;
-            this.DgvServis.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.DgvServis.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DgvServis.RowTemplate.Height = 27;
-            this.DgvServis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvServis.Size = new System.Drawing.Size(736, 123);
-            this.DgvServis.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 24);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Доп. услуги:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Название";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Кол-во";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Цена за 1 услугу";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
             // BtnCheck
             // 
             this.BtnCheck.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(77)))));
             this.BtnCheck.FlatAppearance.BorderSize = 2;
             this.BtnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCheck.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnCheck.Location = new System.Drawing.Point(25, 485);
+            this.BtnCheck.Location = new System.Drawing.Point(467, 485);
             this.BtnCheck.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BtnCheck.Name = "BtnCheck";
             this.BtnCheck.Size = new System.Drawing.Size(147, 50);
@@ -308,11 +309,29 @@
             this.BtnOk.UseVisualStyleBackColor = true;
             this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
+            // BtnDel
+            // 
+            this.BtnDel.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.BtnDel.FlatAppearance.BorderSize = 2;
+            this.BtnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnDel.ForeColor = System.Drawing.Color.Red;
+            this.BtnDel.Location = new System.Drawing.Point(35, 485);
+            this.BtnDel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnDel.Name = "BtnDel";
+            this.BtnDel.Size = new System.Drawing.Size(154, 49);
+            this.BtnDel.TabIndex = 14;
+            this.BtnDel.Text = "Удалить";
+            this.BtnDel.UseVisualStyleBackColor = true;
+            this.BtnDel.Visible = false;
+            this.BtnDel.Click += new System.EventHandler(this.BtnDel_Click);
+            // 
             // FormInfoRegestry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 547);
+            this.Controls.Add(this.BtnDel);
             this.Controls.Add(this.BtnCheck);
             this.Controls.Add(this.BtnOk);
             this.Controls.Add(this.panel3);
@@ -331,8 +350,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvServis)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -362,5 +381,6 @@
         private System.Windows.Forms.Label LbxTitle;
         private Controls.ButtonSpecial BtnOk;
         private Controls.ButtonSpecial BtnCheck;
+        private System.Windows.Forms.Button BtnDel;
     }
 }

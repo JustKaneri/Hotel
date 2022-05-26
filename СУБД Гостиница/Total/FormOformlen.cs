@@ -216,11 +216,21 @@ namespace СУБД_Гостиница.Porte
                 return;
             }
 
+            if(DtmStart.Value.Date > DtmFinish.Value.Date)
+            {
+                BtnReg.Enabled = true;
+                MessageBox.Show("Не корректная дата", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var res = MessageBox.Show($"Проживание в номере будет стоить: {GetPrice()}\r\nПродолжить?", "Цена", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (res == DialogResult.No)
+            {
+                BtnReg.Enabled = true;
                 return;
-
+            }
+               
             string resulClient = "";
 
             if(IsEdit)
@@ -263,6 +273,8 @@ namespace СУБД_Гостиница.Porte
                 if (DgvServis[3, i].Value == null)
                     continue;
 
+                if (DgvServis[4, i].Value == null)
+                    continue;
 
                 if (DgvServis[4,i].Value.ToString().ToLower().Equals("true"))
                 {

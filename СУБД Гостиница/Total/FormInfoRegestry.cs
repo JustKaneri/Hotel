@@ -84,6 +84,9 @@ namespace СУБД_Гостиница.Total
             {
                 DgvServis.Rows.Add(info.NameServis[i], info.CountServis[i], info.PriceServis[i]);
             }
+
+            if (DateTime.Now.Date <= info.DtmStart.AddDays(-1).Date)
+                BtnDel.Visible = true;
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
@@ -141,6 +144,25 @@ namespace СУБД_Гостиница.Total
             app.Quit();
 
             System.Diagnostics.Process.Start(Application.StartupPath + "\\" + fileName);
+        }
+
+        private async void BtnDel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Для удаления записи, укажите пароль", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            FormAssept formAssept = new FormAssept(Manager);
+            if (formAssept.ShowDialog() == DialogResult.OK)
+            {
+                string result = await regestryControoler.DeleteRegistration(Id_Reg);
+
+                if (!result.Equals("OK"))
+                {
+                    MessageBox.Show("Не удалось удалить запись", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }
